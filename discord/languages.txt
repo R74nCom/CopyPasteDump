@@ -1,0 +1,91 @@
+**css**
+```css
+text
+text{text};
+12345```
+
+**cs**
+```cs
+# text
+" text "
+' text '
+text
+12345```
+
+**bash**
+```bash
+# text
+" text "
+text
+12345```
+
+**py**
+```py
+@ text
+# text
+def text
+12345```
+
+**xml**
+```xml
+<text text>
+<text>
+12345```
+
+**html**
+```html
+text
+<text>
+<text text="text">
+12345
+<!-- text -->```
+
+**xl**
+```xl
+Text
+text
+12345```
+
+**fix**
+```fix
+text
+12345
+= text```
+
+**tex**
+```tex
+$ text```
+
+**ini**
+```ini
+[text]
+[text
+text]```
+
+**md**
+```md
+# text
+[text](text)
+[text][text]
+12345```
+
+**diff**
+```diff
+- text
++ text
+--- text
+*** text
+! text
+12345```
+
+**autohotkey**
+```autohotkey
+A_text
+%text%
+^text::
+12345```
+
+**glsl**
+```glsl
+# text
+12345```
