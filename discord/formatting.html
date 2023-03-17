@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+        <meta name="description" content="An extensive guide to formatting messages on Discord.">
+        <meta property="og:description" content="An extensive guide to formatting messages on Discord." />
+    <meta name="keywords" content="copy, emoticons, emojis, unicode, symbols, ascii, text, text art">
+    <meta name="author" content="R74n">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://c.R74n.com" />
+    <meta property="og:site_name" content="Copy Paste Dump" />
+    <meta name="twitter:image" content="https://c.r74n.com/favicon_square.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Discord Formatting - Copy Paste Dump</title>
+        <meta property="og:title" content="Discord Formatting - Copy Paste Dump" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet.css"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://c.r74n.com/icons/apple-touch-icon.png?v=lkvKdlj5Pj">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://c.r74n.com/icons/favicon-32x32.png?v=lkvKdlj5Pj">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://c.r74n.com/icons/favicon-16x16.png?v=lkvKdlj5Pj">
+    <link rel="manifest" href="https://c.r74n.com/icons/site.webmanifest?v=lkvKdlj5Pj">
+    <link rel="mask-icon" href="https://c.r74n.com/icons/safari-pinned-tab.svg?v=lkvKdlj5Pj" color="#00cdca">
+    <link rel="shortcut icon" href="https://c.r74n.com/icons/favicon.ico?v=lkvKdlj5Pj">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-config" content="https://c.r74n.com/icons/browserconfig.xml?v=lkvKdlj5Pj">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="content-language" content="en-US">
+    <script src="../scripts.js"></script>
+    <script src="../jquery-3.5.1.js"></script>
+    <style>
+      .mention {color:#003cff;cursor:pointer;}
+      .mention:active {color:#406cff;}
+    </style>
+    
+</head>
+
+<body>
+
+<a class="cpdtitle" href="https://c.R74n.com"><h1>Copy Paste Dump</h1></a>
+<iframe class="mbiframe" src="../menubar.html" name="menubar"></iframe>
+
+<div class="content">
+<h2 class="pagetitle">Discord Formatting Guide</h2>
+
+<a href=".">Back to the Discord Portal</a><br><br>
+
+<strong>NEW</strong>: <a href="#Timestamps">In-Line Timestamp Formatting</a>
+
+<h3>Table of Contents</h3>
+1. <a href="#Basic">Basics (Bold, italics, etc.)</a><br>
+2. <a href="#Spoiler">Spoilers</a><br>
+3. <a href="#Code">Code Blocks</a><br>
+4. <a href="#Escape">Escaping Text</a><br>
+4.1. <a href="#EscapeMentions">Escape Mentions and Emojis</a><br>
+4.2. <a href="#NativeEmojis">Normal Emojis</a><br>
+5. <a href="#Color">Colored Code Blocks</a><br>
+6. <a href="#Embed">Embeds</a><br>
+6.1. <a href="#Hyperlink">Hyperlinks</a><br>
+7. <a href="#Quote">Quoting</a><br>
+8. <a href="#Protocol">Protocol Links</a><br>
+9. <a href="#DevLink">Invisible Development Link</a><br>
+10. <a href="#Timestamps">Timestamps</a><br>
+<br>
+For the full experience, <a href="https://support.discordapp.com/hc/article_attachments/115002742731/mceclip0.png">enable developer mode</a> on Discord.
+
+<br><br><a class="bkmk" href="#Basic" id="Basic" title="Basic Discord Formatting"><h3>Basics</h3></a>
+<em>How to type bold, italics, underline, and strikethrough on Discord</em>
+<table style="width:100%">
+  <tr>
+    <th></th>
+    <th>Input</th>
+    <th>Output</th>
+  </tr>
+  <tr>
+    <td>Bold</td>
+    <td>**text**</td>
+    <td><span style="font-weight:bold;">text</span></td>
+  </tr>
+  <tr>
+    <td>Italics</td>
+    <td>*text* <em>or</em> _text_</td>
+    <td><span style="font-style:italic;">text</span></td>
+  </tr>
+  <tr>
+    <td>Underline</td>
+    <td>__text__</td>
+    <td><span style="text-decoration:underline;">text</span></td>
+  </tr>
+  <tr>
+    <td>Strikethrough</td>
+    <td>~~text~~</td>
+    <td><span style="text-decoration:line-through;">text</span></td>
+  </tr>
+</table>
+<br>
+You can also combine these, but in specific orders.
+<br><br>
+<table style="width:100%">
+  <tr>
+    <td>Bold-Italics</td>
+    <td>***text***</td>
+    <td><span style="font-weight:bold;font-style:italic;">text</span></td>
+  </tr>
+  <tr>
+    <td>Underline-Italics</td>
+    <td>__*text*__</td>
+    <td><span style="text-decoration:underline;font-style:italic;">text</span></td>
+  </tr>
+  <tr>
+    <td>Bold-Strikethrough</td>
+    <td>~~**text**~~</td>
+    <td><span style="font-weight:bold;text-decoration:line-through;">text</span></td>
+  </tr>
+  <tr>
+    <td>Underline-Strikethrough</td>
+    <td>~~__text__~~</td>
+    <td><span style="text-decoration:underline line-through;">text</span></td>
+  </tr>
+  <tr>
+    <td>All Of The Above</td>
+    <td>~~__***text***__~~</td>
+    <td><span style="text-decoration:underline line-through;font-weight:bold;font-style:italic;">text</span></td>
+  </tr>
+</table>
+
+<br><br><a class="bkmk" href="#Spoiler" id="Spoiler" title="Spoiler Discord Formatting"><h3>Spoilers</h3></a>
+<em>How to type spoilers on Discord</em>
+<table style="width:100%">
+  <tr>
+    <td>||text||</td>
+    <td><img src="images/spoiler.png" alt="Hidden spoiler text"></td>
+  </tr>
+  <tr>
+    <td>Clicked</td>
+    <td><img src="images/spoiler_opened.png" alt="Unhidden spoiler text"></td>
+  </tr>
+  <tr>
+    <td>|| || <em>Only a Space</em></td>
+    <td><img src="images/spoiler_space.png" alt="A single black vertical line"></td>
+  </tr>
+</table>
+
+<br><br><a class="bkmk" href="#Code" id="Code" title="Code Block Discord Formatting"><h3>Code Blocks</h3></a>
+<em>How to type code blocks on Discord</em><br><br>
+<div class="nopadblock" style="max-width:50%;">By surrounding text in single ` (the one on the ~tilde~ key) you can make a one-line code block. This will not work for multiple lines. 
+<strong>Example</strong>: `text`</div>
+<div class="nopadblock"><img src="images/code.png" alt="Code text"></div>
+<br><br>
+However, if you surround text in ```, you will create a bigger, multi-line code block.<br>
+<strong>Example</strong>:
+<div style="padding-left:25px">```<br>
+text<br>
+text<br>
+text```</div>
+<br>
+<img src="images/code_block.png" alt="Text in code block">
+<br>
+<small><em>If you’re using multiple lines, the first line must only contain ```, or else it will be treated as a programming language and not displayed.</em></small><br><br>
+All code blocks can also be <a href="#Basic">bolded, italicized, underlined and struckthrough</a>.
+
+<br><br><a class="bkmk" href="#Escape" id="Escape" title="Escaped Text Discord Formatting"><h3>Escaping Text</h3></a>
+<em>How to escape text on Discord</em><br><br>
+Putting \ in front of certain characters will cancel it out when Discord tries to format text.
+<br><br>
+<strong>Example</strong>: \*text\* <img src="images/escaped.png" alt="Text surrounded by asterisks"><br><br>
+Characters you can escape: ~`!@#$%^&*()_-+={[}]:;"'&lt;&gt;,./?|\<br><br>
+Sometimes \'s will mess with art or something. In this case you must type \\ to escape it.
+
+<a class="bkmk" href="#EscapeMentions" id="EscapeMentions" title="Escape Mentions and Escape Emojis Discord Formatting"><h4>Escaping Mentions and Emojis</h4></a>
+If you happen to put a mention or emoji into a code block or escape it, you’ll notice some weird numbers and stuff. This is how Discord actually sees things like <span class="mention">@mentions</span>, <span class="mention">#channels</span>, emojis and <span style="color:red;cursor:pointer;">@roles</span>.
+<br><br>
+<div style="white-space:pre-wrap;">User Mention
+    \<span class="mention">@user#1234</span> → &lt;@101070932608561152&gt;
+    &lt;@USER_ID&gt;
+    &lt;@!USER_ID&gt; (An ! means they have a nickname set)
+Role Mention
+    \<span style="color:red;cursor:pointer;">@Admin</span> → &lt;@&482038999607934987&gt;
+    &lt;@&ROLE_ID&gt;
+Emoji
+    \:AYAYA: → &lt;:AYAYA:519608855987093529&gt;
+    &lt;:NAME:ID&gt;
+Animated Emoji
+    \:Clap: → &lt;a:Clap:521183484098772993&gt;
+    &lt;a:NAME:ID&gt;
+Channel Mention
+    \<span class="mention">#spam</span> → &lt;#481640594435997706&gt;
+    &lt;#CHANNEL_ID&gt;</div>
+<br>
+If you enter an invalid ID, things will act strange.
+<ul>
+  <li>A user mention will turn to <span class="mention">&lt;@USER_ID&gt;</span></li>
+  <li>A channel mention will turn to <span class="mention">#deleted-channel</span></li>
+  <li>A role mention will turn to <span style="color:red;cursor:pointer;">@deleted-role</span></li>
+  <li>An emoji will just show the name inside colons</li>
+</ul>
+Side note: Escaped user and role mentions will still ping people!
+
+<a class="bkmk" href="#NativeEmojis" id="NativeEmojis" title="Get Normal Emojis Discord Formatting"><h4>Normal Emojis</h4></a>
+<em>How to type normal emojis on Discord</em><br><br>
+Escaping a regular emoji will render it as your operating system's native version, instead of the default Twemoji design.<br><br>
+<strong>Example</strong>: :clap: \:clap: :clap: \:clap: :clap: \:clap: <em>or</em>	👏 \👏 👏 \👏 👏 \👏<br><br>
+<img src="images/escape_emoji.png" alt="Discord emojis and native Apple emojis side-by-side">
+
+<br><br><a class="bkmk" href="#Color" id="Color" title="Color Discord Formatting"><h3>Colored Code Blocks</h3></a>
+<em alt="How to type colors on Discord">How to type colored text on Discord</em><br><br>
+If you don’t know about code blocks, read <a href="#Code">Code Blocks</a> first.<br><br>
+
+When making a multi-line code block, it can be set to a programming language by typing the language name next to the first ```. When set, Discord will color the text accordingly to the language’s syntax.<br><br>
+
+<em>Example</em>:	```html<br>
+&lt;b&gt;Hello World!&lt;/b&gt;```<br><br>
+<img src="images/html.png" alt="Hello World text surrounded by HTML 'b' tags"><br><br>
+<img src="images/lang1.png" height="400px" alt="Green text, Red text, Blue text, Gray text, Yellow text on Discord"> <img src="images/lang2.png" height="400px" alt="Blue text, Green text, Yellow text, Blue text, Highlighted text on Discord"> <img src="images/lang3.png" height="400px" alt="Blue text, Green text, Yellow text, Red text on Discord">
+<br><br><small><div class="nopadblock">How to type red on Discord<br>
+How to type orange on Discord<br>
+How to type yellow on Discord<br></div>
+<div class="nopadblock">How to type green on Discord<br>
+How to type blue on Discord<br>
+How to type purple on Discord<br></div>
+<div class="nopadblock">How to type pink on Discord<br>
+How to type gray on Discord<br>
+How to highlight text on Discord<br></div></small>
+
+<br><br><a class="bkmk" href="#Embed" id="Embed" title="Embed Discord Formatting"><h3>Embeds</h3></a>
+<em>Note: You’re going to need a bot that can send embedded messages to do this part. For this, we will be using a custom bot with an !embed command.</em>
+<br><br>
+All methods of formatting can be used inside of embeds. However, some things like colored code blocks and <a href="#Hyperlink">hyperlinks</a> do not work in the <em>titles</em>.
+<br><br>
+<img src="images/embed.png" alt="Hidden spoiler text shown in an embed">
+<br><br>
+If you have the Manage Messages permission, there should be an X next to the embed when hovering over it. Clicking this will remove the embed for the whole server, but without deleting the message it’s attached to.
+
+<a class="bkmk" href="#Hyperlink" id="Hyperlink" title="Links Discord Formatting"><h4>Hyperlinks</h4></a>
+<em>How to type hyperlinks on Discord</em><br><br>
+These <strong>only</strong> work inside of embed descriptions and messages sent by webhooks/followed servers, but not in embed titles.
+<br><br>
+To create one, put the following text into an embed or webhook message:<br>
+<span style="padding-left:25px;">[Text](link)</span><br>
+<strong>Example</strong>: [Click Here][<a href="https://c.r74n.com">https://c.r74n.com/</a>)<br>
+This will produce something like this: <a href="https://c.r74n.com">Click Here</a>
+<br><br>
+<img src="images/hyperlink_embed.png" alt="Hyperlink shown in an embed"> <img src="images/hyperlink_server.png" alt="Hyperlink shown in a followed channel message"> <img src="images/hyperlink_webhook.png" alt="Hyperlink shown in a webhook message">
+<br><br>
+Also see <a href="#Protocol">Protocol Links</a>!
+
+<br><br><a class="bkmk" href="#Quote" id="Quote" title="Quotes Discord Formatting"><h3>Quoting</h3></a>
+<em>How to type quotes on Discord</em><br><br>
+Quotes are very similar to embeds, except they can be used by normal users and aren’t collapsable. They still can’t use hyperlinks, but they’re pretty cool anyway.<br><br>
+To make a quote, simply type “> “ and your wanted text. This can only be one line.
+<br><br>
+<div class="nopadblock"><strong>Example</strong>:
+> quote</div>
+<div class="nopadblock"><img src="images/quote.png" alt="Single-line quote block"></div>
+<br><br>
+Putting multiple quote lines together will group them into one big quote block.<br><br>
+<div class="nopadblock"><strong>Example</strong>:
+> quote
+> quote
+> quote</div>
+<div class="nopadblock"><img src="images/quote2.png" alt="Multi-line quote block"></div>
+<br><br>
+And putting “>>> “ will quote the rest of your message!
+<strong>Example</strong>:<br>
+>>> quote<br>
+quote<br>
+quote
+
+<br><br><a class="bkmk" href="#Protocol" id="Protocol" title="Protocol Link Discord Formatting"><h3>Protocol Links</h3></a>
+<em>How to type protocol links on Discord</em><br><br>
+Protocol links are used in computers to tell a program to do something.<br>
+They look something like this: <a href="#">example://test</a>
+<br><br>
+In Discord, they do the same thing. However, to type them you need to surround one with &lt; &gt;. You can put any text, as long as :// is in the middle. The left side can contain letters or numbers, and the right side can contain any character except a space. Some characters will be encoded into URL format. For example, ` turns into %60. All capital letters will be turned into lowercase.
+<br><br>
+<div class="nopadblock"><strong>Example</strong>:
+&lt;user://1234&gt;
+&lt;uwu://uwu&gt;
+&lt;1://2&gt;</div>
+<div class="nopadblock"><img src="images/protocol.png" alt="Protocol link made using UwU faces"></div>
+<br><br>
+There’s also some links that can be used to open applications on whoever clicks’ computer. Here are some of them:<br><br>
+&lt;steam://.&gt; opens Steam<br>
+&lt;discord://discordapp.com/channels/@me&gt; opens your friends list<br>
+&lt;http://.&gt; opens the default browser<br>
+&lt;tel://123&gt; tries to call whatever number is 123 (at least on Mac)<br>
+Other things that work the same as &lt;steam://.> include <code>skype</code>, <code>teamspeak</code>, <code>spotify</code>, <a target="_blank" href="https://en.wikipedia.org/wiki/List_of_URI_schemes">and many more</a>.
+
+<br><br><a class="bkmk" href="#DevLink" id="DevLink" title="Invisible Text Discord Formatting"><h3>Development Link</h3></a>
+<em>How to type invisible text on Discord</em><br><br>
+There exists a strange link that, once put into chat, will completely vanish. That link is “<a href="https://canary.discordapp.com/__development/link/">https://canary.discordapp.com/__development/link/</a>”.
+<br><br>
+Your message will be blank when you send this alone, probably the shortest a message can ever be.
+<br><br>
+Any other text will stay the same, though.<br><br>
+<strong>Example</strong>:<br>
+Copy https://canary.discordapp.com/__development/link/ Paste Dump
+<br><br>
+<img src="images/dev1.png" alt="A blank Discord message"> <img src="images/dev2.png" alt="Hello hello">
+<br><br>
+This can be abused, however. You can add text to the link by putting a + at the end.<br>
+<strong>Example</strong>:<br>
+	https://canary.discordapp.com/__development/link/+CopyPasteDump<br>
+This will again be blank.
+<br><br>
+But what if you add +@everyone or +@here?<br>
+Yes, it works…
+<br><br>
+<img src="images/dev_at.png" alt="Invisible message ping">
+<br><br>
+This is used by Discord developers to give out test versions of Discord.
+
+<br><br><a class="bkmk" href="#Timestamps" id="Timestamps" title="In-Line Timestamp Text Discord Formatting"><h3>Timestamps</h3></a>
+<em>How to type times and dates on Discord</em><br><br>
+Timestamps can be typed in Discord messages to include a date, time, or countdown that will constantly be updated and in-sync with every user's timezone and date format settings.
+<br><br>
+The number that is used is a Unix Timestamp. They can be generated using online tools like <a href="https://www.unixtimestamp.com/" target="_blank">this one</a>.
+<br><br>
+Users will see the exact date and time when they hover over the timestamp.
+<br><br>
+<img src="images/timestamps.png" alt="A list of in-line time stamp formatting options on Discord" height="300px">
+<br><br>
+You can specify any exact time (to the second) from &lt;t:-8640000000000:R&gt; to &lt;t:8640000000000:R&gt; (April 19, -271821 to September 12, 275760)
+<br><br>
+<table style="width:100%">
+  <tr>
+    <td>&lt;t:123456789:d&gt;</td>
+    <td>Month/Day/Year</td>
+  </tr>
+  <tr>
+    <td>&lt;t:123456789:f&gt;</td>
+    <td>Month Day, Year Time</td>
+  </tr>
+  <tr>
+    <td>&lt;t:123456789:t&gt;</td>
+    <td>Time</td>
+  </tr>
+  <tr>
+    <td>&lt;t:123456789:D&gt;</td>
+    <td>Month Day, Year</td>
+  </tr>
+  <tr>
+    <td>&lt;t:123456789:F&gt;</td>
+    <td>Weekday, Month Day, Year Time</td>
+  </tr>
+  <tr>
+    <td>&lt;t:123456789:R&gt;</td>
+    <td>Time since</td>
+  </tr>
+  <tr>
+    <td>&lt;t:123456789:T&gt;</td>
+    <td>Hours:Minutes:Seconds</td>
+  </tr>
+</table>
+
+
+
+
+
+
+</div>
+
+
+
+<script src="../loadbuttons.js"></script>
+
+<iframe class="ftiframe" src="../footer.html" name="footer"></iframe>
+
+<div style="width:100%;height:100px;margin:auto;">
+<script data-ad-client="ca-pub-8485284630785740" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<div class="adbox">
+  <!-- Copy Paste Dump -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8485284630785740"
+       data-ad-slot="5555682735"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  </div>
+  <div class="adbox">
+  <!-- Copy Paste Dump -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8485284630785740"
+       data-ad-slot="5555682735"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  </div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93720349-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-93720349-8');
+</script>
+
+
+</body>
+</html>
