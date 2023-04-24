@@ -5,13 +5,18 @@ Light blue - c0d6df
 Dull blue - 4f6d7a
 Blue - 0066ff
 */
+/* New Color Scheme
+Background (Light) - #F5FFFA
+#F5FFFA
+*/
 
 body {
-    background-color:#cddae0;
+    background-color:#F5FFFA;
     font-family: Arial;
     font-size: 18px;
     color: #000000;
     max-width: 100%;
+    margin: 0;
 }
 
 .mbiframe {
@@ -19,17 +24,126 @@ body {
     width:100%;
     height:77px;
 }
+.navdiv {
+    border:none;
+    width:100%;
+    background-color:#333333;
+    margin:0;
+    padding:0;
+    font-family:Arial;
+}
+.navdiv h1 {
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    color: #03D1FA;
+    transition:0.3s;
+}
+.navdiv h1:hover {
+    color: #97eeff;
+}
+.navdiv h1:active {
+    color: #00a1c2;
+}
+nav h1 {
+    font-size: 2em!important;
+}
+.navdiv ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    background-color:#333333;
+    overflow:auto;
+    white-space:nowrap;
+    cursor:default;
+    text-align: center;
+}
+.navimp {
+    background-color:#48515e;
+    color:#ffffff;
+    transition:0.3s;
+}
+.navdiv ul a {
+    display:inline-block;
+    color:white;
+    text-align:center;
+    padding:14px 16px;
+    text-decoration:none;
+    transition:0.3s;
+    cursor:pointer;
+}
+.navhome {
+    padding: 0!important;
+    padding-left: 2px!important;
+    padding-right: 2px!important;
+}
+.navhome img {
+    height: 2em;
+}
+.navdiv ul a:hover {background-color:#111111;}
+.navdiv ul a:active, .navactivepage {background-color:#5e5e5e;}
+.navhome:hover, .navhome:active {background-color:unset!important;}
+.pagetitle {
+    padding-top: 20px;
+}
+
 .ftiframe {
     border:none;
     width: calc(100%);
-
 }
+.footerdiv {
+    border:none;
+    width:100%;
+    background-color:#333333;
+    margin:0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family:Arial;
+    color: white;
+    text-align: center;
+}
+.footersect {
+    display: inline-block;
+    margin: 0 10px;
+    width: auto;
+    vertical-align: top;
+}
+/* on mobile, footersect block*/
+@media screen and (max-width: 600px) {
+    .footersect {
+        display: block;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .footersect ul { text-align: center!important;}
+}
+.footersect a, .footersect a:visited {
+    text-decoration: none;
+    color: #03D1FA;
+}
+.footersect a:hover {
+    color: #97eeff;
+}
+.footersect a:active {
+    color: #00a1c2;
+}
+.footersect ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+.footerbottom { display: block }
+.footerbottom a { color:#00ffff; text-decoration: none; }
+.footerbottom a:visited { color:#00ffff }
+.footerbottom img {height:0.8em; vertical-align: middle;}
 
 
 .cpdtitle {text-align:center;text-decoration: none;}
-.content {margin: 20px;}
+.content {margin: 25px;}
 
-.tabs {border: 1px solid #5f5f5f;background-color:#cecece;overflow:auto;white-space:nowrap;cursor:default;}
+.tabs {border: 1px solid #5f5f5f;background-color:#d0d9d4;overflow:auto;white-space:nowrap;cursor:default;}
 .tabs button, .tabs span {
     background-color: inherit;
     border: none;
@@ -40,8 +154,8 @@ body {
     display:inline-block;
 }
 .tabs button {cursor:pointer;}
-.tabs button:hover {background-color: #dbdbdb;}
-.tabs button.active {background-color: #dbdbdb;}
+.tabs button:hover {background-color: #cfcfcf;}
+.tabs button.active {background-color: #cfcfcf;}
 .tabs span {cursor:default;}
 .tabcontent {
     display: none;
@@ -67,7 +181,7 @@ h2 {margin-top: 0px; padding:0px}
     border: 2px solid #646e73;
     border-radius: 10px;
     display:inline-block;
-    background-color:#cecece;
+    background-color:#e7e7e7;
     min-width: 1em;
     text-align: center;
     margin-top: 1px;
@@ -89,30 +203,38 @@ h2 {margin-top: 0px; padding:0px}
 
 .bkmk {font-size:20px;text-decoration:none;}
 
-div.monoblock, div.divblock, div.bgblock, div.navdiv, div.artblock, div.tinyblock, div.groupblock {display:inline-block;white-space:pre-wrap;margin:0.4rem;padding:0.4rem;vertical-align:middle;}
+div.monoblock, div.divblock, div.bgblock, div.artblock, div.tinyblock, div.groupblock {display:inline-block;white-space:pre-wrap;margin:0.4rem;padding:0.4rem;vertical-align:middle;}
 div.nopadblock {display:inline-block;white-space:pre-wrap;vertical-align:middle;}
 .monoblock {font-family:monospace;}
 .divblock {font-family:Arial;}
 .groupblock {font-family:Arial;border:2px solid #c8c8c8;}
 .artblock {font-family:Arial;line-height:130%;}
 .tinyblock {font-family:Arial;line-height:130%;font-size:10px;cursor:text;}
-.bgblock {background-color:#cecece;border:2px solid #c8c8c8;}
+.bgblock {background-color:#d0d9d4;border:2px solid #c8c8c8;}
 .bgblock a {padding-left:20px;padding-right:20px;}
-.col a {padding-left:20px;color:#103cff;}
+.col a {padding-left:20px;color:#103cff; text-decoration: none;}
+.col a:nth-child(even) {color:#0d2cb1!important}
 .col a:visited {color:#103cff;}
-.col a:active {color:#86ff82;}
+.col a:hover {color:#6481ff}
+.col a:active {color:#001fab;}
 .colcontainer {
     display: table;
     width: 100%;
     table-layout: fixed;
 }
 .col {
-    background-color:#cecece;
+    background-color:#d0d9d4;
     display: table-cell;
     padding: 16px;
     border:2px solid #5f5f5f;
     font-size:25px;
     white-space:pre;margin:0.4rem;padding:0.4rem;vertical-align:top;
+}
+/* Give all cols except the first no left border */
+@media only screen and (min-width: 850px) {
+    .col + .col {
+        border-left: none;
+    }
 }
 @media only screen and (max-width: 850px) {
     .col {
@@ -141,7 +263,7 @@ button:hover, input[type=button]:hover, .button:hover {background-color: #ffffff
 button:active, input[type=button]:active, .button:active {background-color: #c8c8c8;}
 .sb {font-size:15px;padding-left:4px;padding-right:4px;padding-top:1px;padding-bottom:1px;margin-left:5px;margin-top: 1px;margin-bottom: 1px;}
 
-input[type=text] {
+input[type=text], input[type=date], input[type=time] {
     font-size:18px;
     vertical-align: middle;
     border:2px solid #646e73;border-radius: 13px;
@@ -149,7 +271,7 @@ input[type=text] {
     background-color:#ffffff;
     font-family: Arial;
 }
-select {background-color: #ffffff;display:inline-block;margin-top: 1px;margin-bottom: 1px;}
+select {background-color: #ececec;display:inline-block;margin-top: 1px;margin-bottom: 1px;}
 textarea {border:2px solid #646e73;border-radius: 13px;background-color:#ffffff;vertical-align:middle;font-family: Arial;padding:5px;}
 
 figure {display:inline-block;width:auto;}
@@ -160,8 +282,8 @@ table, th, td {
 }
 th, td {padding: 15px;text-align: left;}
 table {border-spacing: 0px;}
-tr:nth-child(odd) {background-color: #c8c8c8;}
-tr:nth-child(even) {background-color: #adadad;}
+tr:nth-child(odd) {background-color: #ececec;}
+tr:nth-child(even) {background-color: #d1d1d1;}
 td {font-weight:normal;}
 
 b {font-weight:bold;}

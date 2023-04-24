@@ -5,7 +5,7 @@
     <meta charset="utf-8">
         <meta name="description" content="A useful collection of text symbols, letters, emojis, ASCII art, and a fancy font generator tool.">
         <meta property="og:description" content="A useful collection of text symbols, letters, emojis, ASCII art, and a fancy font generator tool." />
-    <meta name="keywords" content="copy, emoticons, emojis, unicode, symbols, ascii, text, text art">
+    <meta name="keywords" content="copy, copy and paste, emoticons, emojis, unicode, symbols, ascii, text, text art">
     <meta name="author" content="R74n">
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://c.R74n.com" />
@@ -27,33 +27,54 @@
     <meta http-equiv="content-language" content="en-US">
     <script src="scripts.js"></script>
     <script src="jquery-3.5.1.js"></script>
-    <style>.gsc-input * {border:none}input.gsc-input {border-radius:8px;}</style>
+    <style>
+      .gsc-input * {border:none}
+      input.gsc-input {border-radius:8px!important;height:2em!important;padding-left:0.5em!important}
+      .gsc-input-box {border:none!important}
+      .gsc-clear-button{display:none!important}
+      .gsib_a {padding:0!important}
+      .gsib_b {display:none!important}
+      .gsc-control-searchbox-only {
+        /* Centered and 50% width unless mobile */
+        margin: 0 auto;
+        width: 75%;
+      }
+      @media only screen and (max-width: 600px) {
+        .gsc-control-searchbox-only {
+          width: 100%;
+        }
+      }
+    </style>
     
 </head>
 
 <body>
 
-<a class="cpdtitle" href="https://c.R74n.com"><h1>Copy Paste Dump</h1></a>
-<iframe class="mbiframe" src="menubar.html" name="menubar"></iframe>
+<nav><div class="navdiv" id="navdiv">
+<a class="cpdtitle" href="https://c.R74n.com"><h1>Copy Paste Dump</h1></a><ul>
+<!--&A--><a href="https://c.r74n.com" class="navhome"><img src="https://c.r74n.com/favicon.png"></a>
+<!--&B--><a href="/unicode">Text Symbols</a>
+<!--&C--><a href="/emoji">Emojis</a>
+<!--&D--><a href="/faces">Text Faces</a>
+<!--&E--><a href="/fonts">Font Generator</a>
+<!--&F--><a href="/combining">Combining</a>
+<!--&G--><a href="/shapes">Shapes</a>
+<!--&H--><a href="/pages" class="navimp">All Pages</a><!--&I--><a href="https://cse.google.com/cse?cx=f12e443d1104f2f9c" class="navimp">Search</a>
+<!--&J--></ul></div></nav>
 
 <div class="content">
 <h2 class="pagetitle">Copy Paste Dump</h2>
 
-Click any of the tabs above to start exploring!<br><br>
+Click any of the tabs above to start exploring! <strong>Join our <a href="https://discord.gg/yFAaYYv" target="_blank">Discord</a></strong>, or post something on our <a href="https://www.reddit.com/r/CopyPasteDump/" target="_blank" style="color:rgb(238, 107, 0)">Reddit</a>! ☺️<br><br>
 
-<span style="background-color:red;color:white;border-radius:20em;padding:7px;">NEW</span> <a href="fonts/">Improved Font Generator</a>
-<br><br>
-<span style="background-color:red;color:white;border-radius:20em;padding:7px;">NEW</span> <a href="https://forms.gle/Puo615Gev1binwei9" target="_blank">Donate/Submit Things!</a>
-<br><br>
-
-Join our <a href="https://discord.gg/yFAaYYv" target="_blank">Discord</a> if you like this kind of stuff! ☺️<br><br>
-
-Post something on our <a href="https://www.reddit.com/r/copypastedump/" target="_blank">Reddit</a>!<br><br>
-
-Donate if you like this site via <a href="https://www.paypal.com/donate?hosted_button_id=GCX4VHQ7SZWTN" target="_blank">PayPal</a>! :)
-<br><br>
+<!--<span style="background-color:red;color:white;border-radius:20em;padding:7px;">NEW</span> <a href="fonts/">Improved Font Generator</a>-->
 
 <script async src='https://cse.google.com/cse.js?cx=f12e443d1104f2f9c'></script><div class="gcse-searchbox-only"></div>
+<script>
+  window.addEventListener("load",function(){
+    document.getElementById('gsc-i-id1').setAttribute('placeholder','Search...');
+  })
+</script>
 <br>
 
 <!--<span style="background-color:red;color:white;border-radius:20em;padding:7px;">NEW</span> <a href="unicode/">Unicode Page Overhaul</a>
@@ -61,10 +82,10 @@ Donate if you like this site via <a href="https://www.paypal.com/donate?hosted_b
 
 <div class="tabs">
     <span class="tablinks">How To Copy & Paste:</span>
-    <button class="tablinks" onclick="openTab(event, 'windows');">Windows</button>
-    <button class="tablinks" onclick="openTab(event, 'macos');">macOS</button>
-    <button class="tablinks" onclick="openTab(event, 'mobile');">iOS / Android</button>
-    <button class="tablinks" onclick="openTab(event, 'linux');">Linux</button>
+    <button class="tablinks" onclick="toggleTab(event, 'windows');">Windows</button>
+    <button class="tablinks" onclick="toggleTab(event, 'macos');">macOS</button>
+    <button class="tablinks" onclick="toggleTab(event, 'mobile');">iOS / Android</button>
+    <button class="tablinks" onclick="toggleTab(event, 'linux');">Linux</button>
 </div>
 
 <div id="windows" class="tabcontent">
@@ -100,174 +121,114 @@ Donate if you like this site via <a href="https://www.paypal.com/donate?hosted_b
 <a href="arrows">Arrows</a>
 <a href="words">Words with Unicode</a>
 <a href="flags">All Flag Emoji</a> (Long)
+<a href="zwj">ZWJ Sequences</a>
 <a href="families">All Families</a> (Long)
+<a href="skin">Skin Tones</a>
+<a href="gender">Gendered Emoji</a>
 <a href="combining">Combining Characters</a>
 <a href="invisible">Invisible Characters</a>
 <a href="longest">Longest Characters</a>
 <a href="complex">Most Complex Characters</a>
 <a href="fancy">Fancy Letters</a>
+<a href="sets/">Emoji Sets</a>
 <a href="braille">Braille</a>
+<a href="proposals">Emoji Proposals</a>
 </div>
 <div class="col">Tools
 <a href="fonts">Unicode Font Generator</a>
 <a href="builder">Emoji Builder</a>
 <a href="modifier">Text Modifier</a>
 <a href="sorter">List Sorter</a>
+<a href="discord/timestamps">Discord Timestamp Generator</a>
 <a href="https://R74n.com/unisearch" target="_blank"><i>UniSearch</i></a>
 Art
 <a href="emoji-art">Emoji Art</a>
 <a href="faces">Faces & Emoticons</a>
 <a href="bob">Stick Figure Bob</a>
 <a href="https://R74n.com/moji" target="_blank"><i>R74moji</i></a> <a href="https://R74n.com/moji/all" target="_blank"><i>(All)</i></a>
-<a href="https://R74n.com/hello" target="_blank"><i>Hello In Every Way</i></a>
 More
 <a href="pages">All Pages</a>
+<a href="pages#events">Holidays & Events</a>
 </div>
 <div class="col">Portals
-<a href="instagram/">Instagram</a>
-<a href="twitter/">Twitter</a>
-<a href="tiktok/">TikTok</a>
-<a href="youtube/">YouTube</a>
-<a href="twitch/">Twitch</a>
-<a href="discord/">Discord</a>
-<a href="mc/">Minecraft</a>
-<a href="whatsapp/">WhatsApp</a>
-<a href="reddit/">Reddit</a>
-<a href="apple/">Apple</a>
-<a href="windows/">Windows</a>
-<a href="zoom/">Zoom</a>
-<a href="slack/">Slack</a>
+<a href="instagram/" style="color:#DD2A7B">Instagram</a>
+<a href="twitter/" style="color:#0084d7">Twitter</a>
+<a href="tiktok/" style="color:#000000">TikTok</a>
+<a href="youtube/" style="color:#c4302b">YouTube</a>
+<a href="twitch/" style="color:#9146FF">Twitch</a>
+<a href="discord/" style="color:#5865F2">Discord</a>
+<a href="mc/" style="color:#477a1e">Minecraft</a>
+<a href="whatsapp/" style="color:#008c10">WhatsApp</a>
+<a href="reddit/" style="color:#F74301">Reddit</a>
+<a href="apple/" style="color:#000000">Apple</a>
+<a href="windows/" style="color:#0272D4">Windows</a>
+<a href="zoom/" style="color:#0B5AF6">Zoom</a>
+<a href="slack/" style="color:#4A154B">Slack</a>
+</div>
 </div>
 
-</div>
-
-<div style="display:inline-block">
-<br><h2>Recent Additions</h2>
-<strong>March 5</strong><br>
-<a href="kahoot/">Invisible Names for Kahoot</a><br>
-<a href="ukraine">Ukraine Emojis and Text Symbols</a><br>
-<a href="unicode/greek">Greek Script Letters</a><br>
-<a href="unicode/runes">Runic Script Symbols</a><br>
-<a href="unicode/health">Health Emojis and Text Symbols</a><br>
-<strong>October 3</strong><br>
-<a href="whatsapp/invisible-name">Invisible Names for WhatsApp</a><br>
-<strong>September 29</strong><br>
-<a href="unicode/signs">Sign Characters</a><br>
-<a href="unicode/vehicle">Vehicle Characters</a><br>
-<a href="unicode/sports">Sports Characters</a><br>
-<a href="unicode/people">People Characters</a><br>
-<strong>September 28</strong><br>
-<a href="unicode/ocean">Ocean Characters</a><br>
-<a href="unicode/punctuation">Punctuation Characters</a><br>
-<a href="unicode/dashes">Dash Characters</a><br>
-<strong>September 23</strong><br>
-<a href="emoji">Updated Emojis and Other Pages for Unicode 14</a><br>
-<a href="unicode/astrology">Astrology Symbols</a><br>
-<a href="among-us/">Among Us Text Art</a><br>
-<a href="counter">Character and Word Counter Tool</a><br>
-<a href="twitter/chirp">Twitter Chirp Font</a><br>
-<a href="handshake">All Handshake Emoji Combinations</a><br>
-<strong>September 22</strong><br>
-<a href="emoji-art">Emoji Art</a><br>
-<a href="halloween">Halloween</a><br>
-<a href="mc/emoji">Minecraft Bedrock Secret Emojis</a><br>
-<a href="unicode/cats">Cat Emojis & Text Symbols</a><br>
-<a href="columbus-day">Columbus Day</a><br>
-<a href="election-day">Election Day</a><br>
-<a href="kb">Emoji ZWJ Editor Keyboard</a><br>
-<strong>July 10</strong><br>
-<a href="discord/formatting#Timestamps">Discord In-Line Timestamps Formatting</a><br>
-<strong>June 8</strong><br>
-<a href="valorant/">Change Chat Text Color on Valorant</a><br>
-<a href="facebook/">Special Facebook Emojis & Reactions</a><br>
-<a href="nonrgi">Non-RGI Emoji List</a><br>
-Updated Special Emojis: <a href="windows/">Windows</a>, <a href="twitter/">Twitter</a>, <a href="apple/">Apple</a>, <a href="whatsapp/">WhatsApp</a><br>
-<strong>June 6</strong><br>
-<a href="instagram/invisible-name">Invisible Blank Names For Instagram</a><br>
-<a href="instagram/invisible-comment">Invisible Blank Comments For Instagram</a><br>
-<strong>June 1</strong><br>
-<a href="instagram/pride">2021 Instagram Rainbow Hashtags for Pride Month 🏳️‍🌈</a><br>
-<strong>May 30</strong><br>
-<a href="unicode/myanmar">Myanmar / Burmese Unicode Characters</a><br>
-<a href="unicode/ethiopic">Ethiopic / Amharic Unicode Characters</a><br>
-<a href="unicode/javanese">Javanese Unicode Characters</a><br>
-<strong>May 26</strong><br>
-<a href="news-archive">New Older "Recent Additions" Page</a><br>
-<strong>May 23</strong><br>
-<a href="proposals">About Emoji Proposals</a><br>
-<strong>May 22</strong><br>
-<a href="memorial-day">Memorial Day</a><br>
-<strong>May 16</strong><br>
-<a href="mothers-day">Mother's Day</a><br>
-<a href="eid">Eid al-Fitr and Eid al-Adha</a><br>
-<a href="unicode/food">Lobster added to food emojis</a><br>
-<strong>May 1</strong><br>
-<a href="sets/">List of Emoji Sets</a><br>
-<a href="twitter/twemoji">Twemoji</a><br>
-<a href="twitter/#SpacesReactions">Twitter Spaces Reactions</a><br>
-<a href="twitter/#FleetEmojis">Twitter Fleet Emojis</a><br>
-<a href="instagram/#SliderEmojis">Instagram Story Slider Emojis</a><br>
-<a href="clubhouse/">Clubhouse Emojis</a><br>
-<a href="snapchat/">Snapchat Friend Emoji Meanings</a><br>
-<a href="cages">Emojis in Cages & Generator</a><br>
-<a href="kpop">More Kpop Small Symbols</a><br>
-<a href="mc/color">Minecraft Section Sign</a><br>
-<strong>April 21</strong><br>
-<a href="apple/airtags">All AirTag Emoji Engravings</a><br>
-<strong>April 18</strong><br>
-<a href="unicode/units">Units of Measurement Text Symbols</a><br>
-<a href="unicode/time">Clocks and Time Text Symbols</a><br>
-<a href="unicode/alchemical">Alchemical Symbols</a><br>
-<a href="patriots-day">Patriots' Day</a><br>
-<a href="arbor-day">Arbor Day</a><br>
-<a href="zoom/">Zoom Portal</a><br>
-<a href="zoom/invisible-name">Invisible Names For Zoom</a><br>
-<strong>April 14</strong><br>
-<a href="https://forms.gle/Puo615Gev1binwei9">Created a Submission Form</a><br>
-Updated <a href="fonts/">Fonts</a>, <a href="unicode/plants">Plants/Flowers</a>, <a href="unicode/space">Space</a>, <a href="earth-day">Earth Day</a>, <a href="unicode/animals">Animals</a>, <a href="unicode/stars">Stars</a>, and <a href="unicode/weather">Weather</a><br>
-<strong>April 13</strong><br>
-<a href="fonts/">Many New Fonts</a><br>
-<a href="unicode/stars">Star Text Symbols</a><br>
-<a href="unicode/space">Space Text Symbols</a><br>
-<a href="unicode/weather">Weather Text Symbols</a><br>
-<strong>April 12</strong><br>
-<a href="fonts/">New and Improved Font Generator</a><br>
-<a href="unicode/plants">Plants and Flowers Unicode Symbols</a><br>
-<a href="april-fools-day">April Fools' Day</a><br>
-<a href="easter">Easter</a><br>
-<a href="birthday">Birthdays</a><br>
-<a href="ramadan">Ramadan</a><br>
-<a href="tax-day">Tax Day</a><br>
-<a href="earth-day">Earth Day</a><br>
-<a href="cinco-de-mayo">Cinco de Mayo</a><br>
-Minor style improvements<br>
-<strong>March 14</strong><br>
-<a href="pi-day">Pi Day</a><br>
-<a href="womens-history-month">Women's History Month</a><br>
-<a href="daylight-saving">Daylight Saving Time</a><br>
-<a href="holi">Holi</a><br>
-<br><br>
-<a href="news-archive">Older Additions</a>
+<div style="display:inline-block" id="news-box">
+<br><h3>Recent Additions</h2>
+<strong>April 2023</strong><br>
+<div style="display:inline-block;vertical-align:top;"><strong>NEW:</strong><ul>
+<li>Overhauled look of website</li>
+<li><a href="zwj">ZWJ Sequence List</a></li>
+<li><a href="ashura">Ashura Emojis</a></li>
+<li><a href="autumn">Autumn Emojis</a></li>
+<li><a href="christmas">Christmas Emojis</a></li>
+<li><a href="fathers-day">Father's Day Emojis</a></li>
+<li><a href="flag-day">Flag Day Emojis</a></li>
+<li><a href="hanukkah">Hanukkah Emojis</a></li>
+<li><a href="july-4th">4th of July Emojis</a></li>
+<li><a href="juneteenth">Juneteenth Emojis</a></li>
+<li><a href="kwanzaa">Kwanzaa Emojis</a></li>
+<li><a href="labor-day">Labor Day Emojis</a></li>
+<li><a href="new-year">New Year Emojis</a></li>
+<li><a href="pride">LGBTQ+ Pride Emojis</a></li>
+<li><a href="rosh-hashanah">Rosh Hashanah Emojis</a></li>
+<li><a href="spring">Spring Emojis</a></li>
+<li><a href="summer">Summer Emojis</a></li>
+<li><a href="thanksgiving">Thanksgiving Emojis</a></li>
+<li><a href="valentines-day">Valentine's Day Emojis</a></li>
+<li><a href="winter">Winter Emojis</a></li>
+<li><a href="yom-kippur">Yom Kippur Emojis</a></li>
+</ul></div>
+<div style="display:inline-block;vertical-align:top;"><strong>UPDATED:</strong><ul>
+<li>Main Page</li>
+<li><a href="fonts/">Font Generator</a></li>
+<li><a href="emoji">Every Emoji updated for Unicode 15</a></li>
+<li><a href="unicode/">Text Symbols</a></li>
+<li><a href="discord/formatting">Discord Formatting Guide</a></li>
+<li><a href="unicode/belief">Belief Symbols</a></li>
+<li><a href="unicode/animals">Animal Symbols</a></li>
+<li><a href="unicode/gs">Gender & Sexuality Symbols</a></li>
+<li><a href="unicode/sports">Sports Symbols</a></li>
+<li><a href="unicode/games">Game Symbols</a></li>
+<li><a href="youtube/">YouTube Secret Emojis</a></li>
+<li><a href="twitter/">Twitter Portal</a></li>
+<li><a href="instagram/">Instagram Emojis, Pride Hashtags</a></li>
+<li><a href="among-us/">Among Us Portal</a></li>
+<li><a href="builder">Handshake Emoji Builder</a></li>
+<li><a href="words">Words With Unicode</a></li>
+<li><a href="eid">Eid Emojis</a></li>
+<li><a href="ramadan">Ramadan Emojis</a></li>
+<li><a href="discord/blank-message">Discord Blank Emoji</a></li>
+</ul></div>
+<br><a href="news-archive">Older Additions</a>
 </div>
 
 <div style="display:inline-block;vertical-align:top;padding-top:20px;text-align: center;">
-  <a class="twitter-timeline" data-height="500" data-dnt="true" data-theme="light" href="https://twitter.com/CopyPasteDump?ref_src=twsrc%5Etfw">Tweets by CopyPasteDump</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  
 </div>
 
 
 
 </div>
-
-
-
 </div>
 
 
 
 <script src="loadbuttons.js"></script>
-
-<iframe class="ftiframe" src="footer.html" name="footer"></iframe>
-
 
 <script data-ad-client="ca-pub-8485284630785740" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -295,6 +256,45 @@ Minor style improvements<br>
   gtag('config', 'UA-93720349-8');
 </script>
 
+
+<div class="footerdiv">
+<div class="footersect"><ul>
+<li><a href="/unicode">Text Symbols</a></li>
+<li><a href="/emoji">Emoji</a></li>
+<li><a href="/faces">Emoticon Faces</a></li>
+<li><a href="/shapes">Shapes</a></li>
+<li><a href="/arrows">Arrows</a></li>
+<li><a href="/combining">Combining Characters</a></li>
+<li><a href="/invisible">Invisible Characters</a></li>
+<li><a href="/longest">Longest Characters</a></li>
+<li><a href="/braille">Braille Symbols</a></li>
+<li><a href="/emoji-art">Emoji Art</a></li>
+</ul></div>
+<div class="footersect"><ul>
+<li><a href="/fonts">Unicode Font Generator</a></li>
+<li><a href="/builder">Emoji Family Builder</a></li>
+<li><a href="/modifier">Text Modifier</a></li>
+<li><a href="/sorter">List Sorter</a></li>
+<li><a href="https://r74n.com/unisearch" target="_blank">UniSearch</a></li>
+<li><a href="https://r74n.com/moji" target="_blank">R74moji</a></li>
+<li>&nbsp;</li>
+<li><a href="/pages">All Pages</a></li>
+<li><a href="/pages#events">Holidays & Events</a></li>
+</ul></div>
+<div class="footersect"><ul>
+<li><a href="https://c.r74n.com">Copy Paste Dump</a></li>
+<li><a href="https://forms.gle/Puo615Gev1binwei9" target="_blank">Submission Form</a></li>
+<li><a href="https://r74n.com" target="_blank">R74n</a></li>
+<li><a href="https://sandboxels.r74n.com" target="_blank">Sandboxels</a></li>
+<li>&nbsp;</li>
+<li><a href="https://link.r74n.com/discord" target="_blank">R74n Discord</a></li>
+<li><a href="https://tiktok.com/@r74n.com" target="_blank">R74n TikTok</a></li>
+<li><a href="https://www.reddit.com/r/copypastedump/" target="_blank">Subreddit</a></li>
+<li><a href="https://twitter.com/CopyPasteDump" target="_blank">Emoji Artist Twitter</a></li>
+<li><a href="https://tiktok.com/@emoji__artist" target="_blank">Emoji Artist TikTok</a></li>
+</ul></div>
+<div class="footerbottom"><a href="https://R74n.com/" target="_parent"><img src="https://R74n.com/icons/favicon.svg" title="R74n.com" alt="R74n Logo"></a>&nbsp; © Copyright 2023 <a href="https://R74n.com/" target="_parent" class="R74nCR">R74n</a>.</div>
+</div>
 
 </body>
 </html>

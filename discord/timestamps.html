@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+        <meta name="description" content="Tool to convert a date and time to Discord timestamp messages.">
+        <meta property="og:description" content="Tool to convert a date and time to Discord timestamp messages." />
+    <meta name="keywords" content="copy, copy and paste, emoticons, emojis, unicode, symbols, ascii, text, text art">
+    <meta name="author" content="R74n">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://c.R74n.com" />
+    <meta property="og:site_name" content="Copy Paste Dump" />
+    <meta name="twitter:image" content="https://c.r74n.com/favicon_square.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Discord Timestamp Generator - Copy Paste Dump</title>
+        <meta property="og:title" content="Discord Timestamp Generator - Copy Paste Dump" />
+    <link rel="stylesheet" type="text/css" href="../stylesheet.css"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://c.r74n.com/icons/apple-touch-icon.png?v=lkvKdlj5Pj">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://c.r74n.com/icons/favicon-32x32.png?v=lkvKdlj5Pj">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://c.r74n.com/icons/favicon-16x16.png?v=lkvKdlj5Pj">
+    <link rel="manifest" href="https://c.r74n.com/icons/site.webmanifest?v=lkvKdlj5Pj">
+    <link rel="mask-icon" href="https://c.r74n.com/icons/safari-pinned-tab.svg?v=lkvKdlj5Pj" color="#00cdca">
+    <link rel="shortcut icon" href="https://c.r74n.com/icons/favicon.ico?v=lkvKdlj5Pj">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-config" content="https://c.r74n.com/icons/browserconfig.xml?v=lkvKdlj5Pj">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="content-language" content="en-US">
+    <script src="../scripts.js"></script>
+    <script src="../jquery-3.5.1.js"></script>
+    <style>
+      .et {display:none;overflow:hidden;padding-left:20px;}
+      .active, .expand:hover {background-color:#ccc;}
+    </style>
+    
+</head>
+
+<body>
+
+<nav><div class="navdiv" id="navdiv">
+<a class="cpdtitle" href="https://c.R74n.com"><h1>Copy Paste Dump</h1></a><ul>
+<!--&A--><a href="https://c.r74n.com" class="navhome"><img src="https://c.r74n.com/favicon.png"></a>
+<!--&B--><a href="/unicode">Text Symbols</a>
+<!--&C--><a href="/emoji">Emojis</a>
+<!--&D--><a href="/faces">Text Faces</a>
+<!--&E--><a href="/fonts">Font Generator</a>
+<!--&F--><a href="/combining">Combining</a>
+<!--&G--><a href="/shapes">Shapes</a>
+<!--&H--><a href="/pages" class="navimp">All Pages</a><!--&I--><a href="https://cse.google.com/cse?cx=f12e443d1104f2f9c" class="navimp">Search</a>
+<!--&J--></ul></div></nav>
+
+<div class="content">
+<h2 class="pagetitle">Discord Timestamp Generator</h2>
+
+<a href=".">Back to the Discord Portal</a><br><br>
+
+This tool can generated in-line Discord timestamps for you! Just enter the date and time, choose a format, and copy paste into your Discord server!<br><br>
+
+<!--centered div-->
+<div style="margin:0 auto;width:500px;">
+  Date and Time: <input type="date" id="date1" onchange="updateTimestamp()"> <input type="time" id="time1" value="00:00" onchange="updateTimestamp()">
+  <br><br>Format: <select id="format1" onchange="updateTimestamp()">
+    <option value="d">Month/Day/Year</option>
+    <option value="f">Month Day, Year Time</option>
+    <option value="t">Time</option>
+    <option value="D">Month Day, Year</option>
+    <option value="F">Weekday, Month Day, Year Time</option>
+    <option value="R">Relative Time</option>
+  </select>
+  <br><br>
+  Preview: <input type="text" id="preview1" value="" readonly>
+  <br><br>
+  <input type="text" id="result1" value="" placeholder="Result appears here..." readonly title="Press Copy to copy">
+  <button onclick="copyToClipboard('result1')">Copy</button>
+  <button onclick="setToToday()">Current Time</button>
+</div>
+<script>
+  function updateTimestamp(currentTime) {
+    var date = document.getElementById("date1").value;
+    var time = document.getElementById("time1").value;
+    var format = document.getElementById("format1").value;
+    //var preview = document.getElementById("preview1");
+    var result = document.getElementById("result1");
+    var dateObj = new Date(date + " " + time);
+    // convert to unix timestamp
+    var timestamp = dateObj.getTime() / 1000;
+    // if it is NaN, clear the result
+    if (isNaN(timestamp)) {
+      result.value = "";
+      document.getElementById("preview1").value = "";
+      return;
+    }
+    var preview = "";
+    // set the preview
+    if (format == "R") { // relative time
+      preview = "in " + Math.round((timestamp - Date.now() / 1000) / 60) + " minutes";
+    } else if (format == "t") { // time
+      preview = time;
+    } else if (format == "d") { // month/day/year
+      preview = dateObj.toLocaleDateString();
+    } else if (format == "D") { // weekday, month day, year
+      preview = dateObj.toLocaleDateString(undefined, {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'});
+    } else if (format == "f") { // month day, year time
+      preview = dateObj.toLocaleDateString(undefined, {year: 'numeric', month: 'long', day: 'numeric'}) + " " + time;
+    } else if (format == "F") { // weekday, month day, year time
+      preview = dateObj.toLocaleDateString(undefined, {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}) + " " + time;
+    }
+    document.getElementById("preview1").value = preview;
+    result.value = "<t:" + timestamp + ":" + format + ">";
+  }
+  function setToToday() {
+    // set the date to today
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById("date1").value = today;
+    // set time to now
+    var now = new Date();
+    var hh = String(now.getHours()).padStart(2, '0');
+    var min = String(now.getMinutes()).padStart(2, '0');
+    now = hh + ":" + min;
+    document.getElementById("time1").value = now;
+  }
+  setToToday();
+  updateTimestamp();
+  function selectText(id) {
+    var copyText = document.getElementById(id);
+    copyText.select();
+    copyText.setSelectionRange(0, 99999);
+  }
+  function copyToClipboard(id) {
+    selectText(id);
+    document.execCommand("copy");
+  }
+  document.getElementById("result1").addEventListener("click", function() {
+    selectText("result1");
+  });
+  document.getElementById("result1").addEventListener("focus", function() {
+    selectText("result1");
+  });
+  document.getElementById("result1").addEventListener("mouseover", function() {
+    selectText("result1");
+  });
+</script>
+<br><br>
+<a href="formatting">Discord Formatting Guide</a>
+
+<h3>About Discord Timestamps</h3>
+Timestamps can be typed in Discord messages to include a date, time, or countdown that will constantly be updated and in-sync with every user's timezone and date format settings.
+<br><br>
+The number that is used is a Unix Timestamp, which counts the number of seconds since January 1st, 1970.
+<br><br>
+Users will see the exact date and time when they hover over the timestamp.
+<br><br>
+<img src="images/timestamps.png" alt="A list of in-line time stamp formatting options on Discord" height="300px">
+<br><br>
+You can specify any exact time (to the second) from &lt;t:-8640000000000:R&gt; to &lt;t:8640000000000:R&gt; (April 19, -271821 to September 12, 275760)
+<br><br>
+Below are the different formats you can use for Discord timestamps.
+<br><br>
+<table style="width:100%">
+  <tr>
+    <td>&lt;t:123456789:d&gt;</td>
+    <td>Month/Day/Year</td>
+  </tr>
+  <tr>
+    <td>&lt;t:123456789:f&gt;</td>
+    <td>Month Day, Year Time</td>
+  </tr>
+  <tr>
+    <td>&lt;t:123456789:t&gt;</td>
+    <td>Time</td>
+  </tr>
+  <tr>
+    <td>&lt;t:123456789:D&gt;</td>
+    <td>Month Day, Year</td>
+  </tr>
+  <tr>
+    <td>&lt;t:123456789:F&gt;</td>
+    <td>Weekday, Month Day, Year Time</td>
+  </tr>
+  <tr>
+    <td>&lt;t:123456789:R&gt;</td>
+    <td>Time since</td>
+  </tr>
+  <tr>
+    <td>&lt;t:123456789:T&gt;</td>
+    <td>Hours:Minutes:Seconds</td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+<script>
+  var coll = document.getElementsByClassName("expand");
+  var i;
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+</script>
+
+
+</div>
+
+
+
+<script src="../loadbuttons.js"></script>
+
+<div style="width:100%;height:100px;margin:auto;">
+<script data-ad-client="ca-pub-8485284630785740" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<div class="adbox">
+  <!-- Copy Paste Dump -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8485284630785740"
+       data-ad-slot="5555682735"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  </div>
+  <div class="adbox">
+  <!-- Copy Paste Dump -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8485284630785740"
+       data-ad-slot="5555682735"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  </div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93720349-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-93720349-8');
+</script>
+
+
+<div class="footerdiv">
+<div class="footersect"><ul>
+<li><a href="/unicode">Text Symbols</a></li>
+<li><a href="/emoji">Emoji</a></li>
+<li><a href="/faces">Emoticon Faces</a></li>
+<li><a href="/shapes">Shapes</a></li>
+<li><a href="/arrows">Arrows</a></li>
+<li><a href="/combining">Combining Characters</a></li>
+<li><a href="/invisible">Invisible Characters</a></li>
+<li><a href="/longest">Longest Characters</a></li>
+<li><a href="/braille">Braille Symbols</a></li>
+<li><a href="/emoji-art">Emoji Art</a></li>
+</ul></div>
+<div class="footersect"><ul>
+<li><a href="/fonts">Unicode Font Generator</a></li>
+<li><a href="/builder">Emoji Family Builder</a></li>
+<li><a href="/modifier">Text Modifier</a></li>
+<li><a href="/sorter">List Sorter</a></li>
+<li><a href="https://r74n.com/unisearch" target="_blank">UniSearch</a></li>
+<li><a href="https://r74n.com/moji" target="_blank">R74moji</a></li>
+<li>&nbsp;</li>
+<li><a href="/pages">All Pages</a></li>
+<li><a href="/pages#events">Holidays & Events</a></li>
+</ul></div>
+<div class="footersect"><ul>
+<li><a href="https://c.r74n.com">Copy Paste Dump</a></li>
+<li><a href="https://forms.gle/Puo615Gev1binwei9" target="_blank">Submission Form</a></li>
+<li><a href="https://r74n.com" target="_blank">R74n</a></li>
+<li><a href="https://sandboxels.r74n.com" target="_blank">Sandboxels</a></li>
+<li>&nbsp;</li>
+<li><a href="https://link.r74n.com/discord" target="_blank">R74n Discord</a></li>
+<li><a href="https://tiktok.com/@r74n.com" target="_blank">R74n TikTok</a></li>
+<li><a href="https://www.reddit.com/r/copypastedump/" target="_blank">Subreddit</a></li>
+<li><a href="https://twitter.com/CopyPasteDump" target="_blank">Emoji Artist Twitter</a></li>
+<li><a href="https://tiktok.com/@emoji__artist" target="_blank">Emoji Artist TikTok</a></li>
+</ul></div>
+<div class="footerbottom"><a href="https://R74n.com/" target="_parent"><img src="https://R74n.com/icons/favicon.svg" title="R74n.com" alt="R74n Logo"></a>&nbsp; © Copyright 2023 <a href="https://R74n.com/" target="_parent" class="R74nCR">R74n</a>.</div>
+</div>
+
+</body>
+</html>
