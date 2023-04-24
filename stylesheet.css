@@ -154,8 +154,8 @@ nav h1 {
     display:inline-block;
 }
 .tabs button {cursor:pointer;}
-.tabs button:hover {background-color: #cfcfcf;}
-.tabs button.active {background-color: #cfcfcf;}
+.tabs button:hover {background-color: #bbc9c1;}
+.tabs button.active {background-color: #b3c2b9;}
 .tabs span {cursor:default;}
 .tabcontent {
     display: none;
@@ -216,7 +216,9 @@ div.nopadblock {display:inline-block;white-space:pre-wrap;vertical-align:middle;
 .col a:nth-child(even) {color:#0d2cb1!important}
 .col a:visited {color:#103cff;}
 .col a:hover {color:#6481ff}
+.col a:nth-child(even):hover {color:#566edb!important}
 .col a:active {color:#001fab;}
+.col a:nth-child(even):active {color:#092190!important}
 .colcontainer {
     display: table;
     width: 100%;
