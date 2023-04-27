@@ -78,7 +78,8 @@ nav h1 {
     padding-right: 2px!important;
 }
 .navhome img {
-    height: 2em;
+    height: 36px;
+    width: 36px;
 }
 .navdiv ul a:hover {background-color:#111111;}
 .navdiv ul a:active, .navactivepage {background-color:#5e5e5e;}
@@ -133,6 +134,9 @@ nav h1 {
     margin: 0;
     padding: 0;
     text-align: left;
+}
+.footersect li {
+    margin: 10px 0;
 }
 .footerbottom { display: block }
 .footerbottom a { color:#00ffff; text-decoration: none; }

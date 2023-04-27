@@ -201,35 +201,35 @@ Support may vary across devices.<br><br>
 <h3>Confused? Try some examples...</h3>
 <div id="ExamplesDiv">Loading...</div>
 <script>
-if (!(location.search=="")) {
-  var search = location.search.substring(1);
-  if (search.includes("=")) {
-    var params = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
-    var text = params["text"];
-    //var font = params["font"];
-    currentfont = params["font"];
+  if (!(location.search=="")) {
+    var search = location.search.substring(1);
+    if (search.includes("=")) {
+      var params = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
+      var text = params["text"];
+      //var font = params["font"];
+      currentfont = params["font"];
+    }
+    else {
+      var text = search;
+      currentfont = undefined
+    }
+    if (text==undefined) {text = "Enter Some Text!"}
+    document.getElementById("TextBox").value = text;
+    go();
+  
   }
-  else {
-    var text = search;
-    currentfont = undefined
+  var examples = [];
+  var chosen = [];
+  for (var i=0; i<15; i++) {
+    var example = examplechoices[Math.floor(Math.random() * examplechoices.length)];
+    //console.log(example)
+    if (!(chosen.includes(example))) {
+      chosen.push(example);
+      examples.push("<span class='fontsep'><a href='?text="+example.replace("'","%27")+"'>"+example+"</a></span>")
+    }
   }
-  if (text==undefined) {text = "Enter Some Text!"}
-  document.getElementById("TextBox").value = text;
-  go();
-
-}
-var examples = [];
-var chosen = [];
-for (var i=0; i<15; i++) {
-  var example = examplechoices[Math.floor(Math.random() * examplechoices.length)];
-  //console.log(example)
-  if (!(chosen.includes(example))) {
-    chosen.push(example);
-    examples.push("<span class='fontsep'><a href='?text="+example.replace("'","%27")+"'>"+example+"</a></span>")
-  }
-}
-document.getElementById("ExamplesDiv").innerHTML = examples.join("");
-</script>
+  document.getElementById("ExamplesDiv").innerHTML = examples.join("");
+  </script>
 
 <br><br>
 
