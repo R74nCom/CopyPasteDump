@@ -102,6 +102,8 @@ window.addEventListener('load', function() {
       + "<a href='https://twitter.com/intent/tweet?hashtags=CopyPasteDump&related=R74nCom%2CCopyPasteDump&text="+pageTitle+"&url="+encodedURL+"&via=R74nCom' target='_blank' title='Share on Twitter' style='background-color:#1DA1F2;color:white'>Twitter</a>" // Twitter
       + "<a href='https://www.facebook.com/sharer/sharer.php?u="+encodedURL+"&amp;src=sdkpreparse' target='_blank' title='Share on Facebook' style='background-color:#3B5998;color:white'>Facebook</a>" // Facebook
       + "<a href='https://www.reddit.com/submit?url="+encodedURL+"&title="+pageTitle+"' target='_blank' title='Share on Reddit' style='background-color:#FF4500;color:white'>Reddit</a>" // Reddit
-      + "<a href='https://www.tumblr.com/share?v=3&u="+encodedURL+"&t="+pageTitle+"&tags=CopyPasteDump,emoji,emoticons' target='_blank' title='Share on Tumblr' style='background-color:#546c8c;color:white'>Tumblr</a>" // Tumblr
+      + "<a href='https://www.tumblr.com/share?v=3&u="+encodedURL+"&t="+pageTitle+"&tags=CopyPasteDump,emoji,emoticons' target='_blank' title='Share on Tumblr' style='background-color:#546c8c;color:white'>Tumblr</a>"; // Tumblr
+    // add a gray Copy button
+    footershare.innerHTML += "<a href='javascript:void(0)' onclick='copyText(\""+currentURL+"\");this.innerHTML=\"Copied\"' title='Copy URL to Clipboard' style='background-color:#808080;color:white'>Copy</a>";
       
 });
