@@ -111,13 +111,13 @@ nav h1 {
 }
 /* on mobile, footersect block*/
 @media screen and (max-width: 600px) {
-    .footersect {
+    /* .footersect {
         display: block;
         margin: 0;
         width: 100%;
         text-align: center;
     }
-    .footersect ul { text-align: center!important;}
+    .footersect ul { text-align: center!important;} */
 }
 .footersect a, .footersect a:visited {
     text-decoration: none;
@@ -142,6 +142,15 @@ nav h1 {
 .footerbottom a { color:#00ffff; text-decoration: none; }
 .footerbottom a:visited { color:#00ffff }
 .footerbottom img {height:0.8em; vertical-align: middle;}
+#footershare { display: block; padding-bottom: 10px;}
+#footershare a {
+    background-color: #ffffff;
+    color: black;
+    padding: 0.2em 0.3em;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 5px;
+}
 
 
 .cpdtitle {text-align:center;text-decoration: none;}

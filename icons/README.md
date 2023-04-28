@@ -19,6 +19,6 @@ Insert the following code in the `head` section of your pages:
     <meta name="msapplication-TileColor" content="#00aba9">
     <meta name="msapplication-config" content="https://c.r74n.com/icons/browserconfig.xml?v=lkvKdlj5Pj">
     <meta name="theme-color" content="#ffffff">
-    <meta http-equiv="content-language" content="en-US">
+    <meta http-equiv="content-language" content="en">
 
 *Optional* - Check your favicon with the [favicon checker](https://realfavicongenerator.net/favicon_checker)
