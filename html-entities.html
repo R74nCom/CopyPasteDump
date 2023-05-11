@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+        <meta name="description" content="Table of HTML entities for Unicode symbols.">
+        <meta property="og:description" content="Table of HTML entities for Unicode symbols." />
+    <meta name="keywords" content="copy, copy and paste, emoticons, emojis, unicode, symbols, ascii, text, text art">
+    <meta name="author" content="R74n">
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Copy Paste Dump" />
+    <meta name="twitter:image" content="https://c.r74n.com/favicon_square.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HTML Entities Table / Converter - Copy Paste Dump</title>
+        <meta property="og:title" content="HTML Entities Table / Converter - Copy Paste Dump" />
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://c.r74n.com/icons/apple-touch-icon.png?v=lkvKdlj5Pj">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://c.r74n.com/icons/favicon-32x32.png?v=lkvKdlj5Pj">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://c.r74n.com/icons/favicon-16x16.png?v=lkvKdlj5Pj">
+    <link rel="manifest" href="https://c.r74n.com/icons/site.webmanifest?v=lkvKdlj5Pj">
+    <link rel="mask-icon" href="https://c.r74n.com/icons/safari-pinned-tab.svg?v=lkvKdlj5Pj" color="#00cdca">
+    <link rel="shortcut icon" href="https://c.r74n.com/icons/favicon.ico?v=lkvKdlj5Pj">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-config" content="https://c.r74n.com/icons/browserconfig.xml?v=lkvKdlj5Pj">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="content-language" content="en">
+    <script src="scripts.js"></script>
+    <style>td:nth-child(1) { text-align: center; }</style>
+    
+</head>
+
+<body>
+
+<nav><div class="navdiv" id="navdiv">
+<a class="cpdtitle" href="https://c.R74n.com"><h1>Copy Paste Dump</h1></a><ul>
+<!--&A--><a href="https://c.r74n.com" class="navhome"><img src="https://c.r74n.com/favicon_smaller_old.png" alt="Logo" title="Home"></a><!--&B--><a href="/unicode">Text Symbols</a><!--&C--><a href="/emoji">Emojis</a><!--&D--><a href="/faces">Text Faces</a><!--&E--><a href="/fonts">Font Generator</a><!--&F--><a href="/combining">Combining</a><!--&G--><a href="/shapes">Shapes</a><!--&H--><a href="/pages" class="navimp">All Pages</a><!--&I--><a href="https://cse.google.com/cse?cx=f12e443d1104f2f9c" class="navimp">Search</a>
+<!--&J--></ul></div></nav>
+
+<div class="content">
+<h2 class="pagetitle">HTML Entities</h2>
+
+<dfn>HTML entities</dfn> are codes used to insert symbols into HTML documents. Some characters have named entities, like &amp;copy; for ©. Others have numeric entities, like &#169; for ©, which uses their Unicode decimal value instead. HTML entities are case-sensitive.
+<br><br>
+<input type="text" placeholder="Enter Character" id="charinput">
+<br><br>Output: <span id="output">Type a character in the box above.</span>
+<script>
+     // onchange, convert all characters in the input to their decimal HTML entities
+     document.getElementById("charinput").addEventListener("input", function() {
+          var input = document.getElementById("charinput").value;
+          var output = "";
+          for (var i = 0; i < input.length; i++) {
+               output += "&amp;#" + input.charCodeAt(i) + ";";
+          }
+          if (!output) {
+               output = "Type a character in the box above.";}
+          document.getElementById("output").innerHTML = output;
+     });
+     // onfocus, select all text in the input
+     document.getElementById("charinput").addEventListener("focus", function() {
+          document.getElementById("charinput").select();
+     });
+</script>
+
+<br>
+
+<h3>Common Symbols</h3>
+<table>
+<tr><th>Character</th><th>Entity</th><th>Name</th></tr>
+<tr><td>&copy;</td><td>&amp;copy;</td><td>Copyright</td></tr>
+<tr><td>&reg;</td><td>&amp;reg;</td><td>Registered Trademark</td></tr>
+<tr><td>&trade;</td><td>&amp;trade;</td><td>Trademark</td></tr>
+<tr><td>&infin;</td><td>&amp;infin;</td><td>Infinity</td></tr>
+<tr><td>&deg;</td><td>&amp;deg;</td><td>Degrees</td></tr>
+<tr><td>&#8451;</td><td>&amp;#8451;</td><td>Degrees Celsius</td></tr>
+<tr><td>&#8457;</td><td>&amp;#8457;</td><td>Degrees Fahrenheit</td></tr>
+<tr><td>&uparrow;</td><td>&amp;uparrow;</td><td>Up Arrow</td></tr>
+<tr><td>&downarrow;</td><td>&amp;downarrow;</td><td>Down Arrow</td></tr>
+<tr><td>&leftarrow;</td><td>&amp;leftarrow;</td><td>Left Arrow</td></tr>
+<tr><td>&rightarrow;</td><td>&amp;rightarrow;</td><td>Right Arrow</td></tr>
+<tr><td>&dagger;</td><td>&amp;dagger;</td><td>Dagger / Cross</td></tr>
+<tr><td>&bull;</td><td>&amp;bull;</td><td>Bullet Point</td></tr>
+<tr><td>&iquest;</td><td>&amp;iquest;</td><td>Inverted Question Mark</td></tr>
+<tr><td>&iexcl;</td><td>&amp;iexcl;</td><td>Inverted Exclamation Mark</td></tr>
+<tr><td>&sup2;</td><td>&amp;sup2;</td><td>Squared / Superscript 2</td></tr>
+<tr><td>&sup3;</td><td>&amp;sup3;</td><td>Cubed / Superscript 3</td></tr>
+<tr><td>&frac14;</td><td>&amp;frac14;</td><td>1 Quarter Fraction</td></tr>
+<tr><td>&frac12;</td><td>&amp;frac12;</td><td>1 Half Fraction</td></tr>
+<tr><td>&frac34;</td><td>&amp;frac34;</td><td>3 Quarters Fraction</td></tr>
+<tr><td>&Sqrt;</td><td>&amp;Sqrt;</td><td>Square Root</td></tr>
+<tr><td>&pi;</td><td>&amp;pi;</td><td>Pi / 3.14</td></tr>
+<tr><td>&#8984;</td><td>&amp;#8984;</td><td>Command Key</td></tr>
+</table>
+
+<h3>Punctuation</h3>
+<table>
+<tr><th>Character</th><th>Entity</th><th>Name</th></tr>
+<tr><td>&amp;</td><td>&amp;amp;</td><td>Ampersand</td></tr>
+<tr><td>&lt;</td><td>&amp;lt;</td><td>Less Than</td></tr>
+<tr><td>&gt;</td><td>&amp;gt;</td><td>Greater Than</td></tr>
+<tr><td>&#8208;</td><td>&amp;#8208;</td><td>Hyphen</td></tr>
+<tr><td>&ndash;</td><td>&amp;ndash;</td><td>En Dash</td></tr>
+<tr><td>&mdash;</td><td>&amp;mdash;</td><td>Em Dash</td></tr>
+<tr><td>&apos;</td><td>&amp;apos;</td><td>Apostrophe</td></tr>
+<tr><td>&num;</td><td>&amp;num;</td><td>Number Sign / Hashtag</td></tr>
+<tr><td>&lsquo;</td><td>&amp;lsquo;</td><td>Left Single Quote</td></tr>
+<tr><td>&rsquo;</td><td>&amp;rsquo;</td><td>Right Single Quote</td></tr>
+<tr><td>&sbquo;</td><td>&amp;sbquo;</td><td>Low Single Quote</td></tr>
+<tr><td>&quot;</td><td>&amp;quot;</td><td>Double Quote</td></tr>
+<tr><td>&ldquo;</td><td>&amp;ldquo;</td><td>Left Double Quote</td></tr>
+<tr><td>&rdquo;</td><td>&amp;rdquo;</td><td>Right Double Quote</td></tr>
+<tr><td>&bdquo;</td><td>&amp;bdquo;</td><td>Low Double Quote</td></tr>
+<tr><td>&lsaquo;</td><td>&amp;lsaquo;</td><td>Left Angle Quote</td></tr>
+<tr><td>&rsaquo;</td><td>&amp;rsaquo;</td><td>Right Angle Quote</td></tr>
+<tr><td>&dagger;</td><td>&amp;dagger;</td><td>Dagger / Cross</td></tr>
+<tr><td>&Dagger;</td><td>&amp;Dagger;</td><td>Double Dagger</td></tr>
+<tr><td>&bull;</td><td>&amp;bull;</td><td>Bullet Point</td></tr>
+<tr><td>&hellip;</td><td>&amp;hellip;</td><td>Horizontal Ellipsis</td></tr>
+<tr><td>&permil;</td><td>&amp;permil;</td><td>Per Mille</td></tr>
+<tr><td>&prime;</td><td>&amp;prime;</td><td>Prime</td></tr>
+<tr><td>&Prime;</td><td>&amp;Prime;</td><td>Double Prime</td></tr>
+<tr><td>&excl;</td><td>&amp;excl;</td><td>Exclamation Point</td></tr>
+<tr><td>&#8252;</td><td>&amp;#8252;</td><td>Double Exclamation Point</td></tr>
+<tr><td>&quest;</td><td>&amp;quest;</td><td>Question Mark</td></tr>
+<tr><td>&#8253;</td><td>&amp;#8253;</td><td>Interrobang</td></tr>
+<tr><td>&#8264;</td><td>&amp;#8264;</td><td>Question Exclamation Point</td></tr>
+<tr><td>&oline;</td><td>&amp;oline;</td><td>Overline</td></tr>
+<tr><td>&frasl;</td><td>&amp;frasl;</td><td>Fraction Slash</td></tr>
+<tr><td>&para;</td><td>&amp;para;</td><td>Pilcrow</td></tr>
+<tr><td>&#8267;</td><td>&amp;#8267;</td><td>Reversed Pilcrow</td></tr>
+<tr><td>&dollar;</td><td>&amp;dollar;</td><td>Dollar Sign</td></tr>
+<tr><td>&percnt;</td><td>&amp;percnt;</td><td>Percent Sign</td></tr>
+<tr><td>&lpar;</td><td>&amp;lpar;</td><td>Left Parenthesis</td></tr>
+<tr><td>&rpar;</td><td>&amp;rpar;</td><td>Right Parenthesis</td></tr>
+<tr><td>&ast;</td><td>&amp;ast;</td><td>Asterisk</td></tr>
+<tr><td>&plus;</td><td>&amp;plus;</td><td>Plus Sign</td></tr>
+<tr><td>&plusmn;</td><td>&amp;plusmn;</td><td>Plus-Minus Sign</td></tr>
+<tr><td>&comma;</td><td>&amp;comma;</td><td>Comma</td></tr>
+<tr><td>&period;</td><td>&amp;period;</td><td>Full Stop / Period</td></tr>
+<tr><td>&colon;</td><td>&amp;colon;</td><td>Colon</td></tr>
+<tr><td>&semi;</td><td>&amp;semi;</td><td>Semicolon</td></tr>
+</table>
+<a href="unicode/punctuation">All Punctuation Marks</a>
+
+<h3>Whitespace</h3>
+<table>
+<tr><th>Character</th><th>Entity</th><th>Name</th></tr>
+<tr><td>&Tab;</td><td>&amp;Tab;</td><td>Tab Indent</td></tr>
+<tr><td>&NewLine;</td><td>&amp;NewLine;</td><td>Line Break</td></tr>
+<tr><td>&nbsp;</td><td>&amp;nbsp;</td><td>Non-breaking Space</td></tr>
+<tr><td>&ensp;</td><td>&amp;ensp;</td><td>En Space</td></tr>
+<tr><td>&emsp;</td><td>&amp;emsp;</td><td>Em Space</td></tr>
+<tr><td>&thinsp;</td><td>&amp;thinsp;</td><td>Thin Space</td></tr>
+<tr><td>&zwnj;</td><td>&amp;zwnj;</td><td>Zero Width Non-joiner</td></tr>
+<tr><td>&zwj;</td><td>&amp;zwj;</td><td>Zero Width Joiner</td></tr>
+<tr><td>&lrm;</td><td>&amp;lrm;</td><td>Left-To-Right Override</td></tr>
+<tr><td>&rlm;</td><td>&amp;rlm;</td><td>Right-To-Left Override</td></tr>
+</table>
+<a href="invisible">All Invisible Characters</a>
+
+<h3>Currency</h3>
+<table>
+<tr><th>Character</th><th>Entity</th><th>Name</th></tr>
+<tr><td>&dollar;</td><td>&amp;dollar;</td><td>Dollar</td></tr>
+<tr><td>&cent;</td><td>&amp;cent;</td><td>Cent</td></tr>
+<tr><td>&pound;</td><td>&amp;pound;</td><td>Pound</td></tr>
+<tr><td>&euro;</td><td>&amp;euro;</td><td>Euro</td></tr>
+<tr><td>&yen;</td><td>&amp;yen;</td><td>Yen</td></tr>
+<tr><td>&curren;</td><td>&amp;curren;</td><td>General Currency</td></tr>
+</table>
+<a href="unicode/currency">All Currency Symbols</a>
+<br><br>
+<a href="unicode/">More Text Symbols</a>
+
+
+
+</div>
+
+
+<div style="width:100%;height:100px;margin:auto;">
+<script data-ad-client="ca-pub-8485284630785740" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<div class="adbox">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8485284630785740"
+       data-ad-slot="5555682735"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+<div class="adbox">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8485284630785740"
+       data-ad-slot="5555682735"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93720349-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-93720349-8');
+</script>
+
+
+<div class="footerdiv">
+<div id="footershare">Share to: <em>Loading...</em></div>
+<div class="footersect"><ul>
+<li><strong>Symbols</strong></li>
+<li><a href="/unicode">Text Symbols</a></li>
+<li><a href="/emoji">Emoji</a></li>
+<li><a href="/faces">Emoticon Faces</a></li>
+<li><a href="/shapes">Shapes</a></li>
+<li><a href="/arrows">Arrows</a></li>
+<li><a href="/combining">Combining</a></li>
+<li><a href="/invisible">Invisible</a></li>
+<li><a href="/longest">Longest</a></li>
+<li><a href="/emoji-art">Emoji Art</a></li>
+<li><a href="/zwj">ZWJ Sequences</a></li>
+<li><a href="/flags">Flag Emojis</a></li>
+</ul></div>
+<div class="footersect"><ul>
+<li><strong>Tools & Tables</strong></li>
+<li><a href="/fonts">Font Generator</a></li>
+<li><a href="/ascii">ASCII</a></li>
+<li><a href="/html-entities">HTML Entities</a></li>
+<li><a href="/windows/alt-codes">Alt Codes</a></li>
+<li><a href="/braille">Braille</a></li>
+<li><a href="/builder">Emoji Builder</a></li>
+<li><a href="/modifier">Text Modifier</a></li>
+<li><a href="/sorter">List Sorter</a></li>
+<li><a href="https://r74n.com/unisearch" target="_blank">UniSearch</a></li>
+<li><a href="https://r74n.com/moji" target="_blank">R74moji</a></li>
+</ul></div>
+<div class="footersect"><ul>
+<li><strong>Platforms</strong></li>
+<li><a href="/instagram/">Instagram</a></li>
+<li><a href="/twitter/">Twitter</a></li>
+<li><a href="/tiktok/">TikTok</a></li>
+<li><a href="/youtube/">YouTube</a></li>
+<li><a href="/twitch/">Twitch</a></li>
+<li><a href="/discord/">Discord</a></li>
+<li><a href="/apple/">Apple</a></li>
+<li><a href="/windows/">Windows</a></li>
+<li><a href="/reddit/">Reddit</a></li>
+<li><a href="/whatsapp/">WhatsApp</a></li>
+</ul></div>
+<div class="footersect"><ul>
+<li><strong>Copy Paste Dump</strong></li>
+<li><a href="/pages">All Pages</a></li>
+<li><a href="/pages#events">Holidays & Events</a></li>
+<li><a href="https://forms.gle/Puo615Gev1binwei9" target="_blank">Submission Form</a></li>
+<li><a href="https://r74n.com" target="_blank">R74n</a></li>
+<li><a href="https://sandboxels.r74n.com" target="_blank">Sandboxels</a></li>
+<li>&nbsp;</li>
+<li><a href="https://link.r74n.com/discord" target="_blank">Join the Discord</a></li>
+<li><a href="https://tiktok.com/@r74n.com" target="_blank">R74n TikTok</a></li>
+<li><a href="https://www.reddit.com/r/copypastedump/" target="_blank">Subreddit</a></li>
+<li><a href="https://twitter.com/CopyPasteDump" target="_blank">Emoji Artist Twitter</a></li>
+<li><a href="https://tiktok.com/@emoji__artist" target="_blank">Emoji Artist TikTok</a></li>
+</ul></div>
+<div class="footerbottom"><a href="https://R74n.com/" target="_parent"><img src="https://R74n.com/icons/favicon.svg" title="R74n.com" alt="R74n Logo"></a>&nbsp; © Copyright <a href="https://en.wikipedia.org/wiki/2023" target="_blank">2023</a> <a href="https://R74n.com/" target="_parent" class="R74nCR">R74n</a>.</div>
+</div>
+
+</body>
+</html>

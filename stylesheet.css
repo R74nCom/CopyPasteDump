@@ -17,6 +17,7 @@ body {
     color: #000000;
     max-width: 100%;
     margin: 0;
+    overflow-wrap: break-word;
 }
 
 .mbiframe {
@@ -118,6 +119,14 @@ nav h1 {
         text-align: center;
     }
     .footersect ul { text-align: center!important;} */
+    .footersect {
+        width: 45%;
+        text-align: left;
+    }
+    .footerdiv {
+        text-align: left;
+    }
+    .footerbottom, #footershare { text-align: center; }
 }
 .footersect a, .footersect a:visited {
     text-decoration: none;
@@ -139,8 +148,10 @@ nav h1 {
     margin: 10px 0;
 }
 .footerbottom { display: block }
-.footerbottom a { color:#00ffff; text-decoration: none; }
-.footerbottom a:visited { color:#00ffff }
+.footerbottom a { color:white; text-decoration: none; }
+.footerbottom a:visited { color:white }
+.footerbottom .R74nCR { color:#00ffff; text-decoration: none; }
+.footerbottom .R74nCR:visited { color:#00ffff }
 .footerbottom img {height:0.8em; vertical-align: middle;}
 #footershare { display: block; padding-bottom: 10px;}
 #footershare a {
@@ -262,7 +273,7 @@ div.nopadblock {display:inline-block;white-space:pre-wrap;vertical-align:middle;
 
 img {vertical-align:middle;max-width:95%}
 button, input[type=button], .button, select {
-    background-color:#cecece;
+    background-color:#ececec;
     font-size:20px;
     transition:0.3s;
     padding:7px;
@@ -313,3 +324,14 @@ i {font-style:italic;}
       width: 95.5%;
     }
   }
+.chartable td {
+    padding: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    text-align: center;
+    vertical-align: middle;
+}
+dfn {
+    font-weight: bold;
+}
+.charnametable td:nth-child(1) { text-align: center; }

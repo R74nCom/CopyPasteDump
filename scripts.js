@@ -76,7 +76,9 @@ window.addEventListener('load', function() {
    var anchors = document.getElementsByClassName("cb");
    for(var i = 0; i < anchors.length; i++) {
        var anchor = anchors[i];
-       anchor.setAttribute("texttocopy",anchor.innerHTML);
+       if (anchor.getAttribute("texttocopy") == null) {
+        anchor.setAttribute("texttocopy",anchor.innerHTML);
+       }
        anchor.setAttribute("title","Click to Copy "+anchor.innerHTML);
        anchor.onclick = function() {
            copyText(this.getAttribute("texttocopy"));
