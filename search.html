@@ -3,16 +3,16 @@
 <head>
     <meta charset="utf-8">
         <meta name="description" content="A useful collection of text symbols, letters, emojis, ASCII art, and a fancy font generator tool.">
-        <meta property="og:description" content="A useful collection of text symbols, letters, emojis, ASCII art, and a fancy font generator tool." />
+        <meta property="og:description" content="A useful collection of text symbols, letters, emojis, ASCII art, and a fancy font generator tool.">
     <meta name="keywords" content="copy, copy and paste, emoticons, emojis, unicode, symbols, ascii, text, text art">
     <meta name="author" content="R74n">
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Copy Paste Dump" />
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Copy Paste Dump">
     <meta name="twitter:image" content="https://c.r74n.com/favicon_square.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Search - Copy Paste Dump</title>
-        <meta property="og:title" content="Search for Text Symbols, Emojis, and More - Copy Paste Dump" />
-    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+        <meta property="og:title" content="Search for Text Symbols, Emojis, and More - Copy Paste Dump">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <link rel="apple-touch-icon" sizes="180x180" href="https://c.r74n.com/icons/apple-touch-icon.png?v=lkvKdlj5Pj">
     <link rel="icon" type="image/png" sizes="32x32" href="https://c.r74n.com/icons/favicon-32x32.png?v=lkvKdlj5Pj">
     <link rel="icon" type="image/png" sizes="16x16" href="https://c.r74n.com/icons/favicon-16x16.png?v=lkvKdlj5Pj">
@@ -25,18 +25,33 @@
     <meta http-equiv="content-language" content="en">
     <script src="scripts.js"></script>
     <style>
-     .gsc-control, #___gcse_0 {
-          width: 100%!important
-     }
-     .gsc-control table {
-          border:0px;
-          width: 100%
-     }
-     .gsc-control td {border:0px;}
-     tbody {
-          width: 100%
-     }
-     .gsc-clear-button {display:none!important}
+     .gsc-input * {border:none;}
+      input.gsc-input {border-radius:8px!important;height:2em!important;padding-left:0.5em!important}
+      .gsc-input-box {border:none!important}
+      .gsc-clear-button{display:none!important}
+      .gsib_a {padding:0!important}
+      .gsib_b {display:none!important}
+      .gsc-control-searchbox-only {
+        /* Centered and 50% width unless mobile */
+        margin: 0 auto;
+        width: 75%;
+      }
+      @media only screen and (max-width: 600px) {
+        .gsc-control-searchbox-only {
+          width: 100%;
+        }
+      }
+      .gsc-results-wrapper-overlay {
+        background-color: #F5FFFA!important;
+      }
+      .gsc-results-wrapper-overlay * {
+        background-color: #F5FFFA!important;
+      }
+      .gsc-completion-container {
+        background-color: unset!important;
+      }
+      .gs-snippet, .gsc-orderby * { color:black!important }
+      /* .gsc-richsnippet-showsnippet-label { color:#ff00ff!important} */
     </style>
     
 </head>
@@ -44,16 +59,31 @@
 <body>
 
 <nav><div class="navdiv" id="navdiv">
-<a class="cpdtitle" href="https://c.R74n.com"><h1>Copy Paste Dump</h1></a><ul>
-<!--&A--><a href="https://c.r74n.com" class="navhome"><img src="https://c.r74n.com/favicon_smaller_old.png" alt="Logo" title="Home"></a><!--&B--><a href="/unicode">Text Symbols</a><!--&C--><a href="/emoji">Emojis</a><!--&D--><a href="/faces">Text Faces</a><!--&E--><a href="/fonts">Font Generator</a><!--&F--><a href="/combining">Combining</a><!--&G--><a href="/shapes">Shapes</a><!--&H--><a href="/pages" class="navimp">All Pages</a><!--&I--><a href="https://cse.google.com/cse?cx=f12e443d1104f2f9c" class="navimp">Search</a>
+<a class="skip" href="#content">Skip to content</a><a class="cpdtitle" href="https://c.R74n.com"><h1>Copy Paste Dump</h1></a><ul>
+<!--&A--><a href="https://c.r74n.com" class="navhome"><img src="https://c.r74n.com/favicon_smaller_old.png" alt="Logo" title="Home"></a><!--&B--><a href="/unicode">Text Symbols</a><!--&C--><a href="/emoji">Emojis</a><!--&D--><a href="/faces">Text Faces</a><!--&E--><a href="/fonts">Font Generator</a><!--&F--><!--&G--><a href="/shapes">Shapes</a><!--&H--><a href="/pages" class="navimp">All Pages</a><!--&I--><a href="https://cse.google.com/cse?cx=f12e443d1104f2f9c" class="navimp">Search</a>
 <!--&J--></ul></div></nav>
 
-<div class="content">
+<div class="content" id="content">
 <h2 class="pagetitle">Search</h2>
 
 <script async src="https://cse.google.com/cse.js?cx=f12e443d1104f2f9c">
 </script>
-<div class="gcse-searchresults-only"></div>
+<div class="gcse-search"></div>
+<script>
+  window.addEventListener("load",function(){
+    document.getElementById('gsc-i-id1').setAttribute('placeholder','Search...');
+    // if there is a q in the url, search for it
+    var urlParams = new URLSearchParams(window.location.search);
+    var q = urlParams.get('q');
+    if (q) {
+      document.getElementById('gsc-i-id1').value = q;
+      document.getElementById('gsc-i-id1').focus();
+      document.getElementById('gsc-i-id1').select();
+      // click the search button
+      document.getElementsByClassName('gsc-search-button gsc-search-button-v2')[0].click();
+    }
+  })
+</script>
 
 
 
