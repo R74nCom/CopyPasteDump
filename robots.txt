@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://c.r74n.com/sitemap.txt

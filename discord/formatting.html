@@ -3,16 +3,16 @@
 <head>
     <meta charset="utf-8">
         <meta name="description" content="An extensive guide to formatting messages on Discord using markdown.">
-        <meta property="og:description" content="An extensive guide to formatting messages on Discord using markdown." />
+        <meta property="og:description" content="An extensive guide to formatting messages on Discord using markdown.">
     <meta name="keywords" content="copy, copy and paste, emoticons, emojis, unicode, symbols, ascii, text, text art">
     <meta name="author" content="R74n">
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Copy Paste Dump" />
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Copy Paste Dump">
     <meta name="twitter:image" content="https://c.r74n.com/favicon_square.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Discord Formatting - Copy Paste Dump</title>
-        <meta property="og:title" content="Discord Formatting - Copy Paste Dump" />
-    <link rel="stylesheet" type="text/css" href="../stylesheet.css"/>
+        <meta property="og:title" content="Discord Formatting - Copy Paste Dump">
+    <link rel="stylesheet" type="text/css" href="../stylesheet.css">
     <link rel="apple-touch-icon" sizes="180x180" href="https://c.r74n.com/icons/apple-touch-icon.png?v=lkvKdlj5Pj">
     <link rel="icon" type="image/png" sizes="32x32" href="https://c.r74n.com/icons/favicon-32x32.png?v=lkvKdlj5Pj">
     <link rel="icon" type="image/png" sizes="16x16" href="https://c.r74n.com/icons/favicon-16x16.png?v=lkvKdlj5Pj">
@@ -34,11 +34,11 @@
 <body>
 
 <nav><div class="navdiv" id="navdiv">
-<a class="cpdtitle" href="https://c.R74n.com"><h1>Copy Paste Dump</h1></a><ul>
-<!--&A--><a href="https://c.r74n.com" class="navhome"><img src="https://c.r74n.com/favicon_smaller_old.png" alt="Logo" title="Home"></a><!--&B--><a href="/unicode">Text Symbols</a><!--&C--><a href="/emoji">Emojis</a><!--&D--><a href="/faces">Text Faces</a><!--&E--><a href="/fonts">Font Generator</a><!--&F--><a href="/combining">Combining</a><!--&G--><a href="/shapes">Shapes</a><!--&H--><a href="/pages" class="navimp">All Pages</a><!--&I--><a href="https://cse.google.com/cse?cx=f12e443d1104f2f9c" class="navimp">Search</a>
+<a class="skip" href="#content">Skip to content</a><a class="cpdtitle" href="https://c.R74n.com"><h1>Copy Paste Dump</h1></a><ul>
+<!--&A--><a href="https://c.r74n.com" class="navhome"><img src="https://c.r74n.com/favicon_smaller_old.png" alt="Logo" title="Home"></a><!--&B--><a href="/unicode">Text Symbols</a><!--&C--><a href="/emoji">Emojis</a><!--&D--><a href="/faces">Text Faces</a><!--&E--><a href="/fonts">Font Generator</a><!--&F--><!--&G--><a href="/shapes">Shapes</a><!--&H--><a href="/pages" class="navimp">All Pages</a><!--&I--><a href="/search" class="navimp" title="Search" aria-label="Search" id="navsearch">&nbsp;</a>
 <!--&J--></ul></div></nav>
 
-<div class="content">
+<div class="content" id="content">
 <h2 class="pagetitle">Discord Formatting Guide</h2>
 
 <a href=".">Back to the Discord Portal</a><br><br>
@@ -65,6 +65,8 @@ This guide will teach you how to format messages in Discord using markdown.
 10. <a href="#Protocol">Protocol Links</a><br>
 11. <a href="#DevLink">Invisible Development Link</a><br>
 12. <a href="#Timestamps">Timestamps</a><br>
+13. <a href="#Commands">Emoticon Commands</a><br>
+14. <a href="#id">&lt;id:&gt; Links</a><br>
 See also: <a href="../fonts/">Fonts for Discord Channels</a><br>
 For help, <a href="https://link.r74n.com/discord">join our Discord server</a>!<br>
 <br>
@@ -72,7 +74,7 @@ For the full experience, <a href="https://support.discordapp.com/hc/article_atta
 
 <br><br><a class="bkmk" href="#Basic" id="Basic" title="Basic Discord Formatting"><h3>Basics</h3></a>
 <em>How to type bold, italics, underline, and strikethrough on Discord</em>
-<table style="width:100%">
+<table>
   <tr>
     <th></th>
     <th>Input</th>
@@ -85,7 +87,7 @@ For the full experience, <a href="https://support.discordapp.com/hc/article_atta
   </tr>
   <tr>
     <td>Italics</td>
-    <td>*text* <em>or</em> _text_</td>
+    <td>*text* <em>or</em> _text_ <em>or</em> /me text</td>
     <td><span style="font-style:italic;">text</span></td>
   </tr>
   <tr>
@@ -102,7 +104,7 @@ For the full experience, <a href="https://support.discordapp.com/hc/article_atta
 <br>
 You can also combine these, but in specific orders.
 <br><br>
-<table style="width:100%">
+<table>
   <tr>
     <td>Bold-Italics</td>
     <td>***text***</td>
@@ -135,7 +137,7 @@ You can also combine these, but in specific orders.
 <br><br>
 Spoilers can be typed by surrounding text in 2 vertical bars on both sides (|| ||). The text will appear blacked out until clicked on.
 <br><br>
-<table style="width:100%">
+<table>
   <tr>
     <td>||text||</td>
     <td><img src="images/spoiler.png" alt="Hidden spoiler text"></td>
@@ -253,7 +255,7 @@ This will produce something like this: <a href="https://c.r74n.com">Click Here</
 <br><br>
 Also see <a href="#Protocol">Protocol Links</a>!
 <br><br>
-Update: Discord is now allowing hyperlinks in normal user messages! Previously, these only worked inside of embed descriptions and messages sent by webhooks/followed servers, but not in embed titles.
+Discord allowed hyperlinks in normal user messages for a brief period, but removed them due to security concerns.
 <br><br>
 <img src="images/hyperlink_user.png" height="150" alt="Hyperlink shown in a user message">
 
@@ -375,7 +377,7 @@ Users will see the exact date and time when they hover over the timestamp.
 <br><br>
 You can specify any exact time (to the second) from &lt;t:-8640000000000:R&gt; to &lt;t:8640000000000:R&gt; (April 19, -271821 to September 12, 275760)
 <br><br>
-<table style="width:100%">
+<table>
   <tr>
     <td>&lt;t:123456789:d&gt;</td>
     <td>Month/Day/Year</td>
@@ -407,7 +409,42 @@ You can specify any exact time (to the second) from &lt;t:-8640000000000:R&gt; t
 </table>
 <br><a href="timestamps">Discord Timestamp Generator</a>
 
+<br><br><a class="bkmk" href="#Commands" id="Commands" title="Discord Emoticon Commands"><h3>Emoticon Commands</h3></a>
+Discord provides some built-in commands to add an <a href="../faces">emoticon</a> at the end of your message. Type it in the message box followed by your text.
+<br><br>
+<table>
+  <tr><th>Command</th><th>Emoticon</th></tr>
+  <tr>
+    <td>/shrug</td>
+    <td>¯\_(ツ)_/¯</td>
+  </tr>
+  <tr>
+    <td>/tableflip</td>
+    <td>(╯°□°)╯︵ ┻━┻</td>
+  </tr>
+  <tr>
+    <td>/unflip</td>
+    <td>┬─┬ノ( º _ ºノ)</td>
+  </tr>
+</table>
 
+<br><br><a class="bkmk" href="#id" id="id" title="Discord id Mentions"><h3>&lt;id:&gt; Links</h3></a>
+You can link to certain sections of your server with these strings. You do NOT need to replace "id" with anything, you can just copy and paste as is.
+<br><br>
+<table>
+  <tr>
+    <td>&lt;id:guide&gt; <em>or</em> &lt;id:home&gt;</td>
+    <td>Server Guide</td>
+  </tr>
+  <tr>
+    <td>&lt;id:browse&gt;</td>
+    <td>Browse Channels</td>
+  </tr>
+  <tr>
+    <td>&lt;id:customize&gt;</td>
+    <td>Customize Community</td>
+  </tr>
+</table>
 
 
 

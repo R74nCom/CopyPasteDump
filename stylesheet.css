@@ -59,11 +59,6 @@ nav h1 {
     cursor:default;
     text-align: center;
 }
-.navimp {
-    background-color:#48515e;
-    color:#ffffff;
-    transition:0.3s;
-}
 .navdiv ul a {
     display:inline-block;
     color:white;
@@ -72,6 +67,29 @@ nav h1 {
     text-decoration:none;
     transition:0.3s;
     cursor:pointer;
+    border-radius: 10px 10px 0px 0px;
+}
+.navimp {
+    background-color:#48515e;
+    color:#ffffff;
+    transition:0.3s;
+}
+/* second-to-last nav item */
+.navdiv ul a:nth-last-child(2) {
+    border-radius: 10px 0px 0px 0px;
+}
+/* last nav item */
+.navdiv ul a:last-child {
+    border-radius: 0px 10px 0px 0px;
+    position: relative;
+}
+.navdiv ul a:last-child:before {
+    content: '';
+    position: absolute;
+    left: -0.5px;
+    border-right: 1px solid #cfc7c0;
+    top: 10%;
+    bottom: 10%;
 }
 .navhome {
     padding: 0!important;
@@ -85,6 +103,18 @@ nav h1 {
 .navdiv ul a:hover {background-color:#111111;}
 .navdiv ul a:active, .navactivepage {background-color:#5e5e5e;}
 .navhome:hover, .navhome:active {background-color:unset!important;}
+.navspecial {
+    transition:0.3s;
+    margin-left:10px!important;
+    /* text border of #333333 */
+    text-shadow: 0 0 2px black;
+}
+.navspecial:hover {
+    backdrop-filter: brightness(0.5);
+}
+.navspecial:active {
+    backdrop-filter: brightness(1.25);
+}
 .pagetitle {
     padding-top: 20px;
 }
@@ -121,12 +151,18 @@ nav h1 {
     .footersect ul { text-align: center!important;} */
     .footersect {
         width: 45%;
+        margin: 0;
         text-align: left;
     }
     .footerdiv {
         text-align: left;
     }
     .footerbottom, #footershare { text-align: center; }
+}
+@media screen and (max-width: 300px) {
+    .footersect {
+        display: block;
+    }
 }
 .footersect a, .footersect a:visited {
     text-decoration: none;
@@ -210,6 +246,7 @@ h2 {margin-top: 0px; padding:0px}
     text-align: center;
     margin-top: 1px;
     margin-bottom: 1px;
+    vertical-align: middle;
 }
 .cb:hover {
     color: #0066ff;
@@ -232,7 +269,7 @@ div.nopadblock {display:inline-block;white-space:pre-wrap;vertical-align:middle;
 .monoblock {font-family:monospace;}
 .divblock {font-family:Arial;}
 .groupblock {font-family:Arial;border:2px solid #c8c8c8;}
-.artblock {font-family:Arial;line-height:130%;}
+.artblock {font-family:Arial;line-height:130%;border:1px solid black}
 .tinyblock {font-family:Arial;line-height:130%;font-size:10px;cursor:text;}
 .bgblock {background-color:#d0d9d4;border:2px solid #c8c8c8;}
 .bgblock a {padding-left:20px;padding-right:20px;}
@@ -270,9 +307,10 @@ div.nopadblock {display:inline-block;white-space:pre-wrap;vertical-align:middle;
   }
 .inline {display:inline-block;}
 .seealso {display:inline-block;padding-left:20px;}
+.subpages {margin-top:0}
 
 img {vertical-align:middle;max-width:95%}
-button, input[type=button], .button, select {
+button, input[type=button], input[type=submit], .button, select {
     background-color:#ececec;
     font-size:20px;
     transition:0.3s;
@@ -285,8 +323,8 @@ button, input[type=button], .button, select {
     vertical-align:middle;
     
 }
-button:hover, input[type=button]:hover, .button:hover {background-color: #ffffff;}
-button:active, input[type=button]:active, .button:active {background-color: #c8c8c8;}
+button:hover, input[type=button]:hover, input[type=submit]:hover, .button:hover {background-color: #ffffff;}
+button:active, input[type=button]:active, input[type=submit]:active, .button:active {background-color: #c8c8c8;}
 .sb {font-size:15px;padding-left:4px;padding-right:4px;padding-top:1px;padding-bottom:1px;margin-left:5px;margin-top: 1px;margin-bottom: 1px;}
 
 input[type=text], input[type=date], input[type=time] {
@@ -299,6 +337,7 @@ input[type=text], input[type=date], input[type=time] {
 }
 select {background-color: #ececec;display:inline-block;margin-top: 1px;margin-bottom: 1px;}
 textarea {border:2px solid #646e73;border-radius: 13px;background-color:#ffffff;vertical-align:middle;font-family: Arial;padding:5px;}
+textarea.copypasta {height:100px;width:75%;}
 
 figure {display:inline-block;width:auto;}
 figcaption {text-align:center;}
@@ -335,3 +374,30 @@ dfn {
     font-weight: bold;
 }
 .charnametable td:nth-child(1) { text-align: center; }
+
+.skip {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.skip:focus {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: auto;
+    height: auto;
+    color: #ffffff;
+    background-color: red;
+}
+
+#navsearch { background-image: 
+    url("data:image/svg+xml;utf8,<svg width='800px' height='800px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><g id='Search'><path id='Vector' d='M15 15L21 21M10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g></svg>");
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    /* center the image */
+    background-position: 50% 50%;
+    width: 1.5em
+  }

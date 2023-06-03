@@ -109,3 +109,40 @@ window.addEventListener('load', function() {
     footershare.innerHTML += "<a href='javascript:void(0)' onclick='copyText(\""+currentURL+"\");this.innerHTML=\"Copied\"' title='Copy URL to Clipboard' style='background-color:#808080;color:white'>Copy</a>";
       
 });
+
+document.addEventListener("DOMContentLoaded", function(){
+  var specialEvents = {
+    "5/30-6/30": ["Pride", "pride", "linear-gradient(135deg, rgba(255,0,0,0.75) 0%, rgba(255,154,0,0.75) 10%, rgba(208,222,33,0.75) 20%, rgba(79,220,74,0.75) 30%, rgba(63,218,216,0.75) 40%, rgba(47,201,226,0.75) 50%, rgba(28,127,238,0.75) 60%, rgba(95,21,242,0.75) 70%, rgba(186,12,248,0.75) 80%, rgba(251,7,217,0.75) 90%, rgba(255,0,0,0.75) 100%)"]
+  }
+  try {
+    var today = new Date();
+    // loop through the specialEvents object
+    for (var key in specialEvents) {
+        var dates = key.split('-');
+        var start = new Date(dates[0]);
+        if (dates.length > 1) {
+            var end = new Date(dates[1]);
+        }
+        else {
+            var end = start;
+        }
+        // set year
+        start.setFullYear(today.getFullYear());
+        end.setFullYear(today.getFullYear());
+        // if today is between the start and end dates
+        if (today >= start && today <= end) {
+            var event = specialEvents[key];
+            var eventTitle = event[0];
+            var eventURL = event[1];
+            var eventGradient = event[2]||"unset";
+            console.log(eventTitle);
+            // add to navbar after logo
+            document.querySelector('.navhome').insertAdjacentHTML('afterend', '<a href="/'+eventURL+'" class="navspecial" style="background-image:'+eventGradient+'">'+eventTitle+'</a>');
+            break;
+        }
+    }
+  }
+  catch (e) {
+      console.log(e);
+  }
+});

@@ -3,16 +3,16 @@
 <head>
     <meta charset="utf-8">
         <meta name="description" content="A useful collection of text symbols, letters, emojis, ASCII art, and a fancy font generator tool.">
-        <meta property="og:description" content="A useful collection of text symbols, letters, emojis, ASCII art, and a fancy font generator tool." />
+        <meta property="og:description" content="A useful collection of text symbols, letters, emojis, ASCII art, and a fancy font generator tool.">
     <meta name="keywords" content="copy, copy and paste, emoticons, emojis, unicode, symbols, ascii, text, text art">
     <meta name="author" content="R74n">
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Copy Paste Dump" />
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Copy Paste Dump">
     <meta name="twitter:image" content="https://c.r74n.com/favicon_square.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Copy Paste Dump</title>
-        <meta property="og:title" content="Copy Paste Dump - Text Symbols, Emojis, Font Generators, and More" />
-    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+        <meta property="og:title" content="Copy Paste Dump - Text Symbols, Emojis, Font Generators, and More">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <link rel="apple-touch-icon" sizes="180x180" href="https://c.r74n.com/icons/apple-touch-icon.png?v=lkvKdlj5Pj">
     <link rel="icon" type="image/png" sizes="32x32" href="https://c.r74n.com/icons/favicon-32x32.png?v=lkvKdlj5Pj">
     <link rel="icon" type="image/png" sizes="16x16" href="https://c.r74n.com/icons/favicon-16x16.png?v=lkvKdlj5Pj">
@@ -25,22 +25,26 @@
     <meta http-equiv="content-language" content="en">
     <script src="scripts.js"></script>
     <style>
-      .gsc-input * {border:none;}
-      td.gsc-input, td.gsc-search-button {background-color: #d0d9d4!important}
-      input.gsc-input {border-radius:8px!important;height:2em!important;padding-left:0.5em!important}
-      .gsc-input-box {border:none!important}
-      .gsc-clear-button{display:none!important}
-      .gsib_a {padding:0!important}
-      .gsib_b {display:none!important}
-      .gsc-control-searchbox-only {
+      .searchBox, #searchButton {border-radius:8px!important;height:2em!important;padding-left:0.5em!important}
+      .searchBox {
         /* Centered and 50% width unless mobile */
         margin: 0 auto;
-        width: 75%;
+        width: 55%;
       }
       @media only screen and (max-width: 600px) {
-        .gsc-control-searchbox-only {
-          width: 100%;
+        .searchBox {
+          width: 70%;
         }
+      }
+      #searchDiv {
+        /* Centered on page */
+        text-align: center;
+      }
+      #platforms a:hover {
+        filter: brightness(1.3);
+      }
+      #platforms a:active {
+        filter: brightness(0.7);
       }
     </style>
     
@@ -49,23 +53,22 @@
 <body>
 
 <nav><div class="navdiv" id="navdiv">
-<a class="cpdtitle" href="https://c.R74n.com"><h1>Copy Paste Dump</h1></a><ul>
-<!--&A--><a href="https://c.r74n.com" class="navhome"><img src="https://c.r74n.com/favicon_smaller_old.png" alt="Logo" title="Home"></a><!--&B--><a href="/unicode">Text Symbols</a><!--&C--><a href="/emoji">Emojis</a><!--&D--><a href="/faces">Text Faces</a><!--&E--><a href="/fonts">Font Generator</a><!--&F--><a href="/combining">Combining</a><!--&G--><a href="/shapes">Shapes</a><!--&H--><a href="/pages" class="navimp">All Pages</a><!--&I--><a href="https://cse.google.com/cse?cx=f12e443d1104f2f9c" class="navimp">Search</a>
+<a class="skip" href="#content">Skip to content</a><a class="cpdtitle" href="https://c.R74n.com"><h1>Copy Paste Dump</h1></a><ul>
+<!--&A--><a href="https://c.r74n.com" class="navhome"><img src="https://c.r74n.com/favicon_smaller_old.png" alt="Logo" title="Home"></a><!--&B--><a href="/unicode">Text Symbols</a><!--&C--><a href="/emoji">Emojis</a><!--&D--><a href="/faces">Text Faces</a><!--&E--><a href="/fonts">Font Generator</a><!--&F--><!--&G--><a href="/shapes">Shapes</a><!--&H--><a href="/pages" class="navimp">All Pages</a><!--&I--><a href="/search" class="navimp" title="Search" aria-label="Search" id="navsearch">&nbsp;</a>
 <!--&J--></ul></div></nav>
 
-<div class="content">
+<div class="content" id="content">
 <h2 class="pagetitle">Copy Paste Dump</h2>
 
 Click any of the tabs above to start exploring! <strong>Join our <a href="https://link.r74n.com/discord" target="_blank">Discord</a></strong>, or post something on our <a href="https://www.reddit.com/r/CopyPasteDump/" target="_blank" style="color:rgb(238, 107, 0)">Reddit</a>! ☺️<br><br>
 
 <!--<span style="background-color:red;color:white;border-radius:20em;padding:7px;">NEW</span> <a href="fonts/">Improved Font Generator</a>-->
 
-<script async src='https://cse.google.com/cse.js?cx=f12e443d1104f2f9c'></script><div class="gcse-searchbox-only"></div>
-<script>
-  window.addEventListener("load",function(){
-    document.getElementById('gsc-i-id1').setAttribute('placeholder','Search...');
-  })
-</script>
+<form id="searchDiv" action="/search" method="get">
+<input type="text" placeholder="Search..." id="q" name="q" class="searchBox">
+<!--Go to /search?q=(query)-->
+<input type="submit" value="Search" id="searchButton">
+</form>
 <br>
 
 <!--<span style="background-color:red;color:white;border-radius:20em;padding:7px;">NEW</span> <a href="unicode/">Unicode Page Overhaul</a>
@@ -135,7 +138,7 @@ Click any of the tabs above to start exploring! <strong>Join our <a href="https:
 <a href="discord/snowflake">Discord ID to Time Converter</a>
 <a href="https://R74n.com/unisearch" target="_blank"><i>UniSearch</i></a>
 Art
-<a href="emoji-art">Emoji Art</a>
+<a href="emoji-art/">Emoji Art</a>
 <a href="faces">Faces & Emoticons</a>
 <a href="bob">Stick Figure Bob</a>
 Tables
@@ -147,7 +150,7 @@ More
 <a href="pages">All Pages</a>
 <a href="pages#events">Holidays & Events</a>
 </div>
-<div class="col">Portals
+<div class="col" id="platforms">Platforms
 <a href="instagram/" style="color:#DD2A7B!important">Instagram</a>
 <a href="twitter/" style="color:#0084d7!important">Twitter</a>
 <a href="tiktok/" style="color:#000000!important">TikTok</a>
@@ -172,6 +175,48 @@ More
 
 <div style="display:inline-block" id="news-box">
 <br><h3>Recent Additions</h2>
+<strong>🎉 June 2023 🎂</strong><br>
+<div style="display:inline-block;vertical-align:top;"><strong>NEW:</strong><ul>
+<li><a href="search">Search Page</a></li>
+<li><a href="discord/statuses">Funny Discord Statuses</a></li>
+<li><a href="discord/message-templates">Discord Message Templates</a></li>
+<li><a href="emoji-art/among-us">Among Us Emoji Art</a></li>
+<li><a href="emoji-art/animals">Animal Emoji Art</a></li>
+<li><a href="emoji-art/fnaf">Five Nights at Freddy's Emoji Art</a></li>
+<li><a href="emoji-art/hearts">Heart Emoji Art</a></li>
+<li><a href="emoji-art/minecraft">Minecraft Emoji Art</a></li>
+<li><a href="tiktok/bio">Aesthetic TikTok Bios</a></li>
+<li><a href="tiktok/comment-copypastas">TikTok Comment Copypastas</a></li>
+<li><a href="tiktok/verified-symbol">Fake TikTok Verified Symbol</a></li>
+<li><a href="twitter/official-sources">Twitter ⓘ Official Sources</a></li>
+<li><a href="twitter/bunny-ears">Twitter Bunny Ears Trend</a></li>
+<li><a href="bunny-sign">Bunny Sign ASCII Art</a></li>
+<li><a href="emoji-colors">Emojis by Color</a></li>
+<li><a href="emoji-scale">Scale of the Emojis</a></li>
+<li><a href="keybord-spam">Keyboard Spam</a></li>
+<li><a href="school">Back to School Emojis</a></li>
+<li><a href="scroll-fast">Scroll Fast Emojis</a></li>
+</ul></div>
+<div style="display:inline-block;vertical-align:top;"><strong>UPDATED:</strong><ul>
+<li><a href="emoji-art/">Emoji Art</a></li>
+<li><a href="pride">Pride 🌈</a></li>
+<li><a href="instagram/pride">2023 Instagram Rainbow Pride Month Hashtags</a></li>
+<li><a href="unicode/">Text Symbols</a></li>
+<li><a href="among-us/">Among Us</a></li>
+<li><a href="discord/formatting">Discord Formatting Guide</a></li>
+<li><a href="fancy">Fancy Letters</a></li>
+<li><a href="copypastas">Classic Copypastas</a></li>
+<li><a href="flags">All Flag Emojis</a></li>
+<li><a href="proposals">Emoji Proposals</a></li>
+<li><a href="dividers">Cute Aesthetic Dividers</a></li>
+<li><a href="unicode/people">People Emojis and Symbols</a></li>
+<li><a href="unicode/stars">Star Emojis and Symbols</a></li>
+<li>Tab to "Skip to Content"</li>
+<li>Navigation button for holidays</li>
+</ul></div>
+
+<br><br>
+
 <strong>May 2023</strong><br>
 <div style="display:inline-block;vertical-align:top;"><strong>NEW:</strong><ul>
 <li><a href="discord/snowflake">Discord ID to Time Converter</a></li>
@@ -209,54 +254,6 @@ More
 <li>Mobile-Friendly Footer</li>
 </ul></div>
 
-<br><br>
-
-<strong>April 2023</strong><br>
-<div style="display:inline-block;vertical-align:top;"><strong>NEW:</strong><ul>
-<li>Overhauled look of website</li>
-<li><a href="zwj">ZWJ Sequence List</a></li>
-<li><a href="discord/timestamps">Discord Timestamp Generator</a></li>
-<li><a href="ashura">Ashura Emojis</a></li>
-<li><a href="autumn">Autumn Emojis</a></li>
-<li><a href="christmas">Christmas Emojis</a></li>
-<li><a href="fathers-day">Father's Day Emojis</a></li>
-<li><a href="flag-day">Flag Day Emojis</a></li>
-<li><a href="hanukkah">Hanukkah Emojis</a></li>
-<li><a href="july-4th">4th of July Emojis</a></li>
-<li><a href="juneteenth">Juneteenth Emojis</a></li>
-<li><a href="kwanzaa">Kwanzaa Emojis</a></li>
-<li><a href="labor-day">Labor Day Emojis</a></li>
-<li><a href="new-year">New Year Emojis</a></li>
-<li><a href="pride">LGBTQ+ Pride Emojis</a></li>
-<li><a href="rosh-hashanah">Rosh Hashanah Emojis</a></li>
-<li><a href="spring">Spring Emojis</a></li>
-<li><a href="summer">Summer Emojis</a></li>
-<li><a href="thanksgiving">Thanksgiving Emojis</a></li>
-<li><a href="valentines-day">Valentine's Day Emojis</a></li>
-<li><a href="winter">Winter Emojis</a></li>
-<li><a href="yom-kippur">Yom Kippur Emojis</a></li>
-</ul></div>
-<div style="display:inline-block;vertical-align:top;"><strong>UPDATED:</strong><ul>
-<li>Main Page</li>
-<li><a href="fonts/">Font Generator</a></li>
-<li><a href="emoji">Every Emoji updated for Unicode 15</a></li>
-<li><a href="unicode/">Text Symbols</a></li>
-<li><a href="discord/formatting">Discord Formatting Guide</a></li>
-<li><a href="unicode/belief">Belief Symbols</a></li>
-<li><a href="unicode/animals">Animal Symbols</a></li>
-<li><a href="unicode/gs">Gender & Sexuality Symbols</a></li>
-<li><a href="unicode/sports">Sports Symbols</a></li>
-<li><a href="unicode/games">Game Symbols</a></li>
-<li><a href="youtube/">YouTube Secret Emojis</a></li>
-<li><a href="twitter/">Twitter Portal</a></li>
-<li><a href="instagram/">Instagram Emojis, Pride Hashtags</a></li>
-<li><a href="among-us/">Among Us Portal</a></li>
-<li><a href="builder">Handshake Emoji Builder</a></li>
-<li><a href="words">Words With Unicode</a></li>
-<li><a href="eid">Eid Emojis</a></li>
-<li><a href="ramadan">Ramadan Emojis</a></li>
-<li><a href="discord/blank-message">Discord Blank Emoji</a></li>
-</ul></div>
 <br><a href="news-archive">Older Additions</a>
 </div>
 
@@ -266,7 +263,6 @@ More
 
 
 
-</div>
 </div>
 
 
