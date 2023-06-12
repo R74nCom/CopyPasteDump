@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function(){
     "5/25-5/31": ["Memorial Day", "/memorial-day", USA],
     "6/18": ["Father's Day", "/fathers-day", ["#00b3ff","#005eff","#1500ff"]],
     "6/16-6/19": ["Juneteenth", "/juneteenth", ["#d90000","#000000","#00a808"]],
-    "6/29": ["Eid al-Adha", "/eid", ["#0E6D14","#00900A","#D9CD44","#CFB53B"]],
+    "6/28-6/29": ["Eid al-Adha", "/eid", ["#0E6D14","#00900A","#D9CD44","#CFB53B"]],
     "5/30-6/30": ["Pride", "/pride", ["#ff0000","#ff9900","#d0de21","#4fdc4a","#3fdad8","#2fcae2","#1c7eee","#5f15f2","#ba0cf8","#fb07da","#ff0000"]],
     "7/1-7/4": ["July 4th", "/july-4th", USA],
     "7/28": ["Ashura", "/ashura", ["green","red"]],
