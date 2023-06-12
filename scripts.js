@@ -111,11 +111,40 @@ window.addEventListener('load', function() {
 });
 
 document.addEventListener("DOMContentLoaded", function(){
+  var USA = ["blue","blue","white","red","white","red"];
   var specialEvents = {
-    "5/30-6/30": ["Pride", "pride", "linear-gradient(135deg, rgba(255,0,0,0.75) 0%, rgba(255,154,0,0.75) 10%, rgba(208,222,33,0.75) 20%, rgba(79,220,74,0.75) 30%, rgba(63,218,216,0.75) 40%, rgba(47,201,226,0.75) 50%, rgba(28,127,238,0.75) 60%, rgba(95,21,242,0.75) 70%, rgba(186,12,248,0.75) 80%, rgba(251,7,217,0.75) 90%, rgba(255,0,0,0.75) 100%)"]
+    // should be sorted by end date to work properly
+    // "6/10-6/12": ["Juneteenth", "/juneteenth", ["#d90000","#000000","#00a808"]],
+    "1/1": ["New Year", "/new-year", ["#02172F","#073656","#F0D466","#D7AF30"]],
+    "2/9-2/14": ["Valentine's", "/valentines-day", ["#fa69ff","#ff6969"]],
+    "3/20-3/31": ["Ramadan", "/ramadan", ["#c869ff","#6400c2"]],
+    "4/15-4/18": ["Tax Day", "/tax-day", USA],
+    "4/10-4/14": ["Eid al-Fitr", "/eid", ["#0E6D14","#00900A","#D9CD44","#CFB53B"]],
+    "4/18-4/23": ["Earth Day", "/earth-day", ["#1c3aff","#00990f"]],
+    "5/2": ["R74n", "https://R74n.com", "#00ffff"],
+    "5/4-5/5": ["Cinco de Mayo", "/cinco-de-mayo", ["#ffd900","#c90000"]],
+    "5/10-5/15": ["Mother's Day", "/mothers-day", ["#f59cff","#d93deb"]],
+    "5/25-5/31": ["Memorial Day", "/memorial-day", USA],
+    "6/18": ["Father's Day", "/fathers-day", ["#00b3ff","#005eff","#1500ff"]],
+    "6/16-6/19": ["Juneteenth", "/juneteenth", ["#d90000","#000000","#00a808"]],
+    "6/29": ["Eid al-Adha", "/eid", ["#0E6D14","#00900A","#D9CD44","#CFB53B"]],
+    "5/30-6/30": ["Pride", "/pride", ["#ff0000","#ff9900","#d0de21","#4fdc4a","#3fdad8","#2fcae2","#1c7eee","#5f15f2","#ba0cf8","#fb07da","#ff0000"]],
+    "7/1-7/4": ["July 4th", "/july-4th", USA],
+    "7/28": ["Ashura", "/ashura", ["green","red"]],
+    "9/1-9/5": ["Labor Day", "/labor-day", USA],
+    "9/24-9/30": ["Yom Kippur", "/yom-kippur", ["#4da6ff","#e6c440"]],
+    "10/1-10/31": ["Halloween", "/halloween", ["#ffa200","#ff8800"]],
+    "11/1-11/10": ["US Election", "/election-day", USA],
+    "11/18-11/28": ["Thanksgiving", "/thanksgiving", ["#ff6f00","#804b00"]],
+    "12/5-12/15": ["Hanukkah", "/hanukkah", ["#4da6ff","#e6c440"]],
+    "12/1-12/25": ["Christmas", "/christmas", ["red","lime"]],
+    "12/26-12/30": ["Kwanzaa", "/kwanzaa", ["#d90000","#000000","#00a808"]],
+    "12/31": ["New Year", "/new-year", ["#02172F","#073656","#F0D466","#D7AF30"]],
   }
   try {
     var today = new Date();
+    // today = new Date(last key in specialEvents)
+    //today = new Date(Object.keys(specialEvents)[Object.keys(specialEvents).length-1].split('-')[1]);
     // loop through the specialEvents object
     for (var key in specialEvents) {
         var dates = key.split('-');
@@ -124,20 +153,26 @@ document.addEventListener("DOMContentLoaded", function(){
             var end = new Date(dates[1]);
         }
         else {
-            var end = start;
+            var end = new Date(dates[0]);
         }
         // set year
         start.setFullYear(today.getFullYear());
         end.setFullYear(today.getFullYear());
+        // set time
+        start.setHours(0,0,0);
+        end.setHours(23,59,59);
         // if today is between the start and end dates
         if (today >= start && today <= end) {
             var event = specialEvents[key];
             var eventTitle = event[0];
             var eventURL = event[1];
             var eventGradient = event[2]||"unset";
+            if (Array.isArray(eventGradient)) {
+                eventGradient = "linear-gradient(135deg, "+eventGradient.join(",")+")";
+            }
             console.log(eventTitle);
             // add to navbar after logo
-            document.querySelector('.navhome').insertAdjacentHTML('afterend', '<a href="/'+eventURL+'" class="navspecial" style="background-image:'+eventGradient+'">'+eventTitle+'</a>');
+            document.querySelector('.navhome').insertAdjacentHTML('afterend', '<a href="'+eventURL+'" class="navspecial" style="background:'+eventGradient+'">'+eventTitle+'</a>');
             break;
         }
     }

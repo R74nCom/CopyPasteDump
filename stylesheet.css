@@ -110,10 +110,10 @@ nav h1 {
     text-shadow: 0 0 2px black;
 }
 .navspecial:hover {
-    backdrop-filter: brightness(0.5);
+    filter: brightness(0.75);
 }
 .navspecial:active {
-    backdrop-filter: brightness(1.25);
+    filter: brightness(1);
 }
 .pagetitle {
     padding-top: 20px;
