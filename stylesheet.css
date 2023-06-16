@@ -214,8 +214,6 @@ nav h1 {
     display:inline-block;
 }
 .tabs button {cursor:pointer;}
-.tabs button:hover {background-color: #bbc9c1;}
-.tabs button.active {background-color: #b3c2b9;}
 .tabs span {cursor:default;}
 .tabcontent {
     display: none;
@@ -250,12 +248,12 @@ h2 {margin-top: 0px; padding:0px}
 }
 .cb:hover {
     color: #0066ff;
-    background-color:#ffffff;
+    filter:brightness(1.1);
 }
 .cb:active {
     transition: all 0s ease-in-out;
     color: yellow;
-    background-color:#c8c8c8;
+    filter:brightness(0.75);
 }
 .cb[cooldown="true"] {
     background-color: rgb(0, 136, 0);
@@ -321,10 +319,9 @@ button, input[type=button], input[type=submit], .button, select {
     display:inline-block;
     white-space: nowrap;
     vertical-align:middle;
-    
 }
-button:hover, input[type=button]:hover, input[type=submit]:hover, .button:hover {background-color: #ffffff;}
-button:active, input[type=button]:active, input[type=submit]:active, .button:active {background-color: #c8c8c8;}
+button:hover, input[type=button]:hover, input[type=submit]:hover, .button:hover, input[type=button][selected=true] {filter:brightness(1.1)}
+button:active, input[type=button]:active, input[type=submit]:active, .button:active {filter:brightness(0.75)}
 .sb {font-size:15px;padding-left:4px;padding-right:4px;padding-top:1px;padding-bottom:1px;margin-left:5px;margin-top: 1px;margin-bottom: 1px;}
 
 input[type=text], input[type=date], input[type=time] {
@@ -393,11 +390,11 @@ dfn {
     background-color: red;
 }
 
-#navsearch { background-image: 
-    url("data:image/svg+xml;utf8,<svg width='800px' height='800px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><g id='Search'><path id='Vector' d='M15 15L21 21M10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g></svg>");
+#navsearch {
+    background-image: url("data:image/svg+xml;utf8,<svg width='800px' height='800px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><g id='Search'><path id='Vector' d='M15 15L21 21M10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g></svg>");
     background-repeat: no-repeat;
     background-size: 25px 25px;
     /* center the image */
     background-position: 50% 50%;
     width: 1.5em
-  }
+}

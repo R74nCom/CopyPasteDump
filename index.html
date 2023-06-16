@@ -30,6 +30,9 @@
         /* Centered and 50% width unless mobile */
         margin: 0 auto;
         width: 55%;
+        border-top-right-radius: 0!important;
+        border-bottom-right-radius: 0!important;
+        border-right: none!important;
       }
       @media only screen and (max-width: 600px) {
         .searchBox {
@@ -45,6 +48,18 @@
       }
       #platforms a:active {
         filter: brightness(0.7);
+      }
+      #searchButton {
+        background-image: url("data:image/svg+xml;utf8,<svg width='800px' height='800px' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'><g id='Search'><path id='Vector' d='M15 15L21 21M10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10C17 13.866 13.866 17 10 17Z' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></g></svg>");
+        background-repeat: no-repeat;
+        background-size: 25px 25px;
+        /* center the image */
+        background-position: 50% 50%;
+        width: 2.5em;
+        height: 2.5em!important;
+        background-color: #d0d9d4;
+        border-top-left-radius: 0!important;
+        border-bottom-left-radius: 0!important;
       }
     </style>
     
@@ -65,9 +80,7 @@ Click any of the tabs above to start exploring! <strong>Join our <a href="https:
 <!--<span style="background-color:red;color:white;border-radius:20em;padding:7px;">NEW</span> <a href="fonts/">Improved Font Generator</a>-->
 
 <form id="searchDiv" action="/search" method="get">
-<input type="text" placeholder="Search..." id="q" name="q" class="searchBox">
-<!--Go to /search?q=(query)-->
-<input type="submit" value="Search" id="searchButton">
+<input type="text" placeholder="Search..." id="q" name="q" class="searchBox"><input type="submit" value="&nbsp;" id="searchButton" aria-label="Search">
 </form>
 <br>
 
