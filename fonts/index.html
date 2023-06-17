@@ -189,11 +189,10 @@ return s.split("").reverse().join("");
     /* centered */
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
+    width: 95%;
     max-width: 800px;
     border: 1px solid #000000;
     padding: 10px;
-    
   }
   #fontForm {
     text-align:center;
@@ -201,7 +200,7 @@ return s.split("").reverse().join("");
   #TextBox {
     font-size:25px;
     padding:10px;
-    width:60%;
+    width:95%;
     max-width: 600px;
     margin-bottom:10px;
     vertical-align: middle;
@@ -233,9 +232,9 @@ return s.split("").reverse().join("");
 
 <div style="font-size:25px;">
 
-<form onsubmit="go(true,false);return false;" id="fontForm">
+<form onsubmit="go(true,true);return false;" id="fontForm">
 <input autocomplete="off" autofocus id="TextBox" type="text" placeholder="Type text here..." title="Enter text here, then press [Convert]" oninput="go(false,false);">
-<input type="button" value="Convert" onclick="go(true,true);" id="convertButton">
+<!-- <input type="button" value="Convert" onclick="go(true,true);" id="convertButton"> -->
 </form>
 
 
