@@ -291,7 +291,11 @@ return s.split("").reverse().join("");
       var text = search;
       currentfont = undefined
     }
-    if (text==undefined) {text = "Enter Some Text!"}
+    if (text==undefined) {text = ""}
+    else {
+      // update title tag, make sure first word is capitalized
+      document.title = text.charAt(0).toUpperCase() + text.slice(1) + " Fancy Fonts (𝓬𝓸𝓹𝔂 ⓐⓝⓓ 𝕡𝕒𝕤𝕥𝕖) - Copy Paste Dump";
+    }
     document.getElementById("TextBox").value = text;
     go(true);
   
