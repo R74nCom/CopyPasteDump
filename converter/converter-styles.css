@@ -100,6 +100,7 @@ label, input[type=checkbox], input[type=range] {
         /* center */
         margin-left: auto;
         margin-right: auto;
+        height: 13em;
     }
     #converterLeft {
         padding-bottom: 5px;

@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-        <meta name="description" content="Text tool to convert LANG1 to LANG2 online.">
-        <meta property="og:description" content="Text tool to convert LANG1 to LANG2 online.">
+        <meta name="description" content="Text tool to convert uppercase, lowercase, and other text to different capitalizations.">
+        <meta property="og:description" content="Text tool to convert uppercase, lowercase, and other text to different capitalizations.">
     <meta name="keywords" content="copy, copy and paste, emoticons, emojis, unicode, symbols, text, encoder, translator, generator">
     <meta name="author" content="R74n">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Copy Paste Dump">
     <meta name="twitter:image" content="https://c.r74n.com/favicon_square.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>LANG1 to LANG2 Converter - Copy Paste Dump</title>
-        <meta property="og:title" content="LANG1 to LANG2 Converter - Copy Paste Dump">
+        <title>Case Converter (Upper, Lower + More) - Copy Paste Dump</title>
+        <meta property="og:title" content="Case Converter (Upper, Lower + More) - Copy Paste Dump">
     <link rel="stylesheet" type="text/css" href="../stylesheet.css">
     <link rel="apple-touch-icon" sizes="180x180" href="https://c.r74n.com/icons/apple-touch-icon.png?v=lkvKdlj5Pj">
     <link rel="icon" type="image/png" sizes="32x32" href="https://c.r74n.com/icons/favicon-32x32.png?v=lkvKdlj5Pj">
@@ -30,10 +30,57 @@
     <script>
 
 // CONVERTER SETTINGS
+/*
+lower
+upper
+title
+sentence
+camel
+snake
+kebab
+alternating
+random
+opposite
+*/
+function convertCase(text,type) {
+    switch (type) {
+        case "lower":
+            return text.toLowerCase();
+        case "upper":
+            return text.toUpperCase();
+        case "title":
+            return text.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+        case "sentence":
+            // split by period, question mark, or exclamation point
+            return text.replace(/(^\w{1}|[\.!?]\s*\w{1})/gi,function(txt){return txt.toUpperCase();});
+        case "camel":
+            return text.replace(/(?:^\w|[A-Z]|\b\w)/g, function(word, index) {
+                return index == 0 ? word.toLowerCase() : word.toUpperCase();
+            }).replace(/\s+/g, '');
+        case "snake":
+            return text.replace(/\s+/g, '_').toLowerCase();
+        case "kebab":
+            return text.replace(/\s+/g, '-').toLowerCase();
+        case "alternating":
+            return text.replace(/\s+/g, ' ').replace(/([a-z])/gi, function(match, p1, offset) {
+                return offset % 2 === 0 ? match.toLowerCase() : match.toUpperCase();
+            });
+        case "random":
+            return text.replace(/\s+/g, ' ').replace(/([a-z])/gi, function(match, p1, offset) {
+                return Math.random() > 0.5 ? match.toLowerCase() : match.toUpperCase();
+            });
+        case "opposite":
+            return text.replace(/\s+/g, ' ').replace(/([a-z])/gi, function(match, p1, offset) {
+                return match.toLowerCase() === match ? match.toUpperCase() : match.toLowerCase();
+            });
+    }
+}
 function forward(text) {
+    text = convertCase(text,settings.lang2)
     return text;
 }
 function backward(text) {
+    text = convertCase(text,settings.lang1)
     return text;
 }
 
@@ -56,7 +103,7 @@ function backward(text) {
 <!--&J--></ul></div></nav>
 
 <div class="content" id="content">
-<h2 class="pagetitle">LANG2 Converter</h2>
+<h2 class="pagetitle">Case Converter</h2>
 
 <a href=".">⬅︎ More Converters</a><br><br>
 <noscript><p>This converter requires JavaScript, which you seem to have disabled. It will not work unless you enable JavaScript.</p></noscript>
@@ -66,38 +113,44 @@ function backward(text) {
 <div id="converterLeft">
      <textarea id="inputArea" placeholder="LANG1 goes here..." autofocus></textarea>
      <select id="lang1">
-        <option value="langoption1">LANGSELECT</option>
+        <option value="lower" selected>lowercase</option>
+        <option value="upper">UPPERCASE</option>
+        <option value="title">Title Case</option>
+        <option value="sentence">Sentence case</option>
+        <option value="camel">camelCase</option>
+        <option value="snake">snake_case</option>
+        <option value="kebab">kebab-case</option>
+        <option value="alternating">aLtErNaTiNg cAsE</option>
+        <option value="random">rANdOm cASe</option>
+        <option value="opposite">oPPOSITE cASE</option>
      </select>
 </div>
 <div id="arrow">⇄</div>
 <div id="converterRight">
     <textarea id="outputArea" placeholder="And LANG2 appears here..."></textarea>
     <select id="lang2">
-        <option value="langoption1">LANGSELECT</option>
+        <option value="lower">lowercase</option>
+        <option value="upper" selected>UPPERCASE</option>
+        <option value="title">Title Case</option>
+        <option value="sentence">Sentence case</option>
+        <option value="camel">camelCase</option>
+        <option value="snake">snake_case</option>
+        <option value="kebab">kebab-case</option>
+        <option value="alternating">aLtErNaTiNg cAsE</option>
+        <option value="random">rANdOm cASe</option>
+        <option value="opposite">oPPOSITE cASE</option>
     </select>
 </div>
 <div id="converterBottom">
-    <div class="optionGroup" id="mode">
-        <input type="button" value="MODE1" id="mode1" selected="true">
-        <input type="button" value="MODE2" id="mode2">
-        <input type="button" value="MODE3" id="mode3">
-        <input type="button" value="MODE4" id="mode4">
-    </div>
-    <div class="optionGroup">
-        <input type="checkbox" id="option1"><label for="option1">OPTION1</label>
-        <input type="checkbox" id="option2" checked><label for="option2">OPTION2</label>
-        <input type="checkbox" id="option3"><label for="option3">OPTION3</label>
-        <input type="range" id="amount1" max="100" min="0" step="5" value="25"><label for="amount1">AMOUNT1</label>
-    </div>
-    <div class="optionGroup">
-        <label for="textoption1">TEXTOPTION1: </label><input type="text" id="textoption1" value="" placeholder="Text...">
-    </div>
 </div>
 
 </div>
 
 <h3>How It Works</h3>
-<p>Use this text tool to quickly convert LANG1 to LANG2. Simply type or paste LANG1 into the first box, and LANG2 will appear in the second box for you to copy.</p>
+<p>Use this text tool to quickly convert between one case to another. Simply type or paste text into the first box, and the selected case will appear in the second box for you to copy.</p>
+<p>Change the case by using the dropdown list under each text box.</p>
+<p>If you forgot to turn off Caps Lock when writing something, you can convert your <a href="?lang1=uppercase&lang2=lowercase">Uppercase to Lowercase</a>.</p>
+<p>Many capitalization methods are supported, including <a href="?lang2=lowercase">lowercase</a>, <a href="?lang2=uppercase">UPPERCASE</a>, <a href="?lang2=title">Title Case</a>, <a href="?lang2=sentence">Sentence case</a>, <a href="?lang2=camel">camelCase</a>, <a href="?lang2=snake">snake_case</a>, <a href="?lang2=kebab">kebab-case</a>, <a href="?lang2=alternating">aLtErNaTiNg cAsE</a>, <a href="?lang2=random">rANdOm cASe</a>, and <a href="?lang2=opposite">oPPOSITE cASE</a>.</p>
 
 <h3>More Converters Like This</h3>
 <ul id="seeMoreList">
