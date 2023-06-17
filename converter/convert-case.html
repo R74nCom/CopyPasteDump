@@ -10,7 +10,7 @@
     <meta property="og:site_name" content="Copy Paste Dump">
     <meta name="twitter:image" content="https://c.r74n.com/favicon_square.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Case Converter (Upper, Lower + More) - Copy Paste Dump</title>
+        <title id="titleTag">Case Converter (Upper, Lower + More) - Copy Paste Dump</title>
         <meta property="og:title" content="Case Converter (Upper, Lower + More) - Copy Paste Dump">
     <link rel="stylesheet" type="text/css" href="../stylesheet.css">
     <link rel="apple-touch-icon" sizes="180x180" href="https://c.r74n.com/icons/apple-touch-icon.png?v=lkvKdlj5Pj">
@@ -111,7 +111,7 @@ function backward(text) {
 <div id="converterDiv">
 
 <div id="converterLeft">
-     <textarea id="inputArea" placeholder="LANG1 goes here..." autofocus></textarea>
+     <textarea id="inputArea" placeholder="Text goes here..." autofocus></textarea>
      <select id="lang1">
         <option value="lower" selected>lowercase</option>
         <option value="upper">UPPERCASE</option>
@@ -127,7 +127,7 @@ function backward(text) {
 </div>
 <div id="arrow">⇄</div>
 <div id="converterRight">
-    <textarea id="outputArea" placeholder="And LANG2 appears here..."></textarea>
+    <textarea id="outputArea" placeholder="And converted case appears here..."></textarea>
     <select id="lang2">
         <option value="lower">lowercase</option>
         <option value="upper" selected>UPPERCASE</option>

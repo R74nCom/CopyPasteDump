@@ -10,8 +10,8 @@
     <meta property="og:site_name" content="Copy Paste Dump">
     <meta name="twitter:image" content="https://c.r74n.com/favicon_square.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Font Generator - Copy Paste Dump</title>
-        <meta property="og:title" content="Font Generator - Copy Paste Dump">
+        <title>Fancy Font Generator (𝓬𝓸𝓹𝔂 ⓐⓝⓓ 𝕡𝕒𝕤𝕥𝕖) - Copy Paste Dump</title>
+        <meta property="og:title" content="Fancy Font Generator (𝓬𝓸𝓹𝔂 ⓐⓝⓓ 𝕡𝕒𝕤𝕥𝕖) - Copy Paste Dump">
     <link rel="stylesheet" type="text/css" href="../stylesheet.css">
     <link rel="apple-touch-icon" sizes="180x180" href="https://c.r74n.com/icons/apple-touch-icon.png?v=lkvKdlj5Pj">
     <link rel="icon" type="image/png" sizes="32x32" href="https://c.r74n.com/icons/favicon-32x32.png?v=lkvKdlj5Pj">
@@ -26,135 +26,192 @@
     <script src="../scripts.js"></script>
     <script src="fonts.js"></script>
     <script>
-      if (!String.prototype.replaceAll) {
-        String.prototype.replaceAll = function(str, newStr){
-          if (Object.prototype.toString.call(str).toLowerCase() === '[object regexp]') {
-            return this.replace(str, newStr);
-          }
-          return this.replace(new RegExp(str, 'g'), newStr);
-        };
+  if (!String.prototype.replaceAll) {
+    String.prototype.replaceAll = function(str, newStr){
+      if (Object.prototype.toString.call(str).toLowerCase() === '[object regexp]') {
+        return this.replace(str, newStr);
       }
-      function go(){
-        var Text = document.getElementById("TextBox").value;
-        Text = Text
-        var results = [];
-        if (!(fonts[currentfont]==undefined)) {
-          //console.log(font)
-          results.push("<span class='fontsep'>"+fonts[currentfont]["NAME"]+": "+convert(Text,currentfont).replaceAll("<","&lt;").replaceAll(">","&gt;")+"</span>")
-          results.push("<span class='fontsep'>&nbsp;</span>")
-          results.push("<span class='fontsep'><h3>Other Fonts</h3></span>")
-        }
-        for (key in fonts) {
-          results.push("<span class='fontsep'>"+fonts[key]["NAME"]+": "+convert(Text,key).replaceAll("<","&lt;").replaceAll(">","&gt;")+"</span>")
-        }
-        var ResultsDiv = document.getElementById("ResultsDiv");
-        ResultsDiv.innerHTML = results.join("")
+      return this.replace(new RegExp(str, 'g'), newStr);
+    };
+  }
+  timeout = null;
+  loaded = false;
+  function go(force,update_url){
+    if (timeout) {
+        clearTimeout(timeout);
+    }
+    tempfunc = function() {
+      var Text = document.getElementById("TextBox").value;
+      if (update_url) { updateurl(); }
+      if (Text.length === 0) {
+        document.getElementById("ResultsDiv").style.display = "none";
+        document.getElementById("helpBox").style.display = "block";
+        return;
       }
-      function reversed(s){
-    return s.split("").reverse().join("");
+      var results = [];
+      if (!(fonts[currentfont]==undefined)) {
+        //console.log(font)
+        results.push("<span class='fontsep'>"+fonts[currentfont]["NAME"]+": "+convert(Text,currentfont).replaceAll("<","&lt;").replaceAll(">","&gt;")+"</span>")
+        results.push("<span class='fontsep'>&nbsp;</span>")
+        results.push("<span class='fontsep'><h3>Other Fonts</h3></span>")
+      }
+      for (key in fonts) {
+        results.push("<span class='fontsep'>"+fonts[key]["NAME"]+": "+convert(Text,key).replaceAll("<","&lt;").replaceAll(">","&gt;")+"</span>")
+      }
+      var ResultsDiv = document.getElementById("ResultsDiv");
+      ResultsDiv.innerHTML = results.join("")
+      ResultsDiv.style.display = "block";
+      document.getElementById("helpBox").style.display = "none";
+    }
+    if (force) {tempfunc();return;}
+    timeout = setTimeout(tempfunc, 250 );
+  }
+  function reversed(s){
+return s.split("").reverse().join("");
 }
-      function convert(Text,FontName){
-        var newtext = "";
-        if (!(fonts[FontName]["COMBINE"]==undefined)) {var formatter = "X"+fonts[FontName]["COMBINE"]}
-        else if (!(fonts[FontName]["FORMAT"]==undefined)) {var formatter = fonts[FontName]["FORMAT"]}
-        else {var formatter = undefined}
+  function convert(Text,FontName){
+    var newtext = "";
+    if (!(fonts[FontName]["COMBINE"]==undefined)) {var formatter = "X"+fonts[FontName]["COMBINE"]}
+    else if (!(fonts[FontName]["FORMAT"]==undefined)) {var formatter = fonts[FontName]["FORMAT"]}
+    else {var formatter = undefined}
 
-        if (FontName=="reversed") {
-          newtext = reversed(Text);
+    if (FontName=="reversed") {
+      newtext = reversed(Text);
+    }
+    else {
+        if ((FontName=="mirror") || (FontName=="upsidedown")) {
+          Text = reversed(Text);
         }
-        else {
-            if ((FontName=="mirror") || (FontName=="upsidedown")) {
-              Text = reversed(Text);
+        for (var i = 0; i < Text.length; i++) {
+          char = Text.charAt(i);
+          if (char in fonts[FontName]) {
+            newtext = newtext + fonts[FontName][char];
+          }
+          else {
+            if (!(formatter==undefined)) {
+              newtext = newtext + formatter.replaceAll("X",char)
             }
-            for (var i = 0; i < Text.length; i++) {
-              char = Text.charAt(i);
-              if (char in fonts[FontName]) {
-                newtext = newtext + fonts[FontName][char];
-              }
-              else {
-                if (!(formatter==undefined)) {
-                  newtext = newtext + formatter.replaceAll("X",char)
-                }
-                else {newtext = newtext + char;}
-              }
-            }
+            else {newtext = newtext + char;}
+          }
         }
+    }
 
-        if (!(fonts[FontName]["WORDJOIN"]==undefined)) {
-          newtext = newtext.replaceAll(" ",fonts[FontName]["WORDJOIN"])
-        }
+    if (!(fonts[FontName]["WORDJOIN"]==undefined)) {
+      newtext = newtext.replaceAll(" ",fonts[FontName]["WORDJOIN"])
+    }
 
-        return newtext
-      }
-      function updateurl(){
-        if (currentfont==undefined){window.location.href='?text='+document.getElementById('TextBox').value;}
-        else {window.location.href='?text='+document.getElementById('TextBox').value+"&font="+currentfont;}
-        
-      }
+    return newtext
+  }
+  function updateurl(refresh){
+    if (!refresh) {
+      var text = document.getElementById('TextBox').value;
+      // if (text=="") {text="Enter Some Text!"}
+      if (currentfont==undefined){window.history.pushState("object or string", "Title", "?text="+text);}
+      else {window.history.pushState("object or string", "Title", "?text="+text+"&font="+currentfont);}
+      return;
+    }
+    if (currentfont==undefined){window.location.href='?text='+document.getElementById('TextBox').value;}
+    else {window.location.href='?text='+document.getElementById('TextBox').value+"&font="+currentfont;}
+    
+  }
 
-      examplechoices = [
-        "Visit the Copy Paste Dump!",
-        "Check out https://c.r74n.com/fonts",
-        "Merry Christmas!",
-        "Happy Halloween!",
-        "Happy Easter!",
-        "Hello!",
-        "Good morning!",
-        "Have a nice day!",
-        "Goodnight, sleep tight!",
-        "Happy New Year!",
-        "Merry Christmas Eve!",
-        "Black Lives Matter",
-        "Happy Valentine's Day!",
-        "Good afternoon!",
-        "Happy Independence Day!",
-        "Happy St. Patrick's Day!",
-        "Happy Hanukkah!",
-        "Happy Kwanzaa!",
-        "Happy Pride YEAR!",
-        "Thanks for everything",
-        "I'm sorry...",
-        "c.R74n.com",
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-        "1234567890",
-        "The quick brown fox jumps over the lazy dog.",
-        "I love you!",
-        "Aesthetic",
-        "Be yourself",
-        "Keep calm",
-        "Happy Father's Day!",
-        "Happy Flag Day!",
-        "Happy Juneteenth!",
-        "Happy 4th of July!",
-        "As-salaam Alaykum",
-        "Shana Tova!",
-        "Happy Labor Day!",
-        "Happy Thanksgiving!",
-        "Happy Valentine's Day!",
-        "Season's Greetings",
-        "ATTENTION",
-        "WARNING",
-        "Happy Birthday",
-        "Ramadan Mubarak",
-        "Eid Mubarak!",
-        "Welcome!",
-        "Happy Tax Day?",
-        "Happy April Fools' Day!",
-        "Announcement",
-        "¡Feliz Cinco de Mayo!",
-        "¡Feliz Navidad!",
-        "he/him",
-        "he/they",
-        "she/her",
-        "she/they",
-        "they/them",
-        
-      ]
+  examplechoices = [
+    "Visit the Copy Paste Dump!",
+    "Check out https://c.r74n.com/fonts",
+    "Merry Christmas!",
+    "Happy Halloween!",
+    "Happy Easter!",
+    "Hello!",
+    "Good morning!",
+    "Have a nice day!",
+    "Goodnight, sleep tight!",
+    "Happy New Year!",
+    "Merry Christmas Eve!",
+    "Black Lives Matter",
+    "Happy Valentine's Day!",
+    "Good afternoon!",
+    "Happy Independence Day!",
+    "Happy St. Patrick's Day!",
+    "Happy Hanukkah!",
+    "Happy Kwanzaa!",
+    "Happy Pride YEAR!",
+    "Thanks for everything",
+    "I'm sorry...",
+    "c.R74n.com",
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    "1234567890",
+    "The quick brown fox jumps over the lazy dog.",
+    "I love you!",
+    "Aesthetic",
+    "Be yourself",
+    "Keep calm",
+    "Happy Father's Day!",
+    "Happy Flag Day!",
+    "Happy Juneteenth!",
+    "Happy 4th of July!",
+    "As-salaam Alaykum",
+    "Shana Tova!",
+    "Happy Labor Day!",
+    "Happy Thanksgiving!",
+    "Happy Valentine's Day!",
+    "Season's Greetings",
+    "ATTENTION",
+    "WARNING",
+    "Happy Birthday",
+    "Ramadan Mubarak",
+    "Eid Mubarak!",
+    "Welcome!",
+    "Happy Tax Day?",
+    "Happy April Fools' Day!",
+    "Announcement",
+    "¡Feliz Cinco de Mayo!",
+    "¡Feliz Navidad!",
+    "he/him",
+    "he/they",
+    "she/her",
+    "she/they",
+    "they/them",
+    "Instagram","Twitter","TikTok","YouTube","Twitch","Discord","Minecraft","Reddit","Among Us","WhatsApp","Apple","Windows","Zoom","Slack","GitHub","Snapchat","Facebook","Pinterest","iOS","Android","Google","Clubhouse","House Party","Fortnite","Roblox","PUBG",
+    
+  ]
 
-      currentfont = undefined
-    </script>
-    <style>
-      .fontsep {margin-bottom:5px;display:block}
+  currentfont = undefined
+</script>
+<style>
+  .fontsep {
+    margin-bottom:15px;display:block
+  }
+  .examplesep {
+    margin-bottom:1em;display: inline-block;
+    margin-right: 1em;
+  }
+  #ResultsContainer {
+    /* centered */
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 800px;
+    border: 1px solid #000000;
+    padding: 10px;
+    
+  }
+  #fontForm {
+    text-align:center;
+  }
+  #TextBox {
+    font-size:25px;
+    padding:10px;
+    width:60%;
+    max-width: 600px;
+    margin-bottom:10px;
+    vertical-align: middle;
+  }
+  #convertButton {
+    font-size:25px;
+    padding:10px;
+    margin-bottom:10px;
+    vertical-align: middle;
+  }
     </style>
     
 </head>
@@ -167,36 +224,56 @@
 <!--&J--></ul></div></nav>
 
 <div class="content" id="content">
-<h2 class="pagetitle">Unicode Font Converter</h2>
+<h2 class="pagetitle">Fancy Font Generator</h2>
 
-See Also:<a class="seealso" href="../fancy">Individual Characters</a><a class="seealso" href="../combining">Combining Characters</a>
-<br><br>
-Type text in the box below and press "Convert"!<br><br>
-Support may vary across devices.<br><br>
+<!-- <p>NEW: <a href="../converter/">More Text Converters</a></p> -->
+<p>Convert normal text to fancy text 𝕝𝕚𝕜𝕖 𝖙𝖍𝖎𝖘 to copy and paste!</p>
+
+<noscript><p>This converter requires JavaScript, which you seem to have disabled. It will not work unless you enable JavaScript.</p></noscript>
 
 <div style="font-size:25px;">
 
-<form onsubmit="updateurl();return false;">
-<input autofocus id="TextBox" type="text" placeholder="Type text here..." style="width:300px" title="Enter text here, then press [Convert]">
-<button onclick="updateurl();">Convert</button>
+<form onsubmit="go(true,false);return false;" id="fontForm">
+<input autocomplete="off" autofocus id="TextBox" type="text" placeholder="Type text here..." title="Enter text here, then press [Convert]" oninput="go(false,false);">
+<input type="button" value="Convert" onclick="go(true,true);" id="convertButton">
 </form>
 
-<br>
 
-<div id="ResultsDiv"></div>
 
+<div id="ResultsContainer">
+<p style="text-align:center" id="helpBox"><strong>Type text into the box above</strong> to generate 𝒇𝒂𝒏𝒄𝒚 ᴛᴇxᴛ!</p>
+<div id="ResultsDiv" style="display:none">
+</div>
+</div>
+
+</div>
 <br><br>
 
 <h3>What is this?</h3>
 <p>This is a fancy font generator that uses Unicode text symbols to make cool-looking letters, like bold, italic, underlined, and superscript. They can be used anywhere that allows text input, like Twitter, Facebook, Instagram, Snapchat, TikTok, YouTube comments, Discord, and more!</p>
 
+<p>Some devices may not display every font correctly! Since they use special characters, it depends on the device or font maker to support the symbols.</p>
+
+<p><!--<strong>Check out the other <a href="../converter">Text Converters</a> we have!</strong>--> We also have a list of <a href="../fancy">Fancy Characters</a> and <a href="../combining">Combining Characters</a>.</p>
+
 <h3>How to use this generator?</h3>
-<p>To use this generator tool, simply type or paste text into the box above. After you do that, press enter and a large variety of fonts to choose from will appear. <a href="#HowToCopy" title="How to copy and paste text?">Copy and paste</a> the desired text into any text box around the web. It will work on <a href="https://c.r74n.com/facebook/">Facebook</a>, <a href="https://c.r74n.com/tiktok/">TikTok</a>, <a href="https://c.r74n.com/twitter/">Twitter</a>, <a href="https://c.r74n.com/discord/formatting">Discord</a>, <a href="https://c.r74n.com/instagram/">Instagram</a>, <a href="https://c.r74n.com/youtube/">YouTube</a>, <a href="https://c.r74n.com/zoom/">Zoom</a>, Steam, Tumblr, .io games like Agar.io and Wings.io, and pretty much any social media website that lets you type!</p>
+<p>To use this generator tool, simply type or paste text into the box above. After you do that, a large variety of fonts to choose from will appear. <a href="#HowToCopy" title="How to copy and paste text?">Copy and paste</a> the desired text into any text box around the web.</p>
+<p>They will work on <a href="https://c.r74n.com/facebook/">Facebook</a>, <a href="https://c.r74n.com/tiktok/">TikTok</a>, <a href="https://c.r74n.com/twitter/">Twitter</a>, <a href="https://c.r74n.com/discord/formatting">Discord</a>, <a href="https://c.r74n.com/instagram/">Instagram</a>, <a href="https://c.r74n.com/youtube/">YouTube</a>, <a href="https://c.r74n.com/zoom/">Zoom</a>, Steam, Tumblr, .io games like Agar.io and Wings.io, and pretty much any social media website that lets you type!</p>
+
+<h3>What are fancy text fonts really?</h3>
+<p>You may think you are copying and pasting real fonts, but these <dfn>fancy fonts</dfn> are not real fonts. They are actually <a href="https://en.wikipedia.org/wiki/Unicode" target="_blank">Unicode</a> letters, numbers, and symbols from various languages around the world. This is why on some old devices, they will appear as boxes or question marks. More about Unicode is below!</p>
+<p>Many fancy text styles such as <strong>bold</strong>, <em>italic</em>, and 𝒸𝓊𝓇𝓈𝒾𝓋𝑒 use characters made for mathematical variables and constants.</p>
+<p>Most websites do not let you add custom fonts to your messages & posts, so using <a href="../unicode">text symbols</a> is a good workaround.</p>
+
+<h3>What is Unicode?</h3>
+<p>Unicode is the standard for text encoding that every modern device uses. It was created by the Unicode Consortium, who included practically any language you could think of. It also includes <a href="../emoji">emojis</a> and most text characters you will see on the Internet. There are hundreds of thousands of Unicode characters!</p>
+<p>With the massive amount of characters, almost any <a href="../shapes">shape</a> can be made in some way! Fancy fonts make use of this, and disguise themselves as <a href="../fancy">letters</a>.</p>
+
 
 <h3 id="HowToCopy">How to copy and paste text?</h3>
-<p>Windows / PC: To copy, select text and press <strong>Ctrl and C</strong> at the same time. To paste, press <strong>Ctrl and V</strong> at the same time.</p>
-<p>Mac / macOS: To copy, select text and press <strong>Command and C</strong> at the same time. To paste, press <strong>Command and V</strong> at the same time.</p>
-<p>iOS / iPhone & Android: To copy, <strong>tap and hold</strong> on text, then tap Copy. To paste, go inside a text field and click once, then tap Paste.</p>
+<p><strong>Windows / PC</strong>: To copy, select text and press <strong>Ctrl and C</strong> at the same time. To paste, press <strong>Ctrl and V</strong> at the same time.</p>
+<p><strong>Mac / macOS</strong>: To copy, select text and press <strong>Command and C</strong> at the same time. To paste, press <strong>Command and V</strong> at the same time.</p>
+<p><strong>iOS / iPhone & Android</strong>: To copy, <strong>tap and hold</strong> on text, then tap Copy. To paste, go inside a text field and click once, then tap Paste.</p>
 
 
 
@@ -217,7 +294,7 @@ Support may vary across devices.<br><br>
     }
     if (text==undefined) {text = "Enter Some Text!"}
     document.getElementById("TextBox").value = text;
-    go();
+    go(true);
   
   }
   var examples = [];
@@ -227,7 +304,7 @@ Support may vary across devices.<br><br>
     //console.log(example)
     if (!(chosen.includes(example))) {
       chosen.push(example);
-      examples.push("<span class='fontsep'><a href='?text="+example.replace("'","%27")+"'>"+example+"</a></span>")
+      examples.push("<span class='examplesep'>“<a href='?text="+example.replace("'","%27")+"'>"+example+"</a>„</span>")
     }
   }
   document.getElementById("ExamplesDiv").innerHTML = examples.join("");
@@ -235,7 +312,7 @@ Support may vary across devices.<br><br>
 
 <br><br>
 
-</div>
+
 </div>
 
 

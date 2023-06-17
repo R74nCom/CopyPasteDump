@@ -7,7 +7,7 @@ defaultExamples = {
     countries: ["Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina","Armenia","Australia","Austria","Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan","Bolivia","Bosnia Herzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Central African Republic","Chad","Chile","China","Colombia","Comoros","Congo","Costa Rica","Croatia","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","East Timor","Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Ethiopia","Fiji","Finland","France","Gabon","Gambia","Georgia","Germany","Ghana","Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana","Haiti","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel","Italy","Ivory Coast","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kiribati","North Korea","South Korea","Kosovo","Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Burma","Namibia","Nauru","Nepal","Netherlands","New Zealand","Nicaragua","Nigeria","Norway","Oman","Pakistan","Palau","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania","Russia","Rwanda","St Kitts & Nevis","St Lucia","Saint Vincent & the Grenadines","Samoa","San Marino","Sao Tome & Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Sudan","Spain","Sri Lanka","Sudan","Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Togo","Tonga","Trinidad & Tobago","Tunisia","Turkey","Turkmenistan","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","Great Britain","England","Scotland","Wales","United States","USA","America","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela","Vietnam","Yemen","Zambia","Zimbabwe"],
     greetings: ["Merry Christmas!","Happy Halloween!","Happy Easter!","Hello!","Good morning!","Have a nice day!","Goodnight, sleep tight!","Happy New Year!","Merry Christmas Eve!","Happy Valentine's Day!","Good afternoon!","Happy Independence Day!","Happy St. Patrick's Day!","Happy Hanukkah!","Happy Kwanzaa!","Happy Pride Month!","Happy Father's Day!","Happy Flag Day!","Happy Juneteenth!","Happy 4th of July!","As-salaam Alaykum","Shana Tova!","Happy Labor Day!","Happy Thanksgiving!","Happy Valentine's Day!","Season's Greetings","Happy Birthday","Ramadan Mubarak","Eid Mubarak!","Welcome!","Happy Tax Day?","Happy April Fools' Day!","¡Feliz Cinco de Mayo!","¡Feliz Navidad!"],
     general: ["Black Lives Matter","Thanks for everything","I'm sorry...","c.R74n.com","ABCDEFGHIJKLMNOPQRSTUVWXYZ","1234567890","The quick brown fox jumps over the lazy dog.","I love you!","Aesthetic","Be yourself","Keep calm","ATTENTION","WARNING","Announcement","he/him","he/they","she/her","she/they","they/them","Rules","Roles","Hello, world!","Any Pronouns","Pronouns","Server Rules","Tutorial","IMPORTANT","Cool","Awesome","Fancy","Help","Trigger Warning","Content Warning","Pride"],
-    platforms: ["Instagram","Twitter","TikTok","YouTube","Twitch","Discord","Minecraft","Reddit","Among Us","WhatsApp","Apple","Windows","Zoom","Slack","GitHub","Snapchat","Facebook","Pinterest","iOS","Android","Google","Clubhouse","House Party"],
+    platforms: ["Instagram","Twitter","TikTok","YouTube","Twitch","Discord","Minecraft","Reddit","Among Us","WhatsApp","Apple","Windows","Zoom","Slack","GitHub","Snapchat","Facebook","Pinterest","iOS","Android","Google","Clubhouse","House Party","Fortnite","Roblox","PUBG"],
 }
 
 // old browser support
@@ -40,6 +40,7 @@ function toBase(text, inputBase, outputBase, sep, zeros) {
     }
     else { text = text.split(sep); }
     for (var i = 0; i < text.length; i++) {
+        if (!text[i]) { continue; }
         text[i] = parseInt(text[i], inputBase);
         if (outputBase == null) { text[i] = String.fromCharCode(text[i]); }
         else { text[i] = text[i].toString(outputBase); }
@@ -214,6 +215,7 @@ function langSelectChange(select) {
         updateBackward(undefined,true);
         return;
     }
+    if (!document.getElementById("inputArea").value) { return;}
     updateForward(undefined,true);
 }
 
@@ -266,10 +268,14 @@ function updateBackward(newinput,force) {
 function updateURL(reverse) {
     var params = "";
     if (!reverse) {
-        params += "?text="+encodeURIComponent(document.getElementById("inputArea").value);
+        if (document.getElementById("inputArea").value) {
+            params += "text="+encodeURIComponent(document.getElementById("inputArea").value);
+        }
     }
     else {
-        params += "?output="+encodeURIComponent(document.getElementById("outputArea").value);
+        if (document.getElementById("outputArea").value) {
+            params += "output="+encodeURIComponent(document.getElementById("outputArea").value);
+        }
     }
     var inputs = document.querySelectorAll("input");
     // loop through inputs and selects
@@ -284,11 +290,12 @@ function updateURL(reverse) {
             continue;
         }
         if (element.type === "checkbox") {
-            if (settings[element.id] !== undefined && element.checked === defaultSettings[element.id]) {
+            if (settings[element.id] !== undefined) {
                 // skip if defaultSettings value is the same
                 if (settings[element.id] === defaultSettings[element.id]) { continue; }
                 params += "&"+element.id+"="+element.checked;
             }
+            continue;
         }
         if (settings[element.id] === undefined || element.value === defaultSettings[element.id]) { continue; }
         params += "&"+element.id+"="+element.value;
@@ -299,6 +306,9 @@ function updateURL(reverse) {
         if (settings[element.id] === undefined || element.value === defaultSettings[element.id]) { continue; }
         params += "&"+element.id+"="+element.value;
     }
+    // remove leading &
+    if (params[0] === "&") { params = params.substring(1); }
+    params = "?"+params;
     window.history.replaceState({}, "", params);
 }
 
@@ -421,6 +431,10 @@ function initConverter() {
             }
             exampleList.insertAdjacentHTML("beforeend", "<li>“<a href='?text="+encodeURIComponent(example).replaceAll("'","%27")+"'>"+example+"</a>„</li>\n");
         }
+        if (typeof currentEvent === "string") {
+            // add currentEvent to start of exampleList
+            exampleList.insertAdjacentHTML("afterbegin", "<li>“<a href='?text="+encodeURIComponent(currentEvent).replaceAll("'","%27")+"'>"+currentEvent+"</a>„</li>\n");
+        }
     }
 
     console.log("Loaded converter script");
@@ -434,9 +448,15 @@ function initConverter() {
         var urlParams = new URLSearchParams(window.location.search);
         if (urlParams.has("text")) {
             updateForward(urlParams.get("text"));
+            var titleTag = document.querySelector("title");
+            // make the first letter uppercase
+            titleTag.innerHTML = urlParams.get("text")[0].toUpperCase() + urlParams.get("text").substring(1) + " " + titleTag.innerHTML;
         }
-        if (urlParams.has("output")) {
+        else if (urlParams.has("output")) {
             updateBackward(urlParams.get("output"));
+            var titleTag = document.querySelector("title");
+            // make the first letter uppercase
+            titleTag.innerHTML = urlParams.get("output")[0].toUpperCase() + urlParams.get("output").substring(1) + " " + titleTag.innerHTML;
         }
         // loop through urlParams
         var keys = urlParams.keys();

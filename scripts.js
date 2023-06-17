@@ -110,6 +110,7 @@ window.addEventListener('load', function() {
       
 });
 
+currentEvent = null;
 document.addEventListener("DOMContentLoaded", function(){
   var USA = ["blue","blue","white","red","white","red"];
   var specialEvents = {
@@ -171,6 +172,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 eventGradient = "linear-gradient(135deg, "+eventGradient.join(",")+")";
             }
             console.log(eventTitle);
+            currentEvent = eventTitle;
             // add to navbar after logo
             document.querySelector('.navhome').insertAdjacentHTML('afterend', '<a href="'+eventURL+'" class="navspecial" style="background:'+eventGradient+'">'+eventTitle+'</a>');
             break;
