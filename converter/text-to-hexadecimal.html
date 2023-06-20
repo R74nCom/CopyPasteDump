@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+        <meta name="description" content="Text tool to convert text, like English, to hexadecimal code online.">
+        <meta property="og:description" content="Text tool to convert text, like English, to hexadecimal code online.">
+    <meta name="keywords" content="copy, copy and paste, emoticons, emojis, unicode, symbols, text, encoder, translator, generator">
+    <meta name="author" content="R74n">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Copy Paste Dump">
+    <meta name="twitter:image" content="https://c.r74n.com/favicon_square.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title id="titleTag">Text to Hexadecimal Converter - Copy Paste Dump</title>
+        <meta property="og:title" content="Text to Hexadecimal Converter - Copy Paste Dump">
+    <link rel="stylesheet" type="text/css" href="../stylesheet.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://c.r74n.com/icons/apple-touch-icon.png?v=lkvKdlj5Pj">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://c.r74n.com/icons/favicon-32x32.png?v=lkvKdlj5Pj">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://c.r74n.com/icons/favicon-16x16.png?v=lkvKdlj5Pj">
+    <link rel="manifest" href="https://c.r74n.com/icons/site.webmanifest?v=lkvKdlj5Pj">
+    <link rel="mask-icon" href="https://c.r74n.com/icons/safari-pinned-tab.svg?v=lkvKdlj5Pj" color="#00cdca">
+    <link rel="shortcut icon" href="https://c.r74n.com/icons/favicon.ico?v=lkvKdlj5Pj">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-config" content="https://c.r74n.com/icons/browserconfig.xml?v=lkvKdlj5Pj">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="content-language" content="en">
+    <script src="../scripts.js"></script>
+
+    <script src="converter-script.js"></script>
+    <link rel="stylesheet" type="text/css" href="converter-styles.css">
+    <script>
+
+// CONVERTER SETTINGS
+function forward(text) {
+    text = toBase(text,null,16,settings.sep)
+    if (settings.caps) {
+        text = text.toUpperCase();
+    }
+    return text;
+}
+function backward(text) {
+    text = toBase(text,16,null,settings.sep)
+    return text;
+}
+
+    </script>
+    <style>
+    /* CONVERTER STYLING */
+    /*
+        #inputArea {  }
+        #outputArea {  }
+    */
+    </style>
+    
+</head>
+
+<body>
+
+<nav><div class="navdiv" id="navdiv">
+<a class="skip" href="#content">Skip to content</a><a class="cpdtitle" href="https://c.R74n.com"><h1>Copy Paste Dump</h1></a><ul>
+<!--&A--><a href="https://c.r74n.com" class="navhome"><img src="https://c.r74n.com/favicon_smaller_old.png" alt="Logo" title="Home"></a><!--&B--><a href="/unicode">Symbols</a><!--&C--><a href="/emoji">Emojis</a><!--&D--><a href="/faces">Faces</a><!--&E--><a href="/fonts">Font Generator</a><!--&F--><a href="/converter/">Converters</a><!--&G--><a href="/shapes">Shapes</a><!--&H--><a href="/pages" class="navimp">All Pages</a><!--&I--><a href="/search" class="navimp" title="Search" aria-label="Search" id="navsearch">&nbsp;</a>
+<!--&J--></ul></div></nav>
+
+<div class="content" id="content">
+<h2 class="pagetitle">Text to Hexadecimal Converter</h2>
+
+<a href=".">⬅︎ More Converters</a><br><br>
+<noscript><p>This converter requires JavaScript, which you seem to have disabled. It will not work unless you enable JavaScript.</p></noscript>
+
+<div id="converterDiv">
+
+<div id="converterLeft">
+    <textarea id="inputArea" placeholder="Text goes here..." autofocus></textarea>
+</div>
+<div id="arrow">⇄</div>
+<div id="converterRight">
+    <textarea id="outputArea" placeholder="And Hexadecimal appears here..."></textarea>
+</div>
+<div id="converterBottom">
+    <div class="optionGroup">
+        <input type="checkbox" id="caps" checked><label for="caps">Capitalize</label>
+    </div>
+    <div class="optionGroup">
+        <label for="sep">Separator: </label><input type="text" id="sep" value=" " placeholder="Text...">
+    </div>
+</div>
+
+</div>
+
+<h3>How It Works</h3>
+<p>Use this text tool to quickly convert plain text to hexadecimal. Simply type or paste any text into the first box, and hexadecimal will appear in the second box for you to copy.</p>
+<p>Any character will work in this tool, so every language is supported, not only English!</p>
+<p>Hexadecimal works by representing numbers using 16 digits, instead of the 10 we're used to. It uses the digits 0 1 2 3 4 5 6 7 8 9 A B C D E F.</p>
+<p>Hexadecimal only represents numbers, so to make it into readable text, we convert each character to their decimal value in <a href="../ascii">ASCII</a>. For example, the capital letter K is converted to 114 in decimal, then converted to 4B in hexadecimal.</p>
+<p>Also check out our <a href="text-to-binary">Text to Binary Converter</a>.</p>
+
+<h3>More Converters Like This</h3>
+<ul id="seeMoreList">
+    <!--Optional-->
+</ul>
+
+<h3>Try Some Examples</h3>
+<ul id="exampleList">
+    <!--Automatic-->
+</ul>
+
+<h3>Any issues? <a href="https://forms.gle/Puo615Gev1binwei9" target="_blank">Send us feedback</a>!</h3>
+
+
+
+
+</div>
+
+
+
+<script src="../loadbuttons.js"></script>
+
+<div style="width:100%;height:100px;margin:auto;">
+<script data-ad-client="ca-pub-8485284630785740" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<div class="adbox">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8485284630785740"
+       data-ad-slot="5555682735"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+<div class="adbox">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8485284630785740"
+       data-ad-slot="5555682735"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93720349-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-93720349-8');
+</script>
+
+
+<div class="footerdiv">
+<div id="footershare">Share to: <em>Loading...</em></div>
+<div class="footersect"><ul>
+<li><strong>Symbols</strong></li>
+<li><a href="/unicode">Text Symbols</a></li>
+<li><a href="/emoji">Emoji</a></li>
+<li><a href="/faces">Emoticon Faces</a></li>
+<li><a href="/shapes">Shapes</a></li>
+<li><a href="/arrows">Arrows</a></li>
+<li><a href="/combining">Combining</a></li>
+<li><a href="/invisible">Invisible</a></li>
+<li><a href="/longest">Longest</a></li>
+<li><a href="/emoji-art">Emoji Art</a></li>
+<li><a href="/zwj">ZWJ Sequences</a></li>
+<li><a href="/flags">Flag Emojis</a></li>
+</ul></div>
+<div class="footersect"><ul>
+<li><strong>Tools & Tables</strong></li>
+<li><a href="/fonts">Font Generator</a></li>
+<li><a href="/ascii">ASCII</a></li>
+<li><a href="/html-entities">HTML Entities</a></li>
+<li><a href="/windows/alt-codes">Alt Codes</a></li>
+<li><a href="/braille">Braille</a></li>
+<li><a href="/builder">Emoji Builder</a></li>
+<li><a href="/modifier">Text Modifier</a></li>
+<li><a href="/sorter">List Sorter</a></li>
+<li><a href="https://r74n.com/unisearch" target="_blank">UniSearch</a></li>
+<li><a href="https://r74n.com/moji" target="_blank">R74moji</a></li>
+</ul></div>
+<div class="footersect"><ul>
+<li><strong>Platforms</strong></li>
+<li><a href="/instagram/">Instagram</a></li>
+<li><a href="/twitter/">Twitter</a></li>
+<li><a href="/tiktok/">TikTok</a></li>
+<li><a href="/youtube/">YouTube</a></li>
+<li><a href="/twitch/">Twitch</a></li>
+<li><a href="/discord/">Discord</a></li>
+<li><a href="/apple/">Apple</a></li>
+<li><a href="/windows/">Windows</a></li>
+<li><a href="/reddit/">Reddit</a></li>
+<li><a href="/whatsapp/">WhatsApp</a></li>
+</ul></div>
+<div class="footersect"><ul>
+<li><strong>Copy Paste Dump</strong></li>
+<li><a href="/pages">All Pages</a></li>
+<li><a href="/pages#events">Holidays & Events</a></li>
+<li><a href="https://forms.gle/Puo615Gev1binwei9" target="_blank">Submission Form</a></li>
+<li><a href="https://r74n.com" target="_blank">R74n</a></li>
+<li><a href="https://sandboxels.r74n.com" target="_blank">Sandboxels</a></li>
+<li>&nbsp;</li>
+<li><a href="https://link.r74n.com/discord" target="_blank">Join the Discord</a></li>
+<li><a href="https://tiktok.com/@r74n.com" target="_blank">R74n TikTok</a></li>
+<li><a href="https://www.reddit.com/r/copypastedump/" target="_blank">Subreddit</a></li>
+<li><a href="https://twitter.com/CopyPasteDump" target="_blank">Emoji Artist Twitter</a></li>
+<li><a href="https://tiktok.com/@emoji__artist" target="_blank">Emoji Artist TikTok</a></li>
+</ul></div>
+<div class="footerbottom"><a href="https://R74n.com/" target="_parent"><img src="https://R74n.com/icons/favicon.svg" title="R74n.com" alt="R74n Logo"></a>&nbsp; © Copyright <a href="https://en.wikipedia.org/wiki/2023" target="_blank">2023</a> <a href="https://R74n.com/" target="_parent" class="R74nCR">R74n</a>.</div>
+</div>
+
+</body>
+</html>

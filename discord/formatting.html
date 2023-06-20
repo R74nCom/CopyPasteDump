@@ -35,7 +35,7 @@
 
 <nav><div class="navdiv" id="navdiv">
 <a class="skip" href="#content">Skip to content</a><a class="cpdtitle" href="https://c.R74n.com"><h1>Copy Paste Dump</h1></a><ul>
-<!--&A--><a href="https://c.r74n.com" class="navhome"><img src="https://c.r74n.com/favicon_smaller_old.png" alt="Logo" title="Home"></a><!--&B--><a href="/unicode">Text Symbols</a><!--&C--><a href="/emoji">Emojis</a><!--&D--><a href="/faces">Text Faces</a><!--&E--><a href="/fonts">Font Generator</a><!--&F--><!--&G--><a href="/shapes">Shapes</a><!--&H--><a href="/pages" class="navimp">All Pages</a><!--&I--><a href="/search" class="navimp" title="Search" aria-label="Search" id="navsearch">&nbsp;</a>
+<!--&A--><a href="https://c.r74n.com" class="navhome"><img src="https://c.r74n.com/favicon_smaller_old.png" alt="Logo" title="Home"></a><!--&B--><a href="/unicode">Symbols</a><!--&C--><a href="/emoji">Emojis</a><!--&D--><a href="/faces">Faces</a><!--&E--><a href="/fonts">Font Generator</a><!--&F--><a href="/converter/">Converters</a><!--&G--><a href="/shapes">Shapes</a><!--&H--><a href="/pages" class="navimp">All Pages</a><!--&I--><a href="/search" class="navimp" title="Search" aria-label="Search" id="navsearch">&nbsp;</a>
 <!--&J--></ul></div></nav>
 
 <div class="content" id="content">
@@ -151,6 +151,8 @@ Spoilers can be typed by surrounding text in 2 vertical bars on both sides (|| |
     <td><img src="images/spoiler_space.png" alt="A single black vertical line"></td>
   </tr>
 </table>
+<br>
+You can put a spoiler around every single letter to be annoying with our <a href="../converter/discord-spoilers">Discord Spoiler Generator</a>.
 
 <br><br><a class="bkmk" href="#Code" id="Code" title="Code Block Discord Formatting"><h3>Code Blocks</h3></a>
 <em>How to type code blocks on Discord</em><br><br>
@@ -405,6 +407,37 @@ You can specify any exact time (to the second) from &lt;t:-8640000000000:R&gt; t
   <tr>
     <td>&lt;t:123456789:T&gt;</td>
     <td>Hours:Minutes:Seconds</td>
+  </tr>
+</table>
+<br>Each format also has a different invalid format message, usually with NaN and undefined.
+<table>
+  <tr>
+    <td>&lt;t:99999999999999999:d&gt;</td>
+    <td>NaN/NaN/NaN</td>
+  </tr>
+  <tr>
+    <td>&lt;t:99999999999999999:f&gt;</td>
+    <td>undefined NaN, NaN NaN:NaN PM</td>
+  </tr>
+  <tr>
+    <td>&lt;t:99999999999999999:t&gt;</td>
+    <td>NaN:NaN PM</td>
+  </tr>
+  <tr>
+    <td>&lt;t:99999999999999999:D&gt;</td>
+    <td>undefined NaN, NaN</td>
+  </tr>
+  <tr>
+    <td>&lt;t:99999999999999999:F&gt;</td>
+    <td>undefined, undefined NaN, NaN NaN:NaN PM</td>
+  </tr>
+  <tr>
+    <td>&lt;t:99999999999999999:R&gt;</td>
+    <td>Invalid date</td>
+  </tr>
+  <tr>
+    <td>&lt;t:99999999999999999:T&gt;</td>
+    <td>NaN:NaN:NaN PM</td>
   </tr>
 </table>
 <br><a href="timestamps">Discord Timestamp Generator</a>

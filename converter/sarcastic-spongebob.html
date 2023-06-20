@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-        <meta name="description" content="Text tool to convert LANG1 to LANG2 online.">
-        <meta property="og:description" content="Text tool to convert LANG1 to LANG2 online.">
+        <meta name="description" content="Tool to convert text into the mocking SpongeBob alternating case meme.">
+        <meta property="og:description" content="Tool to convert text into the mocking SpongeBob alternating case meme.">
     <meta name="keywords" content="copy, copy and paste, emoticons, emojis, unicode, symbols, text, encoder, translator, generator">
     <meta name="author" content="R74n">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Copy Paste Dump">
     <meta name="twitter:image" content="https://c.r74n.com/favicon_square.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>LANG1 to LANG2 Converter - Copy Paste Dump</title>
-        <meta property="og:title" content="LANG1 to LANG2 Converter - Copy Paste Dump">
+        <title id="titleTag">saRcASTic sPOnGeBOB Text Converter - Copy Paste Dump</title>
+        <meta property="og:title" content="saRcASTic sPOnGeBOB Text Converter - Copy Paste Dump">
     <link rel="stylesheet" type="text/css" href="../stylesheet.css">
     <link rel="apple-touch-icon" sizes="180x180" href="https://c.r74n.com/icons/apple-touch-icon.png?v=lkvKdlj5Pj">
     <link rel="icon" type="image/png" sizes="32x32" href="https://c.r74n.com/icons/favicon-32x32.png?v=lkvKdlj5Pj">
@@ -31,10 +31,20 @@
 
 // CONVERTER SETTINGS
 function forward(text) {
+    if (settings.random) {
+        return text.replace(/\s+/g, ' ').replace(/([a-z])/gi, function(match, p1, offset) {
+            return Math.random() > 0.5 ? match.toLowerCase() : match.toUpperCase();
+        });
+    }
+    else {
+        return text.replace(/\s+/g, ' ').replace(/([a-z])/gi, function(match, p1, offset) {
+            return offset % 2 === 0 ? match.toLowerCase() : match.toUpperCase();
+        });
+    }
     return text;
 }
 function backward(text) {
-    return text;
+    return text.toLowerCase();
 }
 
     </script>
@@ -52,11 +62,11 @@ function backward(text) {
 
 <nav><div class="navdiv" id="navdiv">
 <a class="skip" href="#content">Skip to content</a><a class="cpdtitle" href="https://c.R74n.com"><h1>Copy Paste Dump</h1></a><ul>
-<!--&A--><a href="https://c.r74n.com" class="navhome"><img src="https://c.r74n.com/favicon_smaller_old.png" alt="Logo" title="Home"></a><!--&B--><a href="/unicode">Text Symbols</a><!--&C--><a href="/emoji">Emojis</a><!--&D--><a href="/faces">Text Faces</a><!--&E--><a href="/fonts">Font Generator</a><!--&F--><!--&G--><a href="/shapes">Shapes</a><!--&H--><a href="/pages" class="navimp">All Pages</a><!--&I--><a href="/search" class="navimp" title="Search" aria-label="Search" id="navsearch">&nbsp;</a>
+<!--&A--><a href="https://c.r74n.com" class="navhome"><img src="https://c.r74n.com/favicon_smaller_old.png" alt="Logo" title="Home"></a><!--&B--><a href="/unicode">Symbols</a><!--&C--><a href="/emoji">Emojis</a><!--&D--><a href="/faces">Faces</a><!--&E--><a href="/fonts">Font Generator</a><!--&F--><a href="/converter/">Converters</a><!--&G--><a href="/shapes">Shapes</a><!--&H--><a href="/pages" class="navimp">All Pages</a><!--&I--><a href="/search" class="navimp" title="Search" aria-label="Search" id="navsearch">&nbsp;</a>
 <!--&J--></ul></div></nav>
 
 <div class="content" id="content">
-<h2 class="pagetitle">LANG2 Converter</h2>
+<h2 class="pagetitle">saRcASTic sPOnGeBOB Converter</h2>
 
 <a href=".">⬅︎ More Converters</a><br><br>
 <noscript><p>This converter requires JavaScript, which you seem to have disabled. It will not work unless you enable JavaScript.</p></noscript>
@@ -64,40 +74,25 @@ function backward(text) {
 <div id="converterDiv">
 
 <div id="converterLeft">
-     <textarea id="inputArea" placeholder="LANG1 goes here..." autofocus></textarea>
-     <select id="lang1">
-        <option value="langoption1">LANGSELECT</option>
-     </select>
+    <textarea id="inputArea" placeholder="Text goes here..." autofocus></textarea>
 </div>
 <div id="arrow">⇄</div>
 <div id="converterRight">
-    <textarea id="outputArea" placeholder="And LANG2 appears here..."></textarea>
-    <select id="lang2">
-        <option value="langoption1">LANGSELECT</option>
-    </select>
+    <textarea id="outputArea" placeholder="And Sarcastic SpongeBob appears here..."></textarea>
 </div>
 <div id="converterBottom">
-    <div class="optionGroup" id="mode">
-        <input type="button" value="MODE1" id="mode1" selected="true">
-        <input type="button" value="MODE2" id="mode2">
-        <input type="button" value="MODE3" id="mode3">
-        <input type="button" value="MODE4" id="mode4">
-    </div>
     <div class="optionGroup">
-        <input type="checkbox" id="option1"><label for="option1">OPTION1</label>
-        <input type="checkbox" id="option2" checked><label for="option2">OPTION2</label>
-        <input type="checkbox" id="option3"><label for="option3">OPTION3</label>
-        <input type="range" id="amount1" max="100" min="0" step="5" value="25"><label for="amount1">AMOUNT1</label>
-    </div>
-    <div class="optionGroup">
-        <label for="textoption1">TEXTOPTION1: </label><input type="text" id="textoption1" value="" placeholder="Text...">
+        <input type="checkbox" id="random" checked><label for="random">Random Case</label>
     </div>
 </div>
 
 </div>
 
 <h3>How It Works</h3>
-<p>Use this text tool to quickly convert LANG1 to LANG2. Simply type or paste LANG1 into the first box, and LANG2 will appear in the second box for you to copy.</p>
+<p>Use this text tool to quickly convert text into RAnDoM cAPiTALIzAtiON like in the mocking SpongeBob meme. Simply type or paste text into the first box, and tExT LIKe thIS will appear in the second box for you to copy.</p>
+<p>You have the option to use completely random case, LiKe thiS, or a simple alternating case, LiKe tHiS.</p>
+<p>This text is used to repeat what somebody else says, but with a mocking tone. Use it to instantly win an argument.</p>
+<img src="https://i.imgur.com/4aIggwt.jpeg" alt="Mocking SpongeBob Meme">
 
 <h3>More Converters Like This</h3>
 <ul id="seeMoreList">

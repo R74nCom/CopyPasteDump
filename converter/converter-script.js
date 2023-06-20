@@ -41,10 +41,15 @@ function toBase(text, inputBase, outputBase, sep, zeros) {
     else { text = text.split(sep); }
     for (var i = 0; i < text.length; i++) {
         if (!text[i]) { continue; }
-        text[i] = parseInt(text[i], inputBase);
+        if (inputBase === 1) { text[i] = text[i].length;}
+        else { text[i] = parseInt(text[i], inputBase); }
         if (outputBase == null) { text[i] = String.fromCharCode(text[i]); }
+        else if (outputBase === 1) {
+            try { text[i] = "1".repeat(text[i]); }
+            catch { text[i] = Infinity; }
+        }
         else { text[i] = text[i].toString(outputBase); }
-        // if base is 2, add leading zeros
+        // add leading zeros
         if (zeros) { text[i] = text[i].padStart(8, "0"); }
     }
     if (outputBase == null) { text = text.join(""); }
@@ -52,6 +57,19 @@ function toBase(text, inputBase, outputBase, sep, zeros) {
     return text;
 }
 function mapCharacters(text, map, sep) {
+    var sortedLarge = [];
+    for (var char in map) {
+        if (char.length > 1) {
+            sortedLarge.push(char);
+        }
+    }
+    // sort by length
+    sortedLarge.sort(function(a,b){return b.length - a.length;});
+    // loop through sortedLarge, replace with value
+    for (var i = 0; i < sortedLarge.length; i++) {
+        var char = sortedLarge[i];
+        text = text.replaceAll(char, map[char]);
+    }
     var newtext = "";
     text = [...text];
     for (var i = 0; i < text.length; i++) {
@@ -255,7 +273,7 @@ function updateBackward(newinput,force) {
         var newInput = "";
         if (typeof backward === "undefined") { newInput = outputArea.value; }
         else { newInput = backward(outputArea.value); }
-        inputArea.value = newInput;
+        if (newInput !== false) {inputArea.value = newInput;}
         // remove converterLoading class from converter sides
         document.getElementById("converterLeft").classList.remove("converterLoading");
         document.getElementById("converterRight").classList.remove("converterLoading");
@@ -349,7 +367,7 @@ function initConverter() {
         for (var j = 0; j < textInputs.length; j++) {
             var textInput = textInputs[j];
             if (textInput.id) {
-                settings[textInput.id] = textInput.value;
+                settings[textInput.id] = textInput.value.replaceAll("\\n","\n").replaceAll("\\t","\t");
                 defaultSettings[textInput.id] = textInput.value;
             }
             textInput.addEventListener("input", function(){ textInputChange(this); });

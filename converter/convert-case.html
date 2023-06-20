@@ -59,6 +59,8 @@ function convertCase(text,type) {
             }).replace(/\s+/g, '');
         case "snake":
             return text.replace(/\s+/g, '_').toLowerCase();
+        case "screamingsnake":
+            return text.replace(/\s+/g, '_').toUpperCase();
         case "kebab":
             return text.replace(/\s+/g, '-').toLowerCase();
         case "alternating":
@@ -99,7 +101,7 @@ function backward(text) {
 
 <nav><div class="navdiv" id="navdiv">
 <a class="skip" href="#content">Skip to content</a><a class="cpdtitle" href="https://c.R74n.com"><h1>Copy Paste Dump</h1></a><ul>
-<!--&A--><a href="https://c.r74n.com" class="navhome"><img src="https://c.r74n.com/favicon_smaller_old.png" alt="Logo" title="Home"></a><!--&B--><a href="/unicode">Text Symbols</a><!--&C--><a href="/emoji">Emojis</a><!--&D--><a href="/faces">Text Faces</a><!--&E--><a href="/fonts">Font Generator</a><!--&F--><!--&G--><a href="/shapes">Shapes</a><!--&H--><a href="/pages" class="navimp">All Pages</a><!--&I--><a href="/search" class="navimp" title="Search" aria-label="Search" id="navsearch">&nbsp;</a>
+<!--&A--><a href="https://c.r74n.com" class="navhome"><img src="https://c.r74n.com/favicon_smaller_old.png" alt="Logo" title="Home"></a><!--&B--><a href="/unicode">Symbols</a><!--&C--><a href="/emoji">Emojis</a><!--&D--><a href="/faces">Faces</a><!--&E--><a href="/fonts">Font Generator</a><!--&F--><a href="/converter/">Converters</a><!--&G--><a href="/shapes">Shapes</a><!--&H--><a href="/pages" class="navimp">All Pages</a><!--&I--><a href="/search" class="navimp" title="Search" aria-label="Search" id="navsearch">&nbsp;</a>
 <!--&J--></ul></div></nav>
 
 <div class="content" id="content">
@@ -111,8 +113,8 @@ function backward(text) {
 <div id="converterDiv">
 
 <div id="converterLeft">
-     <textarea id="inputArea" placeholder="Text goes here..." autofocus></textarea>
-     <select id="lang1">
+    <textarea id="inputArea" placeholder="Text goes here..." autofocus></textarea>
+    <select id="lang1">
         <option value="lower" selected>lowercase</option>
         <option value="upper">UPPERCASE</option>
         <option value="title">Title Case</option>
@@ -123,7 +125,7 @@ function backward(text) {
         <option value="alternating">aLtErNaTiNg cAsE</option>
         <option value="random">rANdOm cASe</option>
         <option value="opposite">oPPOSITE cASE</option>
-     </select>
+    </select>
 </div>
 <div id="arrow">⇄</div>
 <div id="converterRight">
@@ -135,6 +137,7 @@ function backward(text) {
         <option value="sentence">Sentence case</option>
         <option value="camel">camelCase</option>
         <option value="snake">snake_case</option>
+        <option value="screamingsnake">SCREAMING_SNAKE_CASE</option>
         <option value="kebab">kebab-case</option>
         <option value="alternating">aLtErNaTiNg cAsE</option>
         <option value="random">rANdOm cASe</option>

@@ -10,6 +10,10 @@ Background (Light) - #F5FFFA
 #F5FFFA
 */
 
+html {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 body {
     background-color:#F5FFFA;
     font-family: Arial;

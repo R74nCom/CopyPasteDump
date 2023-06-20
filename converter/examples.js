@@ -34,13 +34,18 @@ function forward(text) {
 
 function backward(text) {
     // reverse order of operations
+    // reverseMap will flip keys with values; specify name for performance
     text = toBase(text,2,null);
-    text = mapSuffixes(text, reverseMap(suffixMap));
-    text = mapPrefixes(text, reverseMap(prefixMap));
-    text = mapCharacters(text, reverseMap(charMap));
-    text = mapWords(text, reverseMap(wordMap));
-    text = mapPhrases(text, reverseMap(phraseMap));
+    text = mapSuffixes(text, reverseMap(suffixMap, "suffixMap"));
+    text = mapPrefixes(text, reverseMap(prefixMap, "prefixMap"));
+    text = mapCharacters(text, reverseMap(charMap, "charMap"));
+    text = mapWords(text, reverseMap(wordMap, "wordMap"));
+    text = mapPhrases(text, reverseMap(phraseMap, "phraseMap"));
     return text;
+}
+
+function backward(text) { // disable backward conversion
+    return false;
 }
 
 settings = {
