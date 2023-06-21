@@ -61,7 +61,7 @@ window.addEventListener('load', function(){
   // loop through the ul in navdiv. if the href of the a matches the path, add the navactivepage class
   document.getElementById('navdiv').querySelector('ul').querySelectorAll('a').forEach(function(li){
     // trim "/" from start of href
-    if (li.getAttribute('href').replace(/^\/|\/$/, '') === path) {
+    if (li.getAttribute('href').replace(/(^\/)|(\/$)/g, '') === path) {
       li.classList.add('navactivepage');
     }
   });
