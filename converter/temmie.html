@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+        <meta name="description" content="Text tool to convert English to Temmie language from Undertale online.">
+        <meta property="og:description" content="Text tool to convert English to Temmie language from Undertale online.">
+    <meta name="keywords" content="copy, copy and paste, emoticons, emojis, unicode, symbols, text, encoder, translator, generator">
+    <meta name="author" content="R74n">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Copy Paste Dump">
+    <meta name="twitter:image" content="https://c.r74n.com/favicon_square.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title id="titleTag">Temmie Undertale Translator - Copy Paste Dump</title>
+        <meta property="og:title" content="Temmie Undertale Translator - Copy Paste Dump">
+    <link rel="stylesheet" type="text/css" href="../stylesheet.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://c.r74n.com/icons/apple-touch-icon.png?v=lkvKdlj5Pj">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://c.r74n.com/icons/favicon-32x32.png?v=lkvKdlj5Pj">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://c.r74n.com/icons/favicon-16x16.png?v=lkvKdlj5Pj">
+    <link rel="manifest" href="https://c.r74n.com/icons/site.webmanifest?v=lkvKdlj5Pj">
+    <link rel="mask-icon" href="https://c.r74n.com/icons/safari-pinned-tab.svg?v=lkvKdlj5Pj" color="#00cdca">
+    <link rel="shortcut icon" href="https://c.r74n.com/icons/favicon.ico?v=lkvKdlj5Pj">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-config" content="https://c.r74n.com/icons/browserconfig.xml?v=lkvKdlj5Pj">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="content-language" content="en">
+    <script src="../scripts.js"></script>
+
+    <script src="converter-script.js"></script>
+    <link rel="stylesheet" type="text/css" href="converter-styles.css">
+    <script>
+
+// CONVERTER SETTINGS
+
+phraseMap = {
+"what does the tem say": "NOMNOMNOMNOMNOMNOMNOM",
+"do you want some tem flakes": "YESPLEASEGIVETEMTHETEMFLAKESRIGHTNOWPLEASE",
+"come to tem shop": "its the very best!!!!!!!",
+"Thanks to": "Thanks to Betty Kwong!",
+"favorite song": "Uwa!!! So Holiday!",
+"very famous": "very famus!!!!!!!!!!!!! very!!!!!",
+"are you bob": "MA FREND",
+"7.8 out of 10": "tu much waters",
+"do you want to have a bad time": "DO YOU WANNA HAVE A BAD TOM???",
+"royal scientist": "ALPHYS",
+"dog residue": "DOG RESIDuS",
+"delta rune": "the legend of teh delta rune",
+"fluffy boy": "RALSEI",
+"Temmie Chang": "HOW DID U FIND OUT TEMS REAL NAME?!?",
+"what does the fox say": "no",
+"Have you ever thought about a world where everything is exactly the same": "Except you don't exist?",
+"toby fox": "anoyin doggo",
+"borf borf": "YOU SPEK TEMS LANGUAGE?!?",
+"Heats Flamesman": "I'll always remember that you remembered!",
+"favorite food": "ONLY TEM FLAKES",
+"tem tem": "WHAT DID U JUSt CALL TEM?!?",
+"sing tem": "tra la la",
+"Temster": "DONT CALL TEM THAT!",
+"i will rhyme": "then ill climb",
+"You will regret this": "Are you taunting me?",
+"very good": "very gud!!!!!",
+"are you dead": "I hope not",
+"No tem flakes": "Can't blame a bark for tryin'...",
+"la la la": "tra la la...",
+"bad time": "baaad SNAS",
+"mean girl": "SUZIE",
+"this is": "dis",
+"tem flakes are the best": "Very best!!!!!!",
+"game theory": "the old theme song was better",
+"now it's time": "for a BEEG SHOT",
+"big shot": "BEEG SHOT",
+"bob the builder": "HE CANT FIX IT",
+"sans dance": "SAAAAAAAAAANS DAAAAAAAAAANCE",
+"River Person": "Temmie Village... the room before the darkening lantern room...",
+"favorite color": "tem likes PURPLE!",
+"temmie flakes": "tem flakes",
+"Betty Kwong": "Thanks Betty!",
+"christmas lights": "cristmas sparklez",
+"do it": "dew it!!!",
+"riverperson": "Temmie Village... the room before the darkening lantern room...",
+"annoying dog": "anoyin doggo",
+}
+
+wordMap = {
+"got to": "gotta",
+"whom": "whom'st'dve",
+"friends": "frends",
+"gifts": "giftz",
+"genocide": "TEM no liek",
+"is": "iz",
+"eat": "nom",
+"i'm": "am",
+"yeah": "YAYA",
+"going": "gonna",
+"partner": "pardner",
+"holiday": "holidays",
+"they're": "deyr",
+"allergic": "allergics",
+"santa": "CREEPY MAN WHO BREAKS INTO TEMS HOUSE",
+"snowdin": "cold plaes tem no liek",
+"tiny": "ₜᵢₙᵧ",
+"to": "tu",
+"death": "dieded",
+"are": "r",
+"mettaton": "MAH FAVRIT TV SHOW",
+"me": "meh",
+"human": "hooman",
+"my": "ma",
+"hives": "hOIVS!",
+"subtract": "minus",
+"couldn't": "COUDNDT",
+"never": "nevs",
+"very": "VERYY!!",
+"there": "ther",
+"aw": "awwAwa",
+"color": "CULER",
+"time": "tem",
+"presents": "PRESENTS FOR TEM",
+"aw": "awwAwa",
+"things": "THINs",
+"ash": "HOT FLAKES",
+"come": "com",
+"hint": "Plz dont call meh Tem Tem!",
+"im": "am",
+"small": "SMOL",
+"10/10": "10/Tem",
+"true lab": "what lab?",
+"that": "dat",
+"update": "ubdate",
+"can't": "CANT",
+"addition": "plus",
+"lol": "HAHAH",
+"ok": "okays!",
+"library": "librarby",
+"flowey": "FLOWER PERSON",
+"goodbye": "gudbye",
+"colour": "CULER",
+"humans": "give Tem hOIVES!",
+"more": "MOAR",
+"history": "histery",
+"bob": "Bob's really cool",
+"good": "gud",
+"famous": "famos",
+"where": "whare",
+"suzie": "mean gurl",
+"!": "!!!",
+"flake": "tEM FLAKE",
+"i'm": "ol'm",
+"favorite": "favrite",
+"speak": "spek",
+"education": "educaton",
+"redacted": "",
+"humans": "hoomans",
+"brb": "bee right BAK",
+"noelle": "deer CLASSMATE",
+"yes": "yas",
+"doing": "doin",
+"fight": "destroy",
+"but": "butt",
+"town": "tem village",
+"this": "dis",
+"your": "yer",
+"cheese": "chez",
+"i'm": "im",
+"thing": "THIN",
+"judgement hall": "bad tem",
+"undertale": "NUTDEALER",
+"lancer": "FUNNY card man",
+"with": "wit",
+"do": "du",
+"seam": "seap keepr",
+"link": "LONK",
+"the": "teh",
+"girl": "gurl",
+"bae": "bOI!",
+"yes": "yayA!!!",
+"christmas": "CRISTMAS",
+"temmie shop": "tem shop",
+"robot": "robo",
+"dude": "dood",
+"tem": "TEM",
+"pun": "PUN",
+"what": "WUT",
+"bark": "can't blame a bark for tryin'...",
+"hello": "hOI!!!",
+"waterfall": "tem village is ther",
+"alphys": "ALPHY",
+"hungry": "hungr",
+"queen": "Q5U4EX7YY2E9N",
+"berdly": "burghley",
+"deltarune": "DELTAROON",
+"please": "plz",
+"food": "FOOB",
+"yay": "YAYA",
+"elf": "creepy smol pointy eard man",
+"fuck": "BAD WORD",
+"pootis": "POW",
+"oof": "UWA",
+"chicken": "CHIMKEN",
+"cold": "COLDS",
+"fluffy": "FLOOFY",
+"language": "linguineage",
+"city": "tem village",
+"make": "mak",
+"bell": "dingdong",
+"back": "BAK",
+"you": "u",
+"pussy": "KITTY",
+"bay": "onetta",
+"kris": "KWISP",
+"him": "hem",
+"core": "TEM POWERS CORE!",
+"sure": "sher",
+"grub": "tem flakes",
+"ghost": "FREND",
+"stfu": "stop tickling furry UNICORNS",
+"wouldn't": "WOODNT",
+"hi": "hOI!!!",
+"likes": "lieks",
+"snow": "COLD FLAKES",
+"variable": "VARABLE",
+"omg": "oH mAh GoOdNeSs",
+"won't": "wont",
+"yum": "nom",
+"they": "dey",
+"ralsei": "FLUFFY BOI",
+"butt": "BUTT",
+"yummy": "nom noms",
+"shop": "tem shop",
+"her": "hur",
+"uwu": "owo",
+"dumb": "dum dum",
+"village": "tem village",
+"then": "den",
+"don't": "DONT",
+"sans": "SNAS",
+"gross": "GROSS",
+"perhaps": "peraps",
+"your": "ur",
+"okay": "okays!",
+"nabstablook": "NABSTABLOOP",
+"won't": "WONT",
+"check": "chek.",
+"we": "WE",
+"would": "wud",
+"papyrus": "spaghetti man",
+"its": "it",
+"tired": "YAWN",
+"kiss": "SMOOCH",
+"dead": "ded",
+"pokemon": "PIKACHUZ!!!",
+"earthbound": "EARTHBOUND",
+"friend": "frend",
+"muffet": "MUFFLET",
+"frisk": "THANK FOR PAY FOR COLLEG",
+"toby": "tob",
+"puns": "PUNS",
+"language": "linguineage",
+"rofl": "HAHAH (TEM rolls on floor)",
+"doing": "doin",
+"school": "tem tired...",
+"stuff": "stuf",
+"college": "colleg",
+"can't": "cant",
+"kill": "KIL",
+"I": "tem",
+"cereal": "tem flakes",
+"wow": "WOWOW",
+"has": "haz",
+"matpat": "crazy theory guy",
+"fortnite": "FURTNURT",
+"science": "SCIENCE!",
+"egg": "EG",
+"temmie": "tEMMIE",
+"want": "wan",
+"bye": "bOI!!!!!",
+"mom": "Toriel",
+"spad": "weird guy",
+"it's": "it",
+"jevil": "I can du ANYTIN",
+"vagina": "KITTY",
+"changing": "changin",
+"home": "temmie village",
+"like": "liek",
+"hell": "HECK",
+"cock": "CHIMCKEN",
+"shit": "BAD WORD",
+"pursue": "persue",
+"asriel": "ASREL",
+"sleepy": "tem feel sleepy...",
+"money": "MONEE FOR COLLEG",
+"dog": "annoyin doggo",
+"UWA": "UWA!!!",
+"feeling": "feelin",
+"mario": "WA HOO!",
+"cardboard": "TEM flakes",
+"hotland": "to hot for tem",
+"will": "wil",
+"some": "sum",
+"big": "BIGS",
+"cunt": "BAD WORD",
+"learn": "lern",
+"flexing": "FLEKING",
+"english": "inglish",
+"boy": "boi",
+"flex": "FLECKS",
+"yes": "yez",
+"moss": "YUMmie",
+"shop": "seap",
+"cool": "kool",
+"where": "wher",
+"thanks": "tanks",
+"understand": "understan",
+"good": "gud",
+"cute": "CUOOT",
+"don't": "don",
+"dont": "don",
+"should": "shud",
+"chara": "‎",
+"trying": "tryin",
+"store": "shop",
+"welcome": "welcom",
+"10/10": "TEM OUTTA TEM",
+"penis": "BAD WORD",
+"don't": "dont",
+"puppy": "porper",
+"jingle": "jingles",
+"music": "MUSAK",
+"toriel": "GOAT MOM",
+"ruins": "nevr ben ther",
+"spamton": "BEEG SHOT",
+"ubisoft": "ubisawft",
+"owo": "uwu",
+"determination": "detemmienation",
+"damn": "TIER 3 SWEAR",
+"yucky": "YUCKY",
+"mushroom": "mushroom dance",
+"ten": "tem",
+"meow": "DONT SWARE AT TEH TEM!!!",
+"asgore": "FLUFY KING",
+"undyne": "FISH LADY",
+"why": "y",
+"water": "waters",
+"heat": "HOTS",
+"gaster": "g̵̢̧̛͎̫̘̹̪̥͕̘̠̯̜͎̹͖̲͊̋̊̄͌͛͗̆̇̃͐̊͐̀̓̓̉̃̍̀̔̾̍̌̿͋̂̑͌̐͋̃̈́̍̏͂̉̕͘̚̚͝͝͝ͅa̴̧̢̧̧̡̛̛̟͍̖͓̝͓̟͔̤͕͕͍̭̗͖̪͚̺͓̺͎̺͇̺̖̭̼̱͌̅̆̿̈̉͑̈́̈́̏̒̂̏͑̀̿̎͆̿̔̉̾̆̋̄͗̒̾̂̆̏͌͊͊͆̆͂͘͘͘͠͝͝͝͝s̷̡̢̨̲̰̙͍̜̤̭̗̮̼̼̭͓̖̫̯̥͚͍͗͌̔̈͂̽́̈͌̐́̈́͒͊͌̓̐̏̐̍̏̓̚͜͜͝ͅt̴̨̧̡̢̡̗̼̺͓̩͉̠̪͓̜̤̰̲̭̼̱̙̩̻̰̦̬̝̖̺̥͚̞̲̠̩̣̹̖̣̲̥͐̔͜ͅͅȩ̸̣͙̳̥̬̯̳̜̲͕̗̰͍̞̩͍̤̦̣̫̩̞̤͙̦̪͚̥̾̿̅̃̈́̎͋̈́͊́̀͛̉̀̌̎͒̊̀̈́̽̈́̇̓̉̀̃̕͜͠͠ͅͅŗ̴̛̛̛̛̟̹̝̮̣͙̺̲͍̘̠͔̉̒͛̏͒̐̒̓̀̐̔́̾̾͐̀͛̍̀̀͂̓͑͌̾̉͊̀̊̎̓̽̚͘͠͝͝͠",
+}
+
+function forward(text) {
+    if (settings.bob) {
+        return text;
+    }
+    text = mapPhrases(text, phraseMap);
+    text = mapWords(text, wordMap);
+    return text;
+}
+function backward(text) {
+    text = mapWords(text, reverseMap(wordMap,"wordMap"));
+    text = mapPhrases(text, reverseMap(phraseMap,"phraseMap"));
+    return text;
+}
+
+    </script>
+    <style>
+    /* CONVERTER STYLING */
+    /*
+        #inputArea {  }
+        #outputArea {  }
+    */
+    </style>
+    
+</head>
+
+<body>
+
+<nav><div class="navdiv" id="navdiv">
+<a class="skip" href="#content">Skip to content</a><a class="cpdtitle" href="https://c.R74n.com"><h1>Copy Paste Dump</h1></a><ul>
+<!--&A--><a href="https://c.r74n.com" class="navhome"><img src="https://c.r74n.com/favicon_smaller_old.png" alt="Logo" title="Home"></a><!--&B--><a href="/unicode">Symbols</a><!--&C--><a href="/emoji">Emojis</a><!--&D--><a href="/faces">Faces</a><!--&E--><a href="/fonts">Font Generator</a><!--&F--><a href="/converter/">Converters</a><!--&G--><a href="/shapes">Shapes</a><!--&H--><a href="/pages" class="navimp">All Pages</a><!--&I--><a href="/search" class="navimp" title="Search" aria-label="Search" id="navsearch">&nbsp;</a>
+<!--&J--></ul></div></nav>
+
+<div class="content" id="content">
+<h2 class="pagetitle">Temmie Translator</h2>
+
+<a href=".">⬅︎ More Converters</a><br><br>
+<noscript><p>This converter requires JavaScript, which you seem to have disabled. It will not work unless you enable JavaScript.</p></noscript>
+
+<div id="converterDiv">
+
+<div id="converterLeft">
+    <textarea id="inputArea" placeholder="English goes here..." autofocus></textarea>
+</div>
+<div id="arrow">⇄</div>
+<div id="converterRight">
+    <textarea id="outputArea" placeholder="And TEMMIE appears here..."></textarea>
+</div>
+<div id="converterBottom">
+    <div class="optionGroup">
+        <input type="checkbox" id="bob"><label for="bob">Bob Mode</label>
+    </div>
+</div>
+
+</div>
+
+<h3>How It Works</h3>
+<p>Use this text tool to quickly convert English to Temmie's language in Undertale. Simply type or paste English into the first box, and Temmie text will appear in the second box for you to copy.</p>
+<!--How the text is converted-->
+<!--Why one would use this-->
+<p>This translator is great for rolepaying as Temmie (Tem) from Undertale, who has a strange way of speaking.</p>
+<p>For example, Temmies say things like "hOI!!! am TEM".</p>
+<!--Any options users have-->
+<p>Except for Bob, he speaks fluent English.</p>
+
+<h3>More Converters Like This</h3>
+<ul id="seeMoreList">
+    <!--Optional-->
+    <li><a href="wd-gaster">W. D. Gaster Translator</a></li>
+</ul>
+
+<h3>Try Some Examples</h3>
+<ul id="exampleList">
+    <!--Automatic-->
+</ul>
+
+<h3>Any issues? <a href="https://forms.gle/Puo615Gev1binwei9" target="_blank">Send us feedback</a>!</h3>
+
+
+
+
+</div>
+
+
+
+<script src="../loadbuttons.js"></script>
+
+<div style="width:100%;height:100px;margin:auto;">
+<script data-ad-client="ca-pub-8485284630785740" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<div class="adbox">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8485284630785740"
+       data-ad-slot="5555682735"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+<div class="adbox">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8485284630785740"
+       data-ad-slot="5555682735"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93720349-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-93720349-8');
+</script>
+
+
+<div class="footerdiv">
+<div id="footershare">Share to: <em>Loading...</em></div>
+<div class="footersect"><ul>
+<li><strong>Symbols</strong></li>
+<li><a href="/unicode">Text Symbols</a></li>
+<li><a href="/emoji">Emoji</a></li>
+<li><a href="/faces">Emoticon Faces</a></li>
+<li><a href="/shapes">Shapes</a></li>
+<li><a href="/arrows">Arrows</a></li>
+<li><a href="/combining">Combining</a></li>
+<li><a href="/invisible">Invisible</a></li>
+<li><a href="/longest">Longest</a></li>
+<li><a href="/emoji-art">Emoji Art</a></li>
+<li><a href="/zwj">ZWJ Sequences</a></li>
+<li><a href="/flags">Flag Emojis</a></li>
+</ul></div>
+<div class="footersect"><ul>
+<li><strong>Tools & Tables</strong></li>
+<li><a href="/fonts/">Font Generator</a></li>
+<li><a href="/converter/">Text Converters</a></li>
+<li><a href="/ascii">ASCII</a></li>
+<li><a href="/html-entities">HTML Entities</a></li>
+<li><a href="/windows/alt-codes">Alt Codes</a></li>
+<li><a href="/braille">Braille</a></li>
+<li><a href="/builder">Emoji Builder</a></li>
+<li><a href="/sorter">List Sorter</a></li>
+<li><a href="https://r74n.com/unisearch" target="_blank">UniSearch</a></li>
+<li><a href="https://r74n.com/moji" target="_blank">R74moji</a></li>
+</ul></div>
+<div class="footersect"><ul>
+<li><strong>Platforms</strong></li>
+<li><a href="/instagram/">Instagram</a></li>
+<li><a href="/twitter/">Twitter</a></li>
+<li><a href="/tiktok/">TikTok</a></li>
+<li><a href="/youtube/">YouTube</a></li>
+<li><a href="/twitch/">Twitch</a></li>
+<li><a href="/discord/">Discord</a></li>
+<li><a href="/apple/">Apple</a></li>
+<li><a href="/windows/">Windows</a></li>
+<li><a href="/reddit/">Reddit</a></li>
+<li><a href="/whatsapp/">WhatsApp</a></li>
+</ul></div>
+<div class="footersect"><ul>
+<li><strong>Copy Paste Dump</strong></li>
+<li><a href="/pages">All Pages</a></li>
+<li><a href="/pages#events">Holidays & Events</a></li>
+<li><a href="https://forms.gle/Puo615Gev1binwei9" target="_blank">Submission Form</a></li>
+<li><a href="https://r74n.com" target="_blank">R74n</a></li>
+<li><a href="https://sandboxels.r74n.com" target="_blank">Sandboxels</a></li>
+<li>&nbsp;</li>
+<li><a href="https://link.r74n.com/discord" target="_blank">Join the Discord</a></li>
+<li><a href="https://tiktok.com/@r74n.com" target="_blank">R74n TikTok</a></li>
+<li><a href="https://www.reddit.com/r/copypastedump/" target="_blank">Subreddit</a></li>
+<li><a href="https://twitter.com/CopyPasteDump" target="_blank">Emoji Artist Twitter</a></li>
+<li><a href="https://tiktok.com/@emoji__artist" target="_blank">Emoji Artist TikTok</a></li>
+</ul></div>
+<div class="footerbottom"><a href="https://R74n.com/" target="_parent"><img src="https://R74n.com/icons/favicon.svg" title="R74n.com" alt="R74n Logo"></a>&nbsp; © Copyright <a href="https://en.wikipedia.org/wiki/2023" target="_blank">2023</a> <a href="https://R74n.com/" target="_parent" class="R74nCR">R74n</a>.</div>
+</div>
+
+</body>
+</html>

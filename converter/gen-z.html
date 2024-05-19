@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-        <meta name="description" content="Copy and paste the new X symbol of Twitter 𝕏">
-        <meta property="og:description" content="Copy and paste the new X symbol of Twitter 𝕏">
-    <meta name="keywords" content="copy, copy and paste, emoticons, emojis, unicode, symbols, ascii, text, text art">
+        <meta name="description" content="Text tool to convert normal English to Gen Alpha slang, also known as zoomer speak, online.">
+        <meta property="og:description" content="Text tool to convert normal English to Gen Alpha slang, also known as zoomer speak, online.">
+    <meta name="keywords" content="copy, copy and paste, emoticons, emojis, unicode, symbols, text, encoder, translator, generator">
     <meta name="author" content="R74n">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Copy Paste Dump">
     <meta name="twitter:image" content="https://c.r74n.com/favicon_square.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>𝕏 Twitter X Symbol - Copy Paste Dump</title>
-        <meta property="og:title" content="𝕏 Twitter X Symbol - Copy Paste Dump">
+        <title id="titleTag">🚽 Gen Alpha Translator - Copy Paste Dump</title>
+        <meta property="og:title" content="🚽 Gen Alpha Translator - Copy Paste Dump">
     <link rel="stylesheet" type="text/css" href="../stylesheet.css">
     <link rel="apple-touch-icon" sizes="180x180" href="https://c.r74n.com/icons/apple-touch-icon.png?v=lkvKdlj5Pj">
     <link rel="icon" type="image/png" sizes="32x32" href="https://c.r74n.com/icons/favicon-32x32.png?v=lkvKdlj5Pj">
@@ -24,6 +24,148 @@
     <meta name="theme-color" content="#ffffff">
     <meta http-equiv="content-language" content="en">
     <script src="../scripts.js"></script>
+
+    <script src="converter-script.js"></script>
+    <link rel="stylesheet" type="text/css" href="converter-styles.css">
+    <script>
+
+// CONVERTER SETTINGS
+phraseMap = {
+    "flirt": "rizz up",
+    "flirted": "rizzed up",
+    "flirting": "rizzing up",
+    "big butt": "level 100 gyatt",
+    "workout": "looksmax",
+    "working out": "looksmaxxing",
+    "work out": "looksmax",
+    "worked out": "looksmaxxed",
+    "bodybuilder": "looksmaxxer",
+    "body builder": "looksmaxxer",
+    "steal": "fanum tax",
+    "take": "fanum tax",
+    "rob": "fanum tax",
+    "borrow": "fanum tax",
+    "stole": "fanum taxxed",
+    "took": "fanum taxxed",
+    "robbed": "fanum taxxed",
+    "borrow": "fanum taxxed",
+    "stolen": "fanum taxxed",
+    "stealing": "fanum taxxing",
+    "taking": "fanum taxxing",
+    "robbing": "fanum taxxing",
+    "borrowing": "fanum taxxing",
+    "weird": "made in Ohio",
+    "strange": "made in Ohio",
+    "unusual": "made in Ohio",
+    "crazy": "made in Ohio",
+    "be quiet": "they're mewing",
+    "do good": "eat",
+    "did good": "ate",
+    "doing good": "eating",
+    "do great": "eat and leave no crumbs",
+    "did great": "ate and left no crumbs",
+    "doing great": "eating and leaving no crumbs",
+}
+wordMap = {
+    "charisma": "rizz",
+    "style": "rizz",
+    "charm": "rizz",
+    "attractive": "rizzy",
+    "hot": "rizzy",
+    "cute": "rizzy",
+    "pretty": "rizzy",
+    "handsome": "rizzy",
+    "butt": "gyatt",
+    "ass": "gyatt",
+    "hell": "Ohio",
+    "good": ["bussin'","goated"],
+    "delicious": "bussin'",
+    "great": ["bussin'","goated"],
+    "better": ["bussin'","goated"],
+    "best": "goat",
+    "vibe": "aura",
+    "lying": "capping",
+    "lieing": "capping",
+    "lie": "cap",
+    "lied": "capped",
+    "liar": "capper",
+    "liars": "cappers",
+    "wild": "skibidi",
+    "evil": "skibidi",
+    "stupid": "skibidi",
+    "silly": "skibidi",
+    "dastardly": "skibidi",
+    "amazing": "level 100",
+    "loss": "L",
+    "loser": "L person",
+    "win": "W",
+    "winner": "W person",
+    "big": "huge",
+    "yes": "bet",
+    "agreed": "bet",
+    "agree": "bet",
+    "tune": "bop",
+    "music": "bop",
+    "song": "bop",
+    "old": "cheugy",
+    "uncool": "cheugy",
+    "outdated": "cheugy",
+    "delusional": "delulu",
+    "insane": "delulu",
+    "crazy": "delulu",
+    "dumb": "delulu",
+    "gross": "cringe",
+    "lame": "cringe",
+    "awesome": "based",
+    "true": "based",
+    "toilet": "skibidi",
+    "im": "literally",
+    "i'm": "literally",
+    "facts": "fax",
+    "factual": "fax",
+    "true": "fax",
+    "truth": "fax",
+    "gonna": "finna",
+    "going to": "finna",
+    "about to": "finna",
+    "fixing to": "finna",
+    "leave": "head out",
+    "jam": "bop",
+    "change": "glow up",
+    "transformation": "glow up",
+    "transform": "glow up",
+    "ignore": "ghost",
+    "ignored": "ghosted",
+    "ignoring": "ghosting",
+    "cool": "goated",
+    "disgust": "ick",
+    "seems": "is giving",
+    "a little": "lowkey",
+    "little bit": "lowkey",
+}
+function forward(text) {
+    text = text.toLowerCase().replace(punctuationRegex, "");
+    text = mapPhrases(text, phraseMap);
+    text = mapWords(text, wordMap);
+    if (Math.random() < 0.25) {
+        text += " rn";
+    }
+    return text;
+}
+function backward(text) {
+    text = mapWords(text, reverseMap(wordMap,"wordMap"));
+    text = mapPhrases(text, reverseMap(phraseMap,"phraseMap"));
+    return text;
+}
+
+    </script>
+    <style>
+    /* CONVERTER STYLING */
+    /*
+        #inputArea {  }
+        #outputArea {  }
+    */
+    </style>
     
 </head>
 
@@ -35,37 +177,62 @@
 <!--&J--></ul></div></nav>
 
 <div class="content" id="content">
-<h2 class="pagetitle">𝕏 Twitter X Symbol</h2>
+<h2 class="pagetitle">LANG2 Converter</h2>
 
-<a href=".">Back to the Twitter Portal</a><br><br>
+<a href=".">⬅︎ More Converters</a><br><br>
+<noscript><p>This converter requires JavaScript, which you seem to have disabled. It will not work unless you enable JavaScript.</p></noscript>
 
-<p><strong>Twitter</strong> is rebranding to its new name, <strong>X</strong>. The new logo is also the letter X, and uses a specific Unicode character that is meant for math equations.</p>
+<div id="converterDiv">
 
-<p>There are both uppercase and lowercase versions: <strong style="font-size:1.5em">𝕏 𝕩</strong></p>
+<div id="converterLeft">
+    <textarea id="inputArea" placeholder="LANG1 goes here..." autofocus></textarea>
+    <select id="lang1">
+        <option value="langoption1">LANGSELECT</option>
+    </select>
+</div>
+<div id="arrow">⇄</div>
+<div id="converterRight">
+    <textarea id="outputArea" placeholder="And LANG2 appears here..."></textarea>
+    <select id="lang2">
+        <option value="langoption1">LANGSELECT</option>
+    </select>
+</div>
+<div id="converterBottom">
+    <div class="optionGroup" id="mode">
+        <input type="button" value="MODE1" id="mode1" selected="true">
+        <input type="button" value="MODE2" id="mode2">
+    </div>
+    <div class="optionGroup">
+        <input type="checkbox" id="option1"><label for="option1">OPTION1</label>
+        <input type="checkbox" id="option2" checked><label for="option2">OPTION2</label>
+        <input type="range" id="amount1" max="100" min="0" step="5" value="25"><label for="amount1">AMOUNT1</label>
+    </div>
+    <div class="optionGroup">
+        <label for="textoption1">TEXTOPTION1: </label><input type="text" id="textoption1" value="" placeholder="Text...">
+    </div>
+</div>
 
-<p>You can also press one of these buttons to copy them: <span class="cb">𝕏</span> <span class="cb">𝕩</span></p>
+</div>
 
-<p>In reality, this is the "Mathematical Double-Struck Capital X" character in Unicode, and its codepoint is U+1D54F. It was added in Unicode 3.1 in 2001. It can be pasted into HTML using its <a href="../html-entities">HTML entity</a>, &amp;#120143;.</p>
+<h3>How It Works</h3>
+<p>Use this text tool to quickly convert LANG1 to LANG2. Simply type or paste LANG1 into the first box, and LANG2 will appear in the second box for you to copy.</p>
+<!--How the text is converted-->
+<!--Why one would use this-->
+<!--Any options users have-->
 
-<p>The Twitter rebrand is also referred to as <a href="https://twitter.com/search?q=%23TwitterX" target="_blank">#TwitterX</a>.</p>
-
-<p>There are more characters like this, and you can generate 𝕗𝕒𝕟𝕔𝕪 𝕥𝕖𝕩𝕥 with our <a href="../fonts/?font=doublestruck&text=Twitter X">Font Generator</a>!</p>
-
-<p>The old Twitter symbol, <a href="chirp">[CHIRPBIRDICON]</a> , can also be used on the Twitter website.</p>
-
-<p>More Examples:</p>
-<ul>
-     <li>Twitter𝕏 / Twitter 𝕏</li>
-     <li>𝕏.com / X.com</li>
-     <li>@𝕏 / @X</li>
-     <li><a href="https://twitter.com/search?q=%23%F0%9D%95%8F">#𝕏 / #X</a></li>
-     <li>𝕏Blue / 𝕏 Blue</li>
-     <li>𝕏Verified / 𝕏 Verified</li>
-     <li>𝕏Premium / 𝕏 Premium</li>
-     <li>𝕏Live / 𝕏 Live</li>
-     <li>Anti-X Symbol 𝕏⃠</li>
-     <li>𝕏eet / 𝕏eets / 𝕏es (Xeets)</li>
+<h3>More Converters Like This</h3>
+<ul id="seeMoreList">
+    <!--Optional-->
 </ul>
+
+<h3>Try Some Examples</h3>
+<ul id="exampleList">
+    <!--Automatic-->
+</ul>
+
+<h3>Any issues? <a href="https://forms.gle/Puo615Gev1binwei9" target="_blank">Send us feedback</a>!</h3>
+
+
 
 
 </div>

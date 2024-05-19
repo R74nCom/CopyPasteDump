@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-        <meta name="description" content="Copy and paste the new X symbol of Twitter 𝕏">
-        <meta property="og:description" content="Copy and paste the new X symbol of Twitter 𝕏">
-    <meta name="keywords" content="copy, copy and paste, emoticons, emojis, unicode, symbols, ascii, text, text art">
+        <meta name="description" content="Text tool to convert English swear words into bypassed text to say in Roblox chat.">
+        <meta property="og:description" content="Text tool to convert English swear words into bypassed text to say in Roblox chat">
+    <meta name="keywords" content="copy, copy and paste, emoticons, emojis, unicode, symbols, text, encoder, translator, generator">
     <meta name="author" content="R74n">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Copy Paste Dump">
     <meta name="twitter:image" content="https://c.r74n.com/favicon_square.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>𝕏 Twitter X Symbol - Copy Paste Dump</title>
-        <meta property="og:title" content="𝕏 Twitter X Symbol - Copy Paste Dump">
+        <title id="titleTag">Roblox Filter Bypass Converter - Copy Paste Dump</title>
+        <meta property="og:title" content="Roblox Filter Bypass Converter - Copy Paste Dump">
     <link rel="stylesheet" type="text/css" href="../stylesheet.css">
     <link rel="apple-touch-icon" sizes="180x180" href="https://c.r74n.com/icons/apple-touch-icon.png?v=lkvKdlj5Pj">
     <link rel="icon" type="image/png" sizes="32x32" href="https://c.r74n.com/icons/favicon-32x32.png?v=lkvKdlj5Pj">
@@ -24,6 +24,127 @@
     <meta name="theme-color" content="#ffffff">
     <meta http-equiv="content-language" content="en">
     <script src="../scripts.js"></script>
+
+    <script src="converter-script.js"></script>
+    <link rel="stylesheet" type="text/css" href="converter-styles.css">
+    <script>
+
+// CONVERTER SETTINGS
+charMapSymbols = {
+    "a":"/-\\",
+    "b":"l3",
+    "d":"cl",
+    "e":"3",
+    "h":["/-/","}{","|-|"],
+    "i":"l",
+    "k":"l<",
+    "l":"|_",
+    "m":"/\\/\\",
+    "n":["/\\/","l\\l"],
+    "o":"0",
+    "s":["$","Z"],
+    "u":"|_|",
+    "v":"\\/",
+    "w":"\\/\\/",
+    "x":"><"
+}
+wordMap = {
+    "hoe": "H@e",
+    "lmfao": "xlmfao",
+    "lmao": "Imao",
+    "af": "afx",
+    "shit": ["I((S H I T))I","shld"],
+    "fuck": "fuell ck",
+    "die": "D|€£",
+    "piss": "P|$$§§",
+    "bitch": ["b|t€£","ß|†çh"],
+    "pussy": ["Pu$§€","p0ss¥"],
+    "puss": "Pu$§",
+    "cum": "seamen",
+    "semen": "seamen",
+    "testicle": "†∑s†|ç¬∑",
+    "penis": "p∑ñ|s",
+    "dick": "c|içk"
+}
+charMapFancy = {
+    "q": ["𝔮","𝖖","𝓺","𝓆","𝕢","ꪇ"],
+    "w": ["𝔴","𝖜","𝔀","𝓌","𝕨","᭙"],
+    "e": ["𝔢","𝖊","𝓮","𝑒","𝕖","ꫀ"],
+    "r": ["𝔯","𝖗","𝓻","𝓇","𝕣","᥅"],
+    "t": ["𝔱","𝖙","𝓽","𝓉","𝕥","ꪻ"],
+    "y": ["𝔶","𝖞","𝔂","𝓎","𝕪","ꪗ"],
+    "u": ["𝔲","𝖚","𝓾","𝓊","𝕦","ꪊ"],
+    "i": ["𝔦","𝖎","𝓲","𝒾","𝕚","꠸"],
+    "o": ["𝔬","𝖔","𝓸","𝑜","𝕠","ꪮ"],
+    "p": ["𝔭","𝖕","𝓹","𝓅","𝕡","ρ"],
+    "a": ["𝔞","𝖆","𝓪","𝒶","𝕒","ꪖ"],
+    "s": ["𝔰","𝖘","𝓼","𝓈","𝕤","ᦓ"],
+    "d": ["𝔡","𝖉","𝓭","𝒹","𝕕","ᦔ"],
+    "f": ["𝔣","𝖋","𝓯","𝒻","𝕗","ᠻ"],
+    "g": ["𝔤","𝖌","𝓰","𝑔","𝕘","ᧁ"],
+    "h": ["𝔥","𝖍","𝓱","𝒽","𝕙","ꫝ"],
+    "j": ["𝔧","𝖏","𝓳","𝒿","𝕛","꠹"],
+    "k": ["𝔨","𝖐","𝓴","𝓀","𝕜","ᛕ"],
+    "l": ["𝔩","𝖑","𝓵","𝓁","𝕝","ꪶ"],
+    "z": ["𝔷","𝖟","𝔃","𝓏","𝕫","ƺ"],
+    "x": ["𝔵","𝖝","𝔁","𝓍","𝕩","᥊"],
+    "c": ["𝔠","𝖈","𝓬","𝒸","𝕔","ᥴ"],
+    "v": ["𝔳","𝖛","𝓿","𝓋","𝕧","ꪜ"],
+    "b": ["𝔟","𝖇","𝓫","𝒷","𝕓","᥇"],
+    "n": ["𝔫","𝖓","𝓷","𝓃","𝕟","ꪀ"],
+    "m": ["𝔪","𝖒","𝓶","𝓂","𝕞","ꪑ"],
+}
+charMapCyrillic = {
+    "A": "А",
+    "B": "В",
+    "C": "С",
+    "E": "Е",
+    "H": "Н",
+    "K": "К",
+    "M": "М",
+    "O": "О",
+    "P": "Р",
+    "T": "Т",
+    "X": "Х",
+    "y": "У",
+    "a": "а",
+    "c": "с",
+    "e": "е",
+    "o": "о",
+    "p": "р",
+    "x": "х",
+    "y": "у",
+}
+function forward(text) {
+    if (settings.mode !== "symbols") {
+        text = mapWords(text,wordMap)
+    }
+    if (settings.mode === "symbols") {
+        text = mapCharacters(text,charMapSymbols)
+    }
+    else if (settings.mode === "jj") {
+        text = [...text].join("jj").replaceAll("jj jj"," ")
+    }
+    else if (settings.mode === "fancy") {
+        text = mapCharacters(text,charMapFancy)
+    }
+    else if (settings.mode === "cyrillic") {
+        text = mapCharacters(text,charMapCyrillic)
+    }
+    return text;
+}
+function backward(text) {
+    return false;
+}
+
+    </script>
+    <style>
+    /* CONVERTER STYLING */
+    /*
+        #inputArea {  }
+        #outputArea {  }
+    */
+    </style>
     
 </head>
 
@@ -35,37 +156,57 @@
 <!--&J--></ul></div></nav>
 
 <div class="content" id="content">
-<h2 class="pagetitle">𝕏 Twitter X Symbol</h2>
+<h2 class="pagetitle">Roblox Filter Bypass</h2>
 
-<a href=".">Back to the Twitter Portal</a><br><br>
+<a href=".">⬅︎ More Converters</a><br><br>
+<noscript><p>This converter requires JavaScript, which you seem to have disabled. It will not work unless you enable JavaScript.</p></noscript>
 
-<p><strong>Twitter</strong> is rebranding to its new name, <strong>X</strong>. The new logo is also the letter X, and uses a specific Unicode character that is meant for math equations.</p>
+<div id="converterDiv">
 
-<p>There are both uppercase and lowercase versions: <strong style="font-size:1.5em">𝕏 𝕩</strong></p>
+<div id="converterLeft">
+    <textarea id="inputArea" placeholder="Bad text goes here..." autofocus></textarea>
+</div>
+<div id="arrow">⇄</div>
+<div id="converterRight">
+    <textarea id="outputArea" placeholder="And bypassed text appears here..."></textarea>
+</div>
+<div id="converterBottom">
+    <div class="optionGroup" id="mode">
+        <input type="button" value="Symbol Letters" id="symbols" selected="true">
+        <input type="button" value="JJ Method" id="jj">
+        <input type="button" value="Fancy Font" id="fancy">
+        <input type="button" value="Lookalikes" id="cyrillic">
+    </div>
+</div>
 
-<p>You can also press one of these buttons to copy them: <span class="cb">𝕏</span> <span class="cb">𝕩</span></p>
+</div>
 
-<p>In reality, this is the "Mathematical Double-Struck Capital X" character in Unicode, and its codepoint is U+1D54F. It was added in Unicode 3.1 in 2001. It can be pasted into HTML using its <a href="../html-entities">HTML entity</a>, &amp;#120143;.</p>
+<h3>How It Works</h3>
+<p>Use this text tool to quickly convert plain English into special text that you can paste into Roblox chat to evade swear word filters. Simply type or paste words into the first box, and a bypassed font will appear in the second box for you to copy.</p>
+<!--How the text is converted-->
+<!--Why one would use this-->
+<p>Please remember that you should not break the guidelines of Roblox, and using this tool may put your account at risk of getting banned. Use this at your own risk.</p>
+<!--Any options users have-->
+<p>This converter contains multiple options for you to try, including letter-symbol replacement, putting more letters in-between each one, a <a href="../fonts/">fancy font generator</a>, and a lookalike replacement tool.</p>
+<p>You can also use this converter in other games, like <a href="../mc">Minecraft</a> servers.</p>
+<p>You may want to use these <a href="../invisible">invisible characters</a> in your messages or group names:</p>
+Zero Width Joiner: <span class="cb">‍</span><br>
+Hangul Filler: <span class="cb">ㅤ</span><br>
+Blank Braille Pattern: <span class="cb">⠀</span>
 
-<p>The Twitter rebrand is also referred to as <a href="https://twitter.com/search?q=%23TwitterX" target="_blank">#TwitterX</a>.</p>
-
-<p>There are more characters like this, and you can generate 𝕗𝕒𝕟𝕔𝕪 𝕥𝕖𝕩𝕥 with our <a href="../fonts/?font=doublestruck&text=Twitter X">Font Generator</a>!</p>
-
-<p>The old Twitter symbol, <a href="chirp">[CHIRPBIRDICON]</a> , can also be used on the Twitter website.</p>
-
-<p>More Examples:</p>
-<ul>
-     <li>Twitter𝕏 / Twitter 𝕏</li>
-     <li>𝕏.com / X.com</li>
-     <li>@𝕏 / @X</li>
-     <li><a href="https://twitter.com/search?q=%23%F0%9D%95%8F">#𝕏 / #X</a></li>
-     <li>𝕏Blue / 𝕏 Blue</li>
-     <li>𝕏Verified / 𝕏 Verified</li>
-     <li>𝕏Premium / 𝕏 Premium</li>
-     <li>𝕏Live / 𝕏 Live</li>
-     <li>Anti-X Symbol 𝕏⃠</li>
-     <li>𝕏eet / 𝕏eets / 𝕏es (Xeets)</li>
+<h3>More Converters Like This</h3>
+<ul id="seeMoreList">
+    <!--Optional-->
 </ul>
+
+<h3>Try Some Examples</h3>
+<ul id="exampleList">
+    <!--Automatic-->
+</ul>
+
+<h3>Any issues? <a href="https://forms.gle/Puo615Gev1binwei9" target="_blank">Send us feedback</a>!</h3>
+
+
 
 
 </div>

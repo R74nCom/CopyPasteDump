@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+        <meta name="description" content="Text tool to convert English to LOLcat, or lolspeak, online.">
+        <meta property="og:description" content="Text tool to convert LANG1 to LOLcat, or lolspeak, online.">
+    <meta name="keywords" content="copy, copy and paste, emoticons, emojis, unicode, symbols, text, encoder, translator, generator">
+    <meta name="author" content="R74n">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Copy Paste Dump">
+    <meta name="twitter:image" content="https://c.r74n.com/favicon_square.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title id="titleTag">i cAN hAs LOLcat Translator? - Copy Paste Dump</title>
+        <meta property="og:title" content="i cAN hAs LOLcat Translator? - Copy Paste Dump">
+    <link rel="stylesheet" type="text/css" href="../stylesheet.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://c.r74n.com/icons/apple-touch-icon.png?v=lkvKdlj5Pj">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://c.r74n.com/icons/favicon-32x32.png?v=lkvKdlj5Pj">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://c.r74n.com/icons/favicon-16x16.png?v=lkvKdlj5Pj">
+    <link rel="manifest" href="https://c.r74n.com/icons/site.webmanifest?v=lkvKdlj5Pj">
+    <link rel="mask-icon" href="https://c.r74n.com/icons/safari-pinned-tab.svg?v=lkvKdlj5Pj" color="#00cdca">
+    <link rel="shortcut icon" href="https://c.r74n.com/icons/favicon.ico?v=lkvKdlj5Pj">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-config" content="https://c.r74n.com/icons/browserconfig.xml?v=lkvKdlj5Pj">
+    <meta name="theme-color" content="#ffffff">
+    <meta http-equiv="content-language" content="en">
+    <script src="../scripts.js"></script>
+
+    <script src="converter-script.js"></script>
+    <link rel="stylesheet" type="text/css" href="converter-styles.css">
+    <script>
+
+// CONVERTER SETTINGS
+phraseMap = {
+"can any":"any can",
+"been":"being",
+"were":"waz",
+"can both":"both can",
+"can several":"lots can",
+"we're":"we is",
+"can that":"that can",
+"can all":"all can",
+"can they":"they can",
+"can this":"this can",
+"can you":"you can",
+"may":"can",
+"can few":"few can",
+"you're":"u iz",
+"can she":"she can",
+"am":"iz",
+"can we":"we can",
+"who's":"hoo iz",
+"being":"bean",
+"can those":"those can",
+"can he":"he can",
+"was":"were",
+"cheese burger":"cheez burger",
+"can it":"it can",
+"can i":"i can",
+"they're":"they r",
+}
+wordMap = {
+"unwound":"unwinded",
+"slunk":"slinked",
+"overbought":"overbuyed",
+"spoken":"speaked",
+"bent":"bended",
+"snuck":"sneaked",
+"disproved":"disproved",
+"cheeseburger":"cheezburger",
+"clung":"clinged",
+"overcame":"overcomed",
+"awoken":"awaked",
+"prepaid":"prepayed",
+"redealt":"redealed",
+"withdrawn":"withdrawed",
+"outsped":"outspeeded",
+"presold":"preselled",
+"overhung":"overhanged",
+"rewrote":"rewrited",
+"unsewed":"unsewed",
+"upheld":"upholded",
+"wrung":"wringed",
+"overslept":"oversleeped",
+"wed":"weded",
+"told":"telled",
+"become":"becomed",
+"hung":"hanged",
+"outlied":"outlied",
+"lost":"losed",
+"undertaken":"undertaked",
+"hurt":"hurted",
+"underwent":"undergoed",
+"bid":"bided",
+"began":"begineded",
+"rebuilt":"rebuilded",
+"redone":"redoed",
+"read":"readed",
+"kept":"keeped",
+"overthrown":"overthrowed",
+"shit":"shited",
+"overcome":"overcomed",
+"outspoke":"outspeaked",
+"bred":"breeded",
+"caught":"catched",
+"recast":"recasted",
+"struck":"striked",
+"typeset":"typeseted",
+"outflown":"outflyed",
+"driven":"drived",
+"became":"becomed",
+"rethought":"rethinked",
+"mislaid":"mislayed",
+"run":"runed",
+"threw":"throwed",
+"reawaken":"reawaked",
+"outsold":"outselled",
+"mistaught":"misteached",
+"put":"puted",
+"unstuck":"unsticked",
+"frostbit":"frostbited",
+"jerry-built":"jerry-builded",
+"bitten":"bited",
+"rebound":"rebinded",
+"retread":"retreaded",
+"misheard":"misheared",
+"reset":"reseted",
+"meant":"meaned",
+"rebroadcast":"rebroadcasted",
+"interwound":"interwinded",
+"cut":"cuted",
+"presold":"preselled",
+"misdealt":"misdealed",
+"whetted":"wheted",
+"outgrew":"outgrowed",
+"beat":"beateded",
+"gone":"goed",
+"shook":"shaked",
+"blown":"blowed",
+"mislaid":"mislayed",
+"overthought":"overthinked",
+"unstuck":"unsticked",
+"partook":"partaked",
+"ground":"grinded",
+"spread":"spreaded",
+"spoon-fed":"spoon-feeded",
+"slept":"sleeped",
+"@":"at tha",
+"withstood":"withstanded",
+"broke":"breaked",
+"handwrote":"handwrited",
+"fought":"fighted",
+"overwound":"overwinded",
+"were":"beed",
+"sought":"seeked",
+"jerry-built":"jerry-builded",
+"lent":"lended",
+"outfought":"outfighted",
+"shovel":"shuvel",
+"overbid":"overbided",
+"sung":"singed",
+"outrun":"outruned",
+"test-drove":"test-drived",
+"trodden":"treaded",
+"proved":"proved",
+"does":"dus",
+"relit":"relighted",
+"underbid":"underbided",
+"wept":"weeped",
+"partaken":"partaked",
+"sunk":"sinked",
+"bled":"bleeded",
+"rebid":"rebided",
+"rewed":"reweded",
+"mice":"mouses",
+"outsworn":"outsweared",
+"outswore":"outsweared",
+"held":"holded",
+"found":"finded",
+"overlaid":"overlayed",
+"please":"plz",
+"telecast":"telecasted",
+"sight-read":"sight-readed",
+"crept":"creeped",
+"lip-read":"lip-readed",
+"stolen":"stealed",
+"outthought":"outthinked",
+"rang":"ringed",
+"sweated":"sweated",
+"strove / strived":"strived",
+"forbidden":"forbided",
+"regrown":"regrowed",
+"burst":"bursted",
+"outdone":"outdoed",
+"sped":"speeded",
+"unbound":"unbinded",
+"outbred":"outbreeded",
+"overfed":"overfeeded",
+"rewore":"reweared",
+"slew":"killed",
+"arisen":"arised",
+"done":"doed",
+"outdrunk":"outdrinked",
+"miscast":"miscasted",
+"is":"r",
+"bound":"binded",
+"slid":"slided",
+"women":"womans",
+"outshot":"outshooted",
+"typeset":"typeseted",
+"lied":"lied",
+"outspoken":"outspeaked",
+"outdid":"outdoed",
+"swung":"swinged",
+"gave":"gived",
+"outsped":"outspeeded",
+"unwound":"unwinded",
+"forsaken":"forsaked",
+"cool":"kewl",
+"had":"haved",
+"stricken":"striked",
+"backslidden":"backslided",
+"sweat":"sweated",
+"was":"beed",
+"cut":"cuted",
+"retread":"retreaded",
+"prebuilt":"prebuilded",
+"found":"finded",
+"upheld":"upholded",
+"swept":"sweeped",
+"took":"taked",
+"underwritten":"underwrited",
+"told":"telled",
+"unhung":"unhanged",
+"misunderstood":"misunderstanded",
+"forgot":"forgeted",
+"foresaw":"foreseed",
+"rewove":"reweaved",
+"shaven":"shaved",
+"slain":"slay (kill)ed",
+"overspoke":"overspeaked",
+"repaid":"repayed",
+"dealt":"dealed",
+"wound":"winded",
+"waylaid":"waylayed",
+"swung":"swinged",
+"overran":"overruned",
+"reworn":"reweared",
+"wet":"weted",
+"remade":"remaked",
+"the":"teh",
+"dove / dived":"dived",
+"unspun":"unspined",
+"underlain":"underlied",
+"rebuilt":"rebuilded",
+"got":"geted",
+"unhung":"unhanged",
+"overheard":"overheared",
+"predone":"predoed",
+"rebid":"rebided",
+"outwrote":"outwrited",
+"sold":"selled",
+"set":"seted",
+"held":"holded",
+"taught":"teached",
+"misread":"misreaded",
+"reread":"rereaded",
+"rewaken":"rewaked",
+"come":"comed",
+"saw":"seed",
+"hung":"hanged",
+"stood":"standed",
+"clung":"clinged",
+"arose":"arised",
+"overbuilt":"overbuilded",
+"remade":"remaked",
+"browbeaten":"browbeated",
+"test-driven":"test-drived",
+"people":"peepl",
+"ground":"grinded",
+"flung":"flinged",
+"overridden":"overrided",
+"known":"knowed",
+"lain":"lied",
+"stung":"stinged",
+"outsung":"outsinged",
+"fallen":"falled",
+"brought":"bringed",
+"disproven":"diged",
+"unbound":"unbinded",
+"hewn":"hewed",
+"slit":"slited",
+"ask":"aks",
+"typecast":"typecasted",
+"unfrozen":"unfreezed",
+"overpaid":"overpayed",
+"overdone":"overdoed",
+"dived":"dived",
+"shat":"shited",
+"are":"iz",
+"heard":"heared",
+"rewoven":"reweaved",
+"typewrote":"typewrited",
+"bled":"bleeded",
+"premade":"premaked",
+"at":"et",
+"unstrung":"unstringed",
+"hurt":"hurted",
+"misled":"misleaded",
+"taught":"teached",
+"met":"meeted",
+"roughcast":"roughcasted",
+"wove":"weaved",
+"rerun":"reruned",
+"slid":"slided",
+"overbuilt":"overbuilded",
+"shrank":"shrinked",
+"flew":"flyed",
+"retaught":"reteached",
+"unbent":"unbended",
+"outsold":"outselled",
+"risen":"rised",
+"mowed":"mowed",
+"misdealt":"misdealed",
+"overdid":"overdoed",
+"unhid":"unhided",
+"understood":"understanded",
+"thought":"thinked",
+"meant":"meaned",
+"test-flew":"test-flyed",
+"spoke":"speaked",
+"striven / strived":"strived",
+"sand-cast":"sand-casted",
+"prepaid":"prepayed",
+"recut":"recuted",
+"relaid":"relayed",
+"lied":"lied",
+"fed":"feeded",
+"woven":"weaved",
+"waylaid":"waylayed",
+"swam":"swimed",
+"reran":"reruned",
+"sank":"sinked",
+"outdrawn":"outdrawed",
+"outsat":"outsited",
+"sewn":"sewed",
+"sublet":"subleted",
+"outthrew":"outthrowed",
+"outfought":"outfighted",
+"retold":"retelled",
+"bent":"bendeded",
+"rehung":"rehanged",
+"busted / bust":"busted",
+"dealt":"dealed",
+"drew":"drawed",
+"shed":"sheded",
+"tore":"teared",
+"unslung":"unslinged",
+"understood":"understanded",
+"foretold":"foretelled",
+"went":"goed",
+"brought":"bringed",
+"did":"doed",
+"overshot":"overshooted",
+"prebuilt":"prebuilded",
+"retold":"retelled",
+"underspent":"underspended",
+"bid":"bided",
+"drank":"drinked",
+"reset":"reseted",
+"reground":"regrinded",
+"awakened":"awaked",
+"stuck":"sticked",
+"set":"seted",
+"rewon":"rewined",
+"fought":"fighted",
+"broken":"breaked",
+"resold":"reselled",
+"overthought":"overthinked",
+"preshrank":"preshrinked",
+"feet":"foots",
+"said":"sayed",
+"children":"childs",
+"rethought":"rethinked",
+"underspent":"underspended",
+"outthrown":"outthrowed",
+"chosen":"choosed",
+"outdrove":"outdrived",
+"rid":"rided",
+"crossbred":"crossbreeded",
+"wrote":"writed",
+"sand-cast":"sand-casted",
+"snuck":"sneaked",
+"strung":"stringed",
+"outthought":"outthinked",
+"overdrunk":"overdrinked",
+"miswrote":"miswrited",
+"foreseen":"foreseed",
+"overhung":"overhanged",
+"undercut":"undercuted",
+"unfroze":"unfreezed",
+"split":"splited",
+"put":"puted",
+"cast":"casted",
+"broadcast":"broadcasted",
+"written":"writed",
+"pleaded":"pleaded",
+"shot":"shooted",
+"cost":"costed",
+"overwound":"overwinded",
+"chose":"choosed",
+"stuck":"sticked",
+"outridden":"outrided",
+"led":"leaded",
+"met":"meeted",
+"shed":"sheded",
+"fell":"falled",
+"built":"builded",
+"preset":"preseted",
+"flung":"flinged",
+"spat":"spited",
+"at":"at",
+"preset":"preseted",
+"oversaw":"overseed",
+"rewed":"reweded",
+"interwove":"interweaved",
+"why":"y",
+"overspoken":"overspeaked",
+"overbought":"overbuyed",
+"outsang":"outsinged",
+"awakened":"awaked",
+"taken":"taked",
+"reawoke":"reawaked",
+"forewent":"foregoed",
+"overrode":"overrided",
+"grew":"growed",
+"outrode":"outrided",
+"input":"inputed",
+"dived":"dived",
+"slung":"slinged",
+"left":"leaved",
+"rode":"rided",
+"resewn":"resewed",
+"sang":"singed",
+"won":"wined",
+"forgave":"forgived",
+"stridden":"strided",
+"interwound":"interwinded",
+"dived / dove":"dived",
+"stung":"stinged",
+"bought":"buyed",
+"miscast":"miscasted",
+"cost":"costed",
+"interwoven":"interweaved",
+"quick-frozen":"quick-freezed",
+"dug":"diged",
+"flown":"flyed",
+"outflew":"outflyed",
+"hidden":"hided",
+"lent":"lended",
+"redrew":"redrawed",
+"overshot":"overshooted",
+"shaved":"shaved",
+"backslid":"backslided",
+"resent":"resended",
+"heard":"heared",
+"quick-froze":"quick-freezed",
+"hit":"hited",
+"your":"ur",
+"slept":"sleeped",
+"relayed":"relayed",
+"hand-fed":"hand-feeded",
+"bit":"bited",
+"outslept":"outsleeped",
+"drunk":"drinked",
+"overheard":"overheared",
+"kept":"keeped",
+"outbid":"outbided",
+"mistook":"mistaked",
+"forgotten":"forgeted",
+"made":"maked",
+"mistaught":"misteached",
+"knit":"knited",
+"worn":"weared",
+"repaid":"repayed",
+"a":"",
+"inbred":"inbreeded",
+"own":"haz",
+"browbeat":"browbeated",
+"strewed":"strewed",
+"overfed":"overfeeded",
+"outslept":"outsleeped",
+"knelt":"kneeled",
+"misset":"misseted",
+"retorn":"reteared",
+"outswam":"outswimed",
+"overate":"overeated",
+"trod":"treaded",
+"preshrunk":"preshrinked",
+"outspent":"outspended",
+"roughcast":"roughcasted",
+"men":"mens",
+"overseen":"overseed",
+"proven":"proved",
+"reread":"rereaded",
+"regrew":"regrowed",
+"read":"readed",
+"gotten":"geted",
+"paid":"payed",
+"overspent":"overspended",
+"sat":"sited",
+"overbid":"overbided",
+"wove":"weaved",
+"blew":"blowed",
+"overpaid":"overpayed",
+"seen":"seed",
+"rewon":"rewined",
+"test-flown":"test-flyed",
+"overdrank":"overdrinked",
+"strewn":"strewed",
+"overbred":"overbreeded",
+"redealt":"redealed",
+"overwritten":"overwrited",
+"born":"beared",
+"lit":"lighted",
+"undergone":"undergoed",
+"bought":"buyed",
+"outdrank":"outdrinked",
+"money":"moneys",
+"outshot":"outshooted",
+"foretold":"foretelled",
+"spent":"spended",
+"posess":"haz",
+"offset":"offseted",
+"forecast":"forecasted",
+"overtaken":"overtaked",
+"overslept":"oversleeped",
+"sowed":"sowed",
+"interbred":"interbreeded",
+"unhidden":"unhided",
+"inlaid":"inlayed",
+"redid":"redoed",
+"forecast":"forecasted",
+"drove":"drived",
+"sprung":"springed",
+"left":"leaved",
+"strode":"strided",
+"overtook":"overtaked",
+"retaken":"retaked",
+"misspent":"misspended",
+"misspoke":"misspeaked",
+"felt":"feeled",
+"underfed":"underfeeded",
+"reknitted":"reknited",
+"mistaken":"mistaked",
+"like":"liek",
+"shut":"shuted",
+"struck":"striked",
+"shrunk":"shrinked",
+"misled":"misleaded",
+"pleaded":"pleaded",
+"sworn":"sweared",
+"borne":"beared",
+"shorn":"sheared",
+"undercut":"undercuted",
+"burst":"bursted",
+"bore":"beared",
+"outbid":"outbided",
+"data":"datas",
+"retook":"retaked",
+"unspun":"unspined",
+"mowed":"mowed",
+"misdid":"misdoed",
+"outwritten":"outwrited",
+"swelled":"swelled",
+"slung":"slinged",
+"withheld":"withholded",
+"resent":"resended",
+"overspent":"overspended",
+"swollen":"swelled",
+"spun":"spined",
+"sat":"sited",
+"forsook":"forsaked",
+"lay":"lied",
+"unslung":"unslinged",
+"outswum":"outswimed",
+"typewritten":"typewrited",
+"mown":"mowed",
+"fled":"fleed",
+"overdrew":"overdrawed",
+"begun":"begineded",
+"know":"no",
+"outsat":"outsited",
+"sight-read":"sight-readed",
+"underlay":"underlied",
+"lip-read":"lip-readed",
+"rose":"rised",
+"hewed":"hewed",
+"misunderstood":"misunderstanded",
+"relit":"relighted",
+"outdrew":"outdrawed",
+"underbid":"underbided",
+"retaught":"reteached",
+"frostbitten":"frostbited",
+"overdrawn":"overdrawed",
+"overrun":"overruned",
+"rebroadcast":"rebroadcasted",
+"felt":"feeled",
+"shaken":"shaked",
+"burger":"burgr",
+"ridden":"rided",
+"recast":"recasted",
+"upset":"upseted",
+"outbred":"outbreeded",
+"stank":"stinked",
+"forbade":"forbided",
+"of":"for",
+"bound":"binded",
+"sent":"sended",
+"fled":"fleed",
+"given":"gived",
+"stricken":"striked",
+"outlied":"outlied",
+"outgrown":"outgrowed",
+"you":"u",
+"outdriven":"outdrived",
+"swum":"swimed",
+"proofread":"proofreaded",
+"stole":"stealed",
+"upset":"upseted",
+"built":"builded",
+"proofread":"proofreaded",
+"let":"leted",
+"torn":"teared",
+"disproved":"disproved",
+"rewound":"rewinded",
+"misdone":"misdoed",
+"shown":"showed",
+"misread":"misreaded",
+"misspent":"misspended",
+"recut":"recuted",
+"hid":"hided",
+"wore":"weared",
+"undertook":"undertaked",
+"rung":"ringed",
+"laid":"layed",
+"lit":"lighted",
+"laid":"layed",
+"misspoken":"misspeaked",
+"sought":"seeked",
+"thought":"thinked",
+"rewoke":"rewaked",
+"awoke":"awaked",
+"reheard":"reheared",
+"crept":"creeped",
+"rewound":"rewinded",
+"underfed":"underfeeded",
+"sublet":"subleted",
+"let":"leted",
+"miswritten":"miswrited",
+"busted / bust":"busted",
+"handwritten":"handwrited",
+"overeaten":"overeated",
+"sprang":"springed",
+"dug":"diged",
+"unstrung":"unstringed",
+"frozen":"freezed",
+"misset":"misseted",
+"outran":"outruned",
+"bred":"breeded",
+"interbred":"interbreeded",
+"cheese":"cheez",
+"have":"haz",
+"redrawn":"redrawed",
+"rebound":"rebinded",
+"predid":"predoed",
+"outspent":"outspended",
+"sown":"sowed",
+"led":"leaded",
+"paid":"payed",
+"input":"inputed",
+"retore":"reteared",
+"overthrew":"overthrowed",
+"overbred":"overbreeded",
+"forgiven":"forgived",
+"reground":"regrinded",
+"misheard":"misheared",
+"said":"sayed",
+"reheard":"reheared",
+"withstood":"withstanded",
+"thrown":"throwed",
+"undersold":"underselled",
+"wrung":"wringed",
+"withheld":"withholded",
+"had":"haved",
+"oversold":"overselled",
+"premade":"premaked",
+"relaid":"relayed",
+"grown":"growed",
+"pled":"pleaded",
+"rewritten":"rewrited",
+"swore":"sweared",
+"hit":"hited",
+"caught":"catched",
+"froze":"freezed",
+"offset":"offseted",
+"should":"",
+"resold":"reselled",
+"knit":"knited",
+"sent":"sended",
+"withdrew":"withdrawed",
+"undersold":"underselled",
+"ran":"runed",
+"overlaid":"overlayed",
+"lost":"losed",
+"relayed":"relayed",
+"typecast":"typecasted",
+"cast":"casted",
+"unbent":"unbended",
+"overwrote":"overwrited",
+"beaten":"beateded",
+"undid":"undoed",
+"drawn":"drawed",
+"oversold":"overselled",
+"thrust":"thrusted",
+"came":"comed",
+"undone":"undoed",
+"made":"maked",
+"underwrote":"underwrited",
+"knew":"knowed",
+"showed":"showed",
+"inbred":"inbreeded",
+"hand-fed":"hand-feeded",
+"sold":"selled",
+"&":"end",
+"telecast":"telecasted",
+"shut":"shuted",
+"knelt":"kneeled",
+"pled":"pleaded",
+"fed":"feeded",
+"inlaid":"inlayed",
+"crossbred":"crossbreeded",
+"rehung":"rehanged",
+"foregone":"foregoed",
+"stunk":"stinked",
+"been":"beed",
+"rid":"rided",
+"unsewn":"unsewed",
+"thrust":"thrusted",
+}
+prefixMap = {
+"in":"en",
+"some":"sum",
+"am":"im",
+"wh":"w",
+"na":"ne",
+"extra":"ecstra",
+"mis":"miz",
+"de":"dee",
+"im":"em",
+"mid":"med",
+"out":"aot",
+"ph":"f",
+"super":"sooper",
+"en":"in",
+"over":"ovr",
+}
+suffixMap = {
+"ism":"izm",
+"tch":"ch",
+"ent":"nt",
+"ist":"iss",
+"ce":"s",
+"some":"sum",
+"ly":"le",
+"ool":"ewl",
+"se":"s",
+"ght":"te",
+"al":"el",
+"en":"in",
+"the":"eev",
+"sz":"s",
+"ever":"evr",
+"tion":"shun",
+"ore":"oar",
+"zs":"s",
+"x":"ks",
+"oor":"or",
+"ence":"ans",
+"ness":"nes",
+"ily":"ileh",
+"ft":"f",
+"acy":"asy",
+"ity":"itie",
+"le":"l",
+"s":"z",
+"rom":"rum",
+"ay":"ai",
+"ful":"fool",
+"ive":"if",
+"nd":"n",
+"eese":"eez",
+"al":"el",
+"ked":"kkid",
+"ust":"us",
+"oy":"oi",
+"orm":"erm",
+"ical":"icel",
+"ere":"er",
+"ed":"d",
+"or":"r",
+"ger":"gr",
+"ance":"ens",
+"ship":"shep",
+"icks":"ics",
+"dly":"dli",
+"ough":"oo",
+"ck":"k",
+"ith":"if",
+"ays":"ais",
+"thing":"fin",
+"ing":"in",
+"s":"z",
+"thing":"fin",
+"ate":"micate",
+"icious":"ishus",
+"dom":"dem",
+"elp":"alp",
+"ment":"mant",
+"sion":"shun",
+"ssed":"sd",
+"cause":"cos",
+"er":"r",
+"umn":"um",
+"oat":"owt",
+}
+textMap = {
+"oo":"ew",
+"!":["!??","!?!","?!?!","?!?"],
+",":"",
+"arl":"rl",
+"ck":"k",
+"ll":"l",
+"out":"owt",
+"-":"",
+"ee":"e",
+".":["??","???"],
+"ea":"ee",
+"iend":"end",
+"ss":"s",
+"qu":"kw",
+";":"",
+"'":"",
+"irs":"ers",
+"dj":"j",
+"ss":"s",
+"eath":"eef",
+"aw":"or",
+"oo":"o",
+":":"",
+" a ":" ",
+" an ":" ",
+}
+function forward(text) {
+    text = mapPhrases(text,phraseMap);
+    text = mapWords(text,wordMap);
+    text = mapPrefixes(text,prefixMap);
+    text = mapSuffixes(text,suffixMap);
+    text = mapText(text,textMap);
+    if (settings.caps) {
+        // capitalize 30% of the letters
+        text = text.split("").map(function(c) {
+            if (Math.random() < 0.3) return c.toUpperCase();
+            return c;
+        }).join("");
+    }
+    return text;
+}
+function backward(text) {
+    if (settings.caps) text = text.toLowerCase();
+    text = mapSuffixes(text,reverseMap(suffixMap,"suffixMap"));
+    text = mapPrefixes(text,reverseMap(prefixMap,"prefixMap"));
+    text = mapWords(text,reverseMap(wordMap,"wordMap"));
+    text = mapPhrases(text,reverseMap(phraseMap,"phraseMap"));
+    return text;
+}
+
+    </script>
+    <style>
+    /* CONVERTER STYLING */
+    /*
+        #inputArea {  }
+        #outputArea {  }
+    */
+    </style>
+    
+</head>
+
+<body>
+
+<nav><div class="navdiv" id="navdiv">
+<a class="skip" href="#content">Skip to content</a><a class="cpdtitle" href="https://c.R74n.com"><h1>Copy Paste Dump</h1></a><ul>
+<!--&A--><a href="https://c.r74n.com" class="navhome"><img src="https://c.r74n.com/favicon_smaller_old.png" alt="Logo" title="Home"></a><!--&B--><a href="/unicode">Symbols</a><!--&C--><a href="/emoji">Emojis</a><!--&D--><a href="/faces">Faces</a><!--&E--><a href="/fonts">Font Generator</a><!--&F--><a href="/converter/">Converters</a><!--&G--><a href="/shapes">Shapes</a><!--&H--><a href="/pages" class="navimp">All Pages</a><!--&I--><a href="/search" class="navimp" title="Search" aria-label="Search" id="navsearch">&nbsp;</a>
+<!--&J--></ul></div></nav>
+
+<div class="content" id="content">
+<h2 class="pagetitle">LOLcat Translator</h2>
+
+<a href=".">⬅︎ More Converters</a><br><br>
+<noscript><p>This converter requires JavaScript, which you seem to have disabled. It will not work unless you enable JavaScript.</p></noscript>
+
+<div id="converterDiv">
+
+<div id="converterLeft">
+    <textarea id="inputArea" placeholder="English goes here..." autofocus></textarea>
+</div>
+<div id="arrow">⇄</div>
+<div id="converterRight">
+    <textarea id="outputArea" placeholder="And LOLcat appears here..."></textarea>
+</div>
+<div id="converterBottom">
+    <div class="optionGroup">
+        <input type="checkbox" id="caps" checked><label for="caps">Capitalize</label>
+    </div>
+</div>
+
+</div>
+
+<h3>How It Works</h3>
+<p>Use this text tool to quickly convert English to LOLcat, or lolspeak. Simply type or paste English text into the first box, and translated LOLcat will appear in the second box for you to copy.</p>
+<!--How the text is converted-->
+<!--Why one would use this-->
+<p>LOLcat was a common way of speaking in cat memes back in the old Internet days.</p>
+<p>It works by turning English words into slightly incorrect versions.</p>
+<p>It is associated with the phrase "I can has cheezburger?".</p>
+<!--Any options users have-->
+
+<h3>More Converters Like This</h3>
+<ul id="seeMoreList">
+    <!--Optional-->
+</ul>
+
+<h3>Try Some Examples</h3>
+<ul id="exampleList">
+    <!--Automatic-->
+</ul>
+
+<h3>Any issues? <a href="https://forms.gle/Puo615Gev1binwei9" target="_blank">Send us feedback</a>!</h3>
+
+
+
+
+</div>
+
+
+
+<script src="../loadbuttons.js"></script>
+
+<div style="width:100%;height:100px;margin:auto;">
+<script data-ad-client="ca-pub-8485284630785740" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<div class="adbox">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8485284630785740"
+       data-ad-slot="5555682735"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+<div class="adbox">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8485284630785740"
+       data-ad-slot="5555682735"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+</div>
+</div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-93720349-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-93720349-8');
+</script>
+
+
+<div class="footerdiv">
+<div id="footershare">Share to: <em>Loading...</em></div>
+<div class="footersect"><ul>
+<li><strong>Symbols</strong></li>
+<li><a href="/unicode">Text Symbols</a></li>
+<li><a href="/emoji">Emoji</a></li>
+<li><a href="/faces">Emoticon Faces</a></li>
+<li><a href="/shapes">Shapes</a></li>
+<li><a href="/arrows">Arrows</a></li>
+<li><a href="/combining">Combining</a></li>
+<li><a href="/invisible">Invisible</a></li>
+<li><a href="/longest">Longest</a></li>
+<li><a href="/emoji-art">Emoji Art</a></li>
+<li><a href="/zwj">ZWJ Sequences</a></li>
+<li><a href="/flags">Flag Emojis</a></li>
+</ul></div>
+<div class="footersect"><ul>
+<li><strong>Tools & Tables</strong></li>
+<li><a href="/fonts/">Font Generator</a></li>
+<li><a href="/converter/">Text Converters</a></li>
+<li><a href="/ascii">ASCII</a></li>
+<li><a href="/html-entities">HTML Entities</a></li>
+<li><a href="/windows/alt-codes">Alt Codes</a></li>
+<li><a href="/braille">Braille</a></li>
+<li><a href="/builder">Emoji Builder</a></li>
+<li><a href="/sorter">List Sorter</a></li>
+<li><a href="https://r74n.com/unisearch" target="_blank">UniSearch</a></li>
+<li><a href="https://r74n.com/moji" target="_blank">R74moji</a></li>
+</ul></div>
+<div class="footersect"><ul>
+<li><strong>Platforms</strong></li>
+<li><a href="/instagram/">Instagram</a></li>
+<li><a href="/twitter/">Twitter</a></li>
+<li><a href="/tiktok/">TikTok</a></li>
+<li><a href="/youtube/">YouTube</a></li>
+<li><a href="/twitch/">Twitch</a></li>
+<li><a href="/discord/">Discord</a></li>
+<li><a href="/apple/">Apple</a></li>
+<li><a href="/windows/">Windows</a></li>
+<li><a href="/reddit/">Reddit</a></li>
+<li><a href="/whatsapp/">WhatsApp</a></li>
+</ul></div>
+<div class="footersect"><ul>
+<li><strong>Copy Paste Dump</strong></li>
+<li><a href="/pages">All Pages</a></li>
+<li><a href="/pages#events">Holidays & Events</a></li>
+<li><a href="https://forms.gle/Puo615Gev1binwei9" target="_blank">Submission Form</a></li>
+<li><a href="https://r74n.com" target="_blank">R74n</a></li>
+<li><a href="https://sandboxels.r74n.com" target="_blank">Sandboxels</a></li>
+<li>&nbsp;</li>
+<li><a href="https://link.r74n.com/discord" target="_blank">Join the Discord</a></li>
+<li><a href="https://tiktok.com/@r74n.com" target="_blank">R74n TikTok</a></li>
+<li><a href="https://www.reddit.com/r/copypastedump/" target="_blank">Subreddit</a></li>
+<li><a href="https://twitter.com/CopyPasteDump" target="_blank">Emoji Artist Twitter</a></li>
+<li><a href="https://tiktok.com/@emoji__artist" target="_blank">Emoji Artist TikTok</a></li>
+</ul></div>
+<div class="footerbottom"><a href="https://R74n.com/" target="_parent"><img src="https://R74n.com/icons/favicon.svg" title="R74n.com" alt="R74n Logo"></a>&nbsp; © Copyright <a href="https://en.wikipedia.org/wiki/2023" target="_blank">2023</a> <a href="https://R74n.com/" target="_parent" class="R74nCR">R74n</a>.</div>
+</div>
+
+</body>
+</html>

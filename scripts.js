@@ -149,12 +149,12 @@ document.addEventListener("DOMContentLoaded", function(){
     // loop through the specialEvents object
     for (var key in specialEvents) {
         var dates = key.split('-');
-        var start = new Date(dates[0]);
+        var start = new Date(dates[0]+"/"+today.getFullYear());
         if (dates.length > 1) {
-            var end = new Date(dates[1]);
+            var end = new Date(dates[1]+"/"+today.getFullYear());
         }
         else {
-            var end = new Date(dates[0]);
+            var end = new Date(dates[0]+"/"+today.getFullYear());
         }
         // set year
         start.setFullYear(today.getFullYear());

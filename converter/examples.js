@@ -13,7 +13,7 @@ wordMap = { // replace whole words only
     "suspicious": "sus",
 }
 phraseMap = {
-    "not ryan": "imposter",
+    "not crewmate": "imposter",
 }
 prefixMap = { // replace text at the start of words
     "multi": "uni"
@@ -28,6 +28,7 @@ function forward(text) {
     text = mapCharacters(text, charMap);
     text = mapPrefixes(text, prefixMap);
     text = mapSuffixes(text, suffixMap);
+    text = mapText(text, textMap);
     text = toBase(text,null,2) // null for plain text
     return text;
 }
