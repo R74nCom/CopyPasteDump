@@ -247,3 +247,4 @@ https://c.r74n.com/converter/temmie
 https://c.r74n.com/converter/lolcat
 https://c.r74n.com/converter/alien
 https://c.r74n.com/directional
+https://c.r74n.com/converter/gen-alpha
