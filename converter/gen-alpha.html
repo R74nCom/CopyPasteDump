@@ -10,8 +10,8 @@
     <meta property="og:site_name" content="Copy Paste Dump">
     <meta name="twitter:image" content="https://c.r74n.com/favicon_square.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title id="titleTag">🚽 Gen Alpha Translator - Copy Paste Dump</title>
-        <meta property="og:title" content="🚽 Gen Alpha Translator - Copy Paste Dump">
+        <title id="titleTag">🚽 Gen Alpha Brainrot Text Generator - Copy Paste Dump</title>
+        <meta property="og:title" content="🚽 Gen Alpha Brainrot Text Generator - Copy Paste Dump">
     <link rel="stylesheet" type="text/css" href="../stylesheet.css">
     <link rel="apple-touch-icon" sizes="180x180" href="https://c.r74n.com/icons/apple-touch-icon.png?v=lkvKdlj5Pj">
     <link rel="icon" type="image/png" sizes="32x32" href="https://c.r74n.com/icons/favicon-32x32.png?v=lkvKdlj5Pj">
@@ -143,10 +143,42 @@ wordMap = {
     "a little": "lowkey",
     "little bit": "lowkey",
 }
+randomWordList = "skibidi,toilet,gyatt,rizz,only in ohio,duke dennis,pray today,livvy dunne,rizzing up,baby gronk,sussy,imposter,pibby glitch,in real life,sigma,alpha,omega male,grindset,andrew tate,freddy fazbear,colleen ballinger,smurf cat,strawberry elephant,blud,dawg,shmlawg,ishowspeed,bro really thinks,carti,literally,hitting the griddy,griddy,hit the griddy,ocky way,kai cenat,fanum tax,garten of banban,edging,bussing,whopper whopper whopper,1 2 buckle my shoe,goofy ahh,ahh,adin ross,sin city,monday left me broken,quirked up,busting it down,goated with the sauce,goated,goat,john pork,grimace shake,huggy wuggy,nathaniel b,biggest bird,amogus,uncanny,wholesome,reddit,chungus,keanu reeves,pizza tower,zesty,poggers,kumalala savesta,quandale dingle,glizzy,thug shaker,shaker,morbin time,dj khaled,sisyphus,shadow wizard money gang,ayo the pizza here,plug,nair,compilation,subway surfers,funny moments,nickeh30,ratio,delulu,opium bird,mewing,mew,looksmax,looksmaxxing,fortnite,battle pass,all my fellas,gta 6,backrooms,gigachad,based,cringe,redpilled,F in the chat,lean,looksmaxxing,gassy,xbox live,mrbeast,kid named finger,better caul saul,i am a surgeon,ya cut g,ice spice,gooning,fr,we go gym,josh hutcherson,metal pipe falling,level 600 gyatt,gyatt,rizzler,ohio,rizzonomics,sturdy,kai cenat,fanum,fanum tax,griddying,bomboclat,rizzard of oz,rizz king,sussy baka,erm,what the sigma,sigma,infinite rizz,negative rizz,barbenheimer,sbidi toiledt,roblox,therian,baby gronk,dog doin',we go jim,zyzz,cuh dey board,L rizz,W rizz,L streamer,W streamer,L,W,girl dinner,boy dinner,girl math,poppy playtime,bussin',zoomer,ipad kid,cocomelon".split(",");
+settings = {
+    randomSentences: [
+    "I‘m not so happy.",
+    "She exercises every morning.",
+    "His dog will bark loudly.",
+    "My school starts at 8:00.",
+    "We always eat dinner together.",
+    "They take the bus to work.",
+    "He doesn’t like vegetables.",
+    "I don’t want anything to drink.",
+    "This little black dress isn’t expensive. ",
+    "Those kids don’t speak Gen Alpha.",
+    ]
+}
 function forward(text) {
     text = text.toLowerCase().replace(punctuationRegex, "");
-    text = mapPhrases(text, phraseMap);
-    text = mapWords(text, wordMap);
+    if (!settings.brainrot) {
+        text = mapPhrases(text, phraseMap);
+        text = mapWords(text, wordMap);
+    }
+    else {
+        var split = text.split(" ");
+        for (var i = 0; i < split.length; i++) {
+            var word = split[i];
+            if (simpleWords.indexOf(word) === -1) {
+                // make it x (settings.brainrot) random words
+                var newWord = "";
+                for (var j = 0; j < settings.brainrot; j++) {
+                    newWord += choose(randomWordList) + " ";
+                }
+                split[i] = newWord.slice(0, -1);
+            }
+        }
+        text = split.join(" ");
+    }
     if (Math.random() < 0.25) {
         text += " rn";
     }
@@ -177,7 +209,7 @@ function backward(text) {
 <!--&J--></ul></div></nav>
 
 <div class="content" id="content">
-<h2 class="pagetitle">LANG2 Converter</h2>
+<h2 class="pagetitle">Gen Alpha Translator</h2>
 
 <a href=".">⬅︎ More Converters</a><br><br>
 <noscript><p>This converter requires JavaScript, which you seem to have disabled. It will not work unless you enable JavaScript.</p></noscript>
@@ -185,39 +217,42 @@ function backward(text) {
 <div id="converterDiv">
 
 <div id="converterLeft">
-    <textarea id="inputArea" placeholder="LANG1 goes here..." autofocus></textarea>
-    <select id="lang1">
-        <option value="langoption1">LANGSELECT</option>
-    </select>
+    <textarea id="inputArea" placeholder="English goes here..." autofocus></textarea>
 </div>
 <div id="arrow">⇄</div>
 <div id="converterRight">
-    <textarea id="outputArea" placeholder="And LANG2 appears here..."></textarea>
-    <select id="lang2">
-        <option value="langoption1">LANGSELECT</option>
-    </select>
+    <textarea id="outputArea" placeholder="And brainrot appears here..."></textarea>
 </div>
 <div id="converterBottom">
-    <div class="optionGroup" id="mode">
-        <input type="button" value="MODE1" id="mode1" selected="true">
-        <input type="button" value="MODE2" id="mode2">
-    </div>
     <div class="optionGroup">
-        <input type="checkbox" id="option1"><label for="option1">OPTION1</label>
-        <input type="checkbox" id="option2" checked><label for="option2">OPTION2</label>
-        <input type="range" id="amount1" max="100" min="0" step="5" value="25"><label for="amount1">AMOUNT1</label>
-    </div>
-    <div class="optionGroup">
-        <label for="textoption1">TEXTOPTION1: </label><input type="text" id="textoption1" value="" placeholder="Text...">
+        <input type="range" id="brainrot" max="5" min="0" step="1" value="1"><label for="brainrot">Brainrot</label>
     </div>
 </div>
 
 </div>
 
 <h3>How It Works</h3>
-<p>Use this text tool to quickly convert LANG1 to LANG2. Simply type or paste LANG1 into the first box, and LANG2 will appear in the second box for you to copy.</p>
+<p>Use this text tool to quickly convert a block of text to Generation Alpha (Gen Alpha) brainrot slang. Simply type or paste English into the first box, and brainrot will appear in the second box for you to copy. <a href="https://knowyourmeme.com/memes/cultures/generation-alpha-gen-alpha" target="_blank">Gen Alpha</a> refers to kids born between the early 2010s and mid-2020s, also called iPad kids.</p>
 <!--How the text is converted-->
+<p>Gen Alpha slang usually consists of nonsense words such as:</p>
+<ul>
+<li>skibidi toilet</li>
+<li>gyatt</li>
+<li>rizz</li>
+<li>rizzler</li>
+<li>only in ohio</li>
+<li>livvy dunne rizzed up baby gronk</li>
+<li>sussy imposter</li>
+<li>sigma male</li>
+<li>bussing / bussin'</li>
+<li>pluh</li>
+<li>blud</li>
+<li>poggers</li>
+<li>zesty</li>
+<li>goated</li>
+</ul>
 <!--Why one would use this-->
+<p>Use this translator to generate copypastas to paste in <a href="../discord/">Discord</a> servers or comment on TikToks, YouTube Shorts, or Instagram Reels.</p>
 <!--Any options users have-->
 
 <h3>More Converters Like This</h3>

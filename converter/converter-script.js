@@ -9,6 +9,7 @@ defaultExamples = {
     general: ["Black Lives Matter","Thanks for everything","I'm sorry...","c.R74n.com","ABCDEFGHIJKLMNOPQRSTUVWXYZ","1234567890","The quick brown fox jumps over the lazy dog.","I love you!","Aesthetic","Be yourself","Keep calm","ATTENTION","WARNING","Announcement","he/him","he/they","she/her","she/they","they/them","Rules","Roles","Hello, world!","Any Pronouns","Pronouns","Server Rules","Tutorial","IMPORTANT","Cool","Awesome","Fancy","Help","Trigger Warning","Content Warning","Pride"],
     platforms: ["Instagram","Twitter","TikTok","YouTube","Twitch","Discord","Minecraft","Reddit","Among Us","WhatsApp","Apple","Windows","Zoom","Slack","GitHub","Snapchat","Facebook","Pinterest","iOS","Android","Google","Clubhouse","House Party","Fortnite","Roblox","PUBG"],
 }
+simpleWords = "the,and,have,that,for,you,with,say,this,they,but,his,from,not,she,as,what,their,can,who,get,would,her,all,about,will,there,when,which,them,some,out,into,just,see,him,your,come,could,now,than,like,other,how,then,its,our,were,theyre,hes,shes,youre,im,i,a,u,r,ur,these,those,so,also,or,to,too,might,may,cant,cannot".split(",");
 
 // old browser support
 if (!String.prototype.replaceAll) {String.prototype.replaceAll = function(str, newStr){if (Object.prototype.toString.call(str).toLowerCase() === '[object regexp]') {return this.replace(str, newStr);}return this.replace(new RegExp(str, 'g'), newStr);};}
@@ -424,6 +425,12 @@ function initConverter() {
                 updateURL(true);
             }
         });
+    }
+
+    if (settings.randomSentences) {
+        // add random sentences to inputArea
+        inputArea.value = choose(settings.randomSentences);
+        textInputChange(inputArea);
     }
 
     var seeMoreList = document.getElementById("seeMoreList");
