@@ -182,4 +182,11 @@ document.addEventListener("DOMContentLoaded", function(){
   catch (e) {
       console.log(e);
   }
+
+  var contentDiv = document.getElementById('content');
+  if (contentDiv) {
+    contentDiv.insertAdjacentHTML("beforeend", `
+    <h3 style="text-align:center">Missing something? <div style="display:inline-block"><a href="https://forms.gle/Puo615Gev1binwei9" target="_blank">Submit or send feedback</a>!</div></h3>
+    `)
+  }
 });
