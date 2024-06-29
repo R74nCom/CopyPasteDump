@@ -10,8 +10,8 @@
     <meta property="og:site_name" content="Copy Paste Dump">
     <meta name="twitter:image" content="https://c.r74n.com/favicon_square.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title id="titleTag">𝓯𝓻𝓮𝓪𝓴𝔂 𝓽𝓮𝔁𝓽 Converter (Hello Bro) - Copy Paste Dump</title>
-        <meta property="og:title" content="𝓯𝓻𝓮𝓪𝓴𝔂 𝓽𝓮𝔁𝓽 Converter (Hello Bro) - Copy Paste Dump">
+        <title id="titleTag">👅 𝓯𝓻𝓮𝓪𝓴𝔂 𝓽𝓮𝔁𝓽 Converter (Hello Bro) - Copy Paste Dump</title>
+        <meta property="og:title" content="👅 𝓯𝓻𝓮𝓪𝓴𝔂 𝓽𝓮𝔁𝓽 Converter (Hello Bro) - Copy Paste Dump">
     <link rel="stylesheet" type="text/css" href="../stylesheet.css">
     <link rel="apple-touch-icon" sizes="180x180" href="https://c.r74n.com/icons/apple-touch-icon.png?v=lkvKdlj5Pj">
     <link rel="icon" type="image/png" sizes="32x32" href="https://c.r74n.com/icons/favicon-32x32.png?v=lkvKdlj5Pj">
@@ -87,18 +87,24 @@ charMap = {
 function forward(text) {
     if (text.trim() == "") text = "freaky";
     text = mapCharacters(text,charMap);
-    text += " ❤️"
+    if (Math.random() < 0.25) {
+        text += " 👅"
+    }
+    else {
+        text += " ❤️"
+    }
     return text;
 }
 function backward(text) {
     text = text.replace(" ❤️","");
+    text = text.replace(" 👅","");
     text = mapCharacters(text,reverseMap(charMap,"charMap"));
     return text;
 }
 
 settings = {
     // choose which examples to show
-    examples: [["Hello bro","Hello vro","Freaky","Yo vro","Hongebob","Pongebob","Spongebob","No bro","Yes bro","Maybe bro","Oh No Bro"], defaultExamples.names, defaultExamples.greetings]
+    examples: [["Hello bro","Hello vro","Freaky","Yo vro","Hongebob","Pongebob","Spongebob","No bro","Yes bro","Maybe bro","Oh No Bro","Rio De Janeiro","Match My Freak"], defaultExamples.names, defaultExamples.greetings]
 }
 
     </script>
@@ -141,14 +147,20 @@ settings = {
 
 <h3>How It Works</h3>
 <p>What if text was 𝓯𝓻𝓮𝓪𝓴𝔂? Use this text tool to quickly convert text to "freaky text" (𝓯𝓻𝓮𝓪𝓴𝔂 𝓽𝓮𝔁𝓽), used in various memes like "𝓗𝓮𝓵𝓵𝓸 𝓑𝓻𝓸 ❤️ / 𝓗𝓮𝓵𝓵𝓸 𝓥𝓻𝓸 ❤️". Simply type or paste text into the first box, and the freaky font will appear in the second box for you to copy.</p>
+<!--Why one would use this-->
+<p>The text is used in certain memes, like the Freaky Bob meme, showing SpongeBob calling or saying strange things. It is also used in phrases like "[blank] if it was 𝓯𝓻𝓮𝓪𝓴𝔂". Sometimes, the Rio De Janeiro visual filter is applied to the image.</p>
+<img src="https://i.imgur.com/LocLBCJ.png" alt="Example of freaky text being used" height="300">
 <!--How the text is converted-->
 <p>The "freaky text" is actually a set of Unicode math characters called "Mathematical Bold Script". It isn't a real font, so the text may not appear on all devices.</p>
-<!--Why one would use this-->
+<p>All freaky letters: 𝓪 𝓫 𝓬 𝓭 𝓮 𝓯 𝓰 𝓱 𝓲 𝓳 𝓴 𝓵 𝓶 𝓷 𝓸 𝓹 𝓺 𝓻 𝓼 𝓽 𝓾 𝓿 𝔀 𝔁 𝔂 𝔃 𝓐 𝓑 𝓒 𝓓 𝓔 𝓕 𝓖 𝓗 𝓘 𝓙 𝓚 𝓛 𝓜 𝓝 𝓞 𝓟 𝓠 𝓡 𝓢 𝓣 𝓤 𝓥 𝓦 𝓧 𝓨 𝓩</p>
 <!--Any options users have-->
 <p>We have many more fonts for you too! Try out our <a href="../fonts/">Fancy Font Generator</a>.</p>
 
 <h3>More Converters Like This</h3>
 <ul id="seeMoreList">
+    <a href="gen-alpha">Gen Alpha Brainrot Translator</a>
+    <a href="alien">Alien (Glorp Gnarp) Translator</a>
+    <a href="../fonts/">Fancy Font Generator</a> (All Fonts)
     <!--Optional-->
 </ul>
 
