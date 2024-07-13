@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function(){
   var contentDiv = document.getElementById('content');
   if (contentDiv) {
     contentDiv.insertAdjacentHTML("beforeend", `
-    <h3 style="text-align:center">Missing something? <div style="display:inline-block"><a href="https://forms.gle/Puo615Gev1binwei9" target="_blank">Submit or send feedback</a>!</div></h3>
+    <h3 style="text-align:center">Missing something? <div style="display:inline-block"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfb982MRjL6hFDpS4utKzjrDP2UUIPprG8iunwW2t0dxfJvmQ/viewform?usp=pp_url&entry.1257758897=`+document.title.split(" - ")[0].split(" (")[0]+`:+" target="_blank">Submit or send feedback</a>!</div></h3>
     `)
   }
 });
